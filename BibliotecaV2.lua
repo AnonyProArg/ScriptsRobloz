@@ -465,6 +465,29 @@ local function handleTouchEvents()
     end
 
 end
+local closeButton = Instance.new("TextButton")
+
+closeButton.Parent = screenGui
+
+closeButton.Size = UDim2.new(0, 150, 0, 50)
+
+closeButton.Position = UDim2.new(0.85, -75, 0.2, 0)
+
+closeButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+
+closeButton.Text = "Cerrar Menú"
+
+-- Función para cerrar el menú
+
+local function closeMenu()
+
+    screenGui:Destroy()
+
+end
+
+-- Conectar función al evento Click del botón de cerrar menú
+
+closeButton.Activated:Connect(closeMenu)
 
 -- Llamar a la función para manejar los eventos táctiles
 

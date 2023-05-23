@@ -323,65 +323,7 @@ local opciones = {
     {nombre = "Opción 6", codigo = 'if getgenv().SimpleSpyExecuted and type(getgenv().SimpleSpyShutdown) == "function" then
     getgenv().SimpleSpyShutdown()
 end
-    -- Verificar si el dispositivo es móvil
-
-local isMobile = system.getInfo("platform") == "android" or system.getInfo("platform") == "ios"
-
--- Función para manejar el evento de toque
-
-local function onTouch(event)
-
-    if event.phase == "began" then
-
-        -- Se ha tocado la pantalla
-
-        local touchX, touchY = event.x, event.y
-
-        
-
-        -- Realizar acciones basadas en las coordenadas táctiles
-
-        -- ...
-
-        
-
-    elseif event.phase == "moved" then
-
-        -- El dedo se ha movido por la pantalla
-
-        local touchX, touchY = event.x, event.y
-
-        
-
-        -- Realizar acciones basadas en las coordenadas táctiles mientras se mueve el dedo
-
-        -- ...
-
-        
-
-    elseif event.phase == "ended" then
-
-        -- Se ha levantado el dedo de la pantalla
-
-        -- Realizar acciones finales basadas en las coordenadas táctiles
-
-        -- ...
-
-        
-
-    end
-
-    return true  -- Indica que el evento ha sido manejado correctamente
-
-end
-
--- Verificar si el dispositivo es móvil y añadir el evento de toque
-
-if isMobile then
-
-    Runtime:addEventListener("touch", onTouch)
-
-end
+    
 
 local configs = {
     logcheckcaller = false,

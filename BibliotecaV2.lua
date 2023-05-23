@@ -6,7 +6,7 @@ local opciones = {
 
     {nombre = "Spy Mobil", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/HoodProject/Espa-oles/main/Turtle%20Spy.lua"))()'},
 
-    {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Volar AllGame", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua"))()'},
 
     {nombre = "Opción 5", codigo = 'loadstring(game:HttpGet("###"))()'},
 

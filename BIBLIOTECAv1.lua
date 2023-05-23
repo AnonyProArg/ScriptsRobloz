@@ -2710,6 +2710,4 @@ end
 
 end
 
-gridLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(ajustarTamañoScrollingFrame)
 
-ajustarTamañoScrollingFrame()

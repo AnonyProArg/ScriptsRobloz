@@ -1,10 +1,10 @@
 local opciones = {
 
-    {nombre = "Opción 1", codigo = 'loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Dex-Explorer-v2-10490"))()'},
+    {nombre = "Dex", codigo = 'loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Dex-Explorer-v2-10490"))()'},
 
-    {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()'},
+    {nombre = "Spy Pc" , codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()'},
 
-    {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Spy Mobil", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/HoodProject/Espa-oles/main/Turtle%20Spy.lua"))()'},
 
     {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
 

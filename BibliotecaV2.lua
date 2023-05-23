@@ -470,6 +470,4 @@ end
 
 handleTouchEvents()
 
-gridLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(ajustarTamañoScrollingFrame)
 
-ajustarTamañoScrollingFrame()

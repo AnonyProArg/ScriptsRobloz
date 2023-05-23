@@ -10,7 +10,7 @@ local opciones = {
 
     {nombre = "AtravesarTodo V.1", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Nocolision.lua"))()'},
 
-    {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "TPlayer", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TpPlayers.lua "))()'},
 
     {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
 

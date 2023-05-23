@@ -6,17 +6,9 @@ local opciones = {
 
         -- Código para ejecutar cuando se selecciona la opción "Volar"
 
-        local scriptURL = "https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua"
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua"))()
 
-        local success, scriptContent = pcall(game.HttpGet, game, game, scriptURL)
 
-        if success then
-
-            local flyScript = loadstring(scriptContent)
-
-            if flyScript then
-
-                flyScript()
 
             else
 
@@ -36,17 +28,9 @@ local opciones = {
 
         -- Código para ejecutar cuando se selecciona la opción "Dex Modificador"
 
-        local scriptURL = "https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4"
+        loadstring(game:HttpGetAsync("https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4"
 
-        local success, scriptContent = pcall(game.HttpGetAsync, game, game, scriptURL)
-
-        if success then
-
-            local dexScript = loadstring(scriptContent)
-
-            if dexScript then
-
-                dexScript()
+        
 
             else
 

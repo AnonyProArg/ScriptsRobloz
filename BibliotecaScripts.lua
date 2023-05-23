@@ -10,17 +10,7 @@ local opciones = {
 
 
 
-            else
-
-                print("Error al cargar el script de vuelo")
-
-            end
-
-        else
-
-            print("Error al obtener el script de vuelo desde el servidor")
-
-        end
+            
 
     end},
 
@@ -32,17 +22,7 @@ local opciones = {
 
         
 
-            else
 
-                print("Error al cargar el script de Dex Modificador")
-
-            end
-
-        else
-
-            print("Error al obtener el script de Dex Modificador desde el servidor")
-
-        end
 
     end},
 

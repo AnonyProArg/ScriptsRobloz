@@ -348,7 +348,7 @@ frame.Parent = gui
 
 local scrollingFrame = Instance.new("ScrollingFrame")
 
-scrollingFrame.Size = UDim2.new(1, -10, 1, -40)
+scrollingFrame.Size = UDim2.new(1, -10, 1, -90)
 
 scrollingFrame.Position = UDim2.new(0, 5, 0, 5)
 

@@ -1,6 +1,6 @@
 local opciones = {
 
-    {nombre = "Dex", codigo = 'loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Dex-Explorer-v2-10490"))()'},
+    {nombre = "Dex V2", codigo = 'loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Dex-Explorer-v2-10490"))()'},
 
     {nombre = "Spy Pc" , codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()'},
 
@@ -12,7 +12,7 @@ local opciones = {
 
     {nombre = "TPlayer", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua"))()'},
 
-    {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Dex V3", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Dex%20Explorer.lua.txt"))()'},
 
     {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
 

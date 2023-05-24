@@ -14,7 +14,7 @@ local opciones = {
 
     {nombre = "Dex V3", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Dex%20Explorer.lua.txt"))()'},
 
-    {nombre = "Doors Fluxus", codigo = 'loadstring(game:HttpGet("loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSHUB_Loader.lua"),true))()"))()'},
+    {nombre = "Doors Fluxus", codigo = 'loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSHUB_Loader.lua"),true))()'},
 
     {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
 

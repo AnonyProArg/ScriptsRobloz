@@ -132,15 +132,9 @@ closeButton.TextColor3 = Color3.new(1, 1, 1)
 
 closeButton.Parent = menuFrame
 
--- Conectar la función de cerrar el menú y restablecer los ajustes al evento Activated del botón
 
-closeButton.Activated:Connect(function()
 
-    -- Restablecer la colisión del jugador con todos los objetos
 
-    enableCollisionWithAll()
-
-    
 
     -- Eliminar el menú flotante
 

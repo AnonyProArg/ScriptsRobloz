@@ -20,7 +20,7 @@ local opciones = {
 
     {nombre = "RegarPlnts Meepcity", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/plantsMeepC.txt"))()'},
 
-    {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "AutoPesca+ MeepCity", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/yLegendzz/Scripts/main/Meepcity"))()'},
 
 {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
 

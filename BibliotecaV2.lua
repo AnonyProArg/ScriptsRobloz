@@ -30,7 +30,7 @@ local opciones = {
 
     {nombre = "SoloPlus Meepcity", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/gestion/main/PlusMeep"))()'},
 
-    {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "DoubleDown AutoWin", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Misc%20Scripts/DoubleDown.lua?raw=true"))()'},
 
     {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
 

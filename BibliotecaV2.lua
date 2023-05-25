@@ -24,11 +24,11 @@ local opciones = {
 
 {nombre = "Doors Delta+", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/mstudio45/MSDOORS/7bd97c2d956a775d683c2d7973d79715b30998ea/MSDOORS/Moonsec.lua"))()'},
 
-    {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Teclado Virtual", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()'},
 
-    {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Items+ MeepCity", codigo = 'loadstring(game:HttpGet("https://scriptblox.com/raw/MeepCity-Meepcity-cracked-6349"))()'},
 
-    {nombre = "Opción 5", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "SoloPlus Meepcity", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/gestion/main/PlusMeep"))()'},
 
     {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
 

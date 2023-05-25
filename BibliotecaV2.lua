@@ -22,7 +22,7 @@ local opciones = {
 
     {nombre = "AutoPesca+ MeepCity", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/yLegendzz/Scripts/main/Meepcity"))()'},
 
-{nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
+{nombre = "Doors Delta+", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/mstudio45/MSDOORS/7bd97c2d956a775d683c2d7973d79715b30998ea/MSDOORS/Moonsec.lua"))()'},
 
     {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
 

@@ -1,60 +1,69 @@
+-- Variables
 local player = game.Players.LocalPlayer
-local gui = Instance.new("\83\99\114\101\101\110\71\117\105")
-local mainFrame = Instance.new("\70\114\97\109\101")
-local collectCoinsButton = Instance.new("\84\101\120\116\66\117\116\116\111\110")
-local removePlantsButton = Instance.new("\84\101\120\116\66\117\116\116\111\110")
-local plantPlantsButton = Instance.new("\84\101\120\116\66\117\116\116\111\110")
-local waterPlantsButton = Instance.new("\84\101\120\116\66\117\116\116\111\110")
-local executeAllButton = Instance.new("\84\101\120\116\66\117\116\116\111\110")
-local closeButton = Instance.new("\84\101\120\116\66\117\116\116\111\110")
+local gui = Instance.new("ScreenGui")
+local mainFrame = Instance.new("Frame")
+local collectCoinsButton = Instance.new("TextButton")
+local removePlantsButton = Instance.new("TextButton")
+local plantPlantsButton = Instance.new("TextButton")
+local waterPlantsButton = Instance.new("TextButton")
+local executeAllButton = Instance.new("TextButton")
+local closeButton = Instance.new("TextButton")
 local running = false
 
-gui.\78\97\109\101 = "\70\108\111\97\116\105\110\103\77\101\110\117"
-gui.\80\97\114\101\110\116 = player.\80\108\97\121\101\114\71\117\105
+-- Configuración de la GUI
+gui.Name = "FloatingMenu"
+gui.Parent = player.PlayerGui
 
-mainFrame.\78\97\109\101 = "\77\97\105\110\70\114\97\109\101"
-mainFrame.\80\97\114\101\110\116 = UDim2.\110\101\119(0.5, -75, 0.5, -135)
-mainFrame.\83\105\122\101 = UDim2.\110\101\119(0, 150, 0, 270)
-mainFrame.\83\116\121\108\101 = \69\110\117\109\46\70\114\97\109\101\83\116\121\108\101.\68\114\111\112\83\104\97\100\111\119
-mainFrame.\80\97\114\101\110\116 = gui
+mainFrame.Name = "MainFrame"
+mainFrame.Position = UDim2.new(0.5, -75, 0.5, -135)
+mainFrame.Size = UDim2.new(0, 150, 0, 270)
+mainFrame.Style = Enum.FrameStyle.DropShadow
+mainFrame.Parent = gui
 
-collectCoinsButton.\78\97\109\101 = "\67\111\108\108\101\99\116\67\111\105\110\115"
-collectCoinsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.05, 0)
-collectCoinsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-collectCoinsButton.\84\101\120\116 = "\82\101\99\111\103\101\114"
+collectCoinsButton.Name = "CollectCoinsButton"
+collectCoinsButton.Position = UDim2.new(0.5, -50, 0.05, 0)
+collectCoinsButton.Size = UDim2.new(0, 100, 0, 30)
+collectCoinsButton.Text = "Recoger"
+collectCoinsButton.Parent = mainFrame
 
-removePlantsButton.\78\97\109\101 = "\82\101\109\111\118\101\80\108\97\110\116\115"
-removePlantsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.2, 0)
-removePlantsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-removePlantsButton.\84\101\120\116 = "\82\101\109\111\118\101\114\32\80\108\97\110\116\97\115"
+removePlantsButton.Name = "RemovePlantsButton"
+removePlantsButton.Position = UDim2.new(0.5, -50, 0.2, 0)
+removePlantsButton.Size = UDim2.new(0, 100, 0, 30)
+removePlantsButton.Text = "Remover Plantas"
+removePlantsButton.Parent = mainFrame
 
-plantPlantsButton.\78\97\109\101 = "\80\108\97\110\116\80\108\97\110\116\115"
-plantPlantsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.35, 0)
-plantPlantsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-plantPlantsButton.\84\101\120\116 = "\80\108\97\110\116\97\114\32\80\108\97\110\116\97\115"
+plantPlantsButton.Name = "PlantPlantsButton"
+plantPlantsButton.Position = UDim2.new(0.5, -50, 0.35, 0)
+plantPlantsButton.Size = UDim2.new(0, 100, 0, 30)
+plantPlantsButton.Text = "Plantar Plantas"
+plantPlantsButton.Parent = mainFrame
 
-waterPlantsButton.\78\97\109\101 = "\87\97\116\101\114\80\108\97\110\116\115"
-waterPlantsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.5, 0)
-waterPlantsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-waterPlantsButton.\84\101\120\116 = "\82\101\103\97\114\32\80\108\97\110\116\97\115"
+waterPlantsButton.Name = "WaterPlantsButton"
+waterPlantsButton.Position = UDim2.new(0.5, -50, 0.5, 0)
+waterPlantsButton.Size = UDim2.new(0, 100, 0, 30)
+waterPlantsButton.Text = "Regar Plantas"
+waterPlantsButton.Parent = mainFrame
 
-executeAllButton.\78\97\109\101 = "\69\120\101\99\117\116\101\65\108\108\66\117\116\116\111\110\115"
-executeAllButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -75, 0.65, 0)
-executeAllButton.\83\105\122\101 = UDim2.\110\101\119(0, 150, 0, 30)
-executeAllButton.\84\101\120\116 = "\69\106\101\99\117\116\97\114\32\84\111\100\111"
+executeAllButton.Name = "ExecuteAllButton"
+executeAllButton.Position = UDim2.new(0.5, -75, 0.65, 0)
+executeAllButton.Size = UDim2.new(0, 150, 0, 30)
+executeAllButton.Text = "Ejecutar Todo"
+executeAllButton.Parent = mainFrame
 
-closeButton.\78\97\109\101 = "\67\108\111\115\101\66\117\116\116\111\110"
-closeButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.9, 0)
-closeButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-closeButton.\84\101\120\116 = "\67\101\114\114\97\114\32\109\101\110\250"
+closeButton.Name = "CloseButton"
+closeButton.Position = UDim2.new(0.5, -50, 0.9, 0)
+closeButton.Size = UDim2.new(0, 100, 0, 30)
+closeButton.Text = "Cerrar menú"
+closeButton.Parent = mainFrame
 
-local function \101\120\101\99\117\116\101\67\111\100\101(\99\111\100\101)
-    if \99\111\100\101 then
-        \108\111\97\100\115\116\114\105\110\103(\99\111\100\101)()
+-- Funciones
+local function executeCode(code)
+    if code then
+        loadstring(code)()
     end
 end
 
-local function \99\111\108\108\101\99\116\67\111\105\110\115()
+local function collectCoins()
     running = true
 
     for i = 0, 20 do
@@ -62,14 +71,14 @@ local function \99\111\108\108\101\99\116\67\111\105\110\115()
             break
         end
 
-        \101\120\101\99\117\116\101\67\111\100\101('\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\34\82\101\112\108\105\99\97\116\101\100\83\116\111\114\97\103\101\34,32' .. i .. ')')
-        wait(0.01)
+        executeCode('game:GetService("ReplicatedStorage").ConnectionEvent:FireServer(228, ' .. i .. ')')
+        wait(0.01) -- Esperar 10 milisegundos por cada iteración
     end
 
     running = false
 end
 
-local function \114\101\109\111\118\101\80\108\97\110\116\115()
+local function removePlants()
     running = true
 
     for i = 0, 20 do
@@ -77,14 +86,14 @@ local function \114\101\109\111\118\101\80\108\97\110\116\115()
             break
         end
 
-        \101\120\101\99\117\116\101\67\111\100\101('\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\57\54,32' .. i .. ')')
-        wait(0.01)
+        executeCode('game:GetService("ReplicatedStorage").Connection:InvokeServer(96, ' .. i .. ')')
+        wait(0.01) -- Esperar 10 milisegundos por cada iteración
     end
 
     running = false
 end
 
-local function \112\108\97\110\116\80\108\97\110\116\115()
+local function plantPlants()
     running = true
 
     for i = 0, 20 do
@@ -92,14 +101,14 @@ local function \112\108\97\110\116\80\108\97\110\116\115()
             break
         end
 
-        \101\120\101\99\117\116\101\67\111\100\101('\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\57\57,32' .. i .. ', 49)')
-        wait(0.01)
+        executeCode('game:GetService("ReplicatedStorage").Connection:InvokeServer(99, ' .. i .. ', 17)')
+        wait(0.01) -- Esperar 10 milisegundos por cada iteración
     end
 
     running = false
 end
 
-local function \119\97\116\101\114\80\108\97\110\116\115()
+local function waterPlants()
     running = true
 
     for i = 0, 20 do
@@ -107,190 +116,64 @@ local function \119\97\116\101\114\80\108\97\110\116\115()
             break
         end
 
-        \101\120\101\99\117\116\101\67\111\100\101('\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\57\51,32' .. i .. ')')
-        wait(0.01)
+        executeCode('game:GetService("ReplicatedStorage").Connection:InvokeServer(93, ' .. i .. ')')
+        wait(0.01) -- Esperar 10 milisegundos por cada iteración
     end
 
-    running = true
+   running = true
 
     for i = 0, 20 do
         if not running then
             break
         end
 
-        \101\120\101\99\117\116\101\67\111\100\101('\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\57\51,32' .. i .. ')')
-        wait(0.01)
+        executeCode('game:GetService("ReplicatedStorage").Connection:InvokeServer(93, ' .. i .. ')')
+        wait(0.01) -- Esperar 10 milisegundos por cada iteración
     end
 
     running = false
 end
 
-collectCoinsButton.\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107.\67\111\110\110\101\99\116:Connect(function()
+-- Eventos de botones
+collectCoinsButton.MouseButton1Click:Connect(function()
     if not running then
-        \99\111\108\108\101\99\116\67\111\105\110\115()
+        collectCoins()
     end
 end)
 
-removePlantsButton.\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107.\67\111\110\110\101\99\116:Connect(function()
+removePlantsButton.MouseButton1Click:Connect(function()
     if not running then
-        \114\101\109\111\118\101\80\108\97\110\116\115()
+        removePlants()
     end
 end)
 
-plantPlantsButton.\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107.\67\111\110\110\101\99\116:Connect(function()
+plantPlantsButton.MouseButton1Click:Connect(function()
     if not running then
-        \112\108\97\110\116\80\108\97\110\116\115()
+        plantPlants()
     end
 end)
 
-waterPlantsButton.\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107.\67\111\110\110\101\99\116:Connect(function()
+waterPlantsButton.MouseButton1Click:Connect(function()
     if not running then
-        \119\97\116\101\114\80\108\97\110\116\115()
+        waterPlants()
+    end
+end)
+executeAllButton.MouseButton1Click:Connect(function()
+    if not running then
+        running = true
+
+        -- Ejecutar en orden: Recoger, Remover Plantas, Plantar Plantas, Regar Plantas
+        collectCoins()
+        removePlants()
+        plantPlants()
+        waterPlants()
+        gui:Destroy()
+
+        running = false
     end
 end)
 
-executeAllButton.\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107.\67\111\110\110\101\99\116:Connect(function()
-    if not running then
-        \99\111\108\108\101\99\116\67\111\105\110\115()
-        \114\101\109\111\118\101\80\108\97\110\116\115()
-        \112\108\97\110\116\80\108\97\110\116\115()
-        \119\97\116\101\114\80\108\97\110\116\115()
-    end
-end)
-
-closeButton.\77\111\117\115\101\66\117\116\116\111\110\49\67\108\105\99\107.\67\111\110\110\101\99\116:Connect(function()
-    running = false
-    gui:Destroy()
-end)
-
-gui.\80\97\114\101\110\116 = player.\85\73\80\97\114\101\110\116.\67\104\105\108\100\82\101\110
-gui.\80\97\114\101\110\116\46\80\97\114\101\110\116 = player.\85\73\80\97\114\101\110\116.\70\114\97\109\101
-
-mainFrame.\80\97\114\101\110\116 = gui.\80\97\114\101\110\116
-
-collectCoinsButton.\80\97\114\101\110\116 = mainFrame
-removePlantsButton.\80\97\114\101\110\116 = mainFrame
-plantPlantsButton.\80\97\114\101\110\116 = mainFrame
-waterPlantsButton.\80\97\114\101\110\116 = mainFrame
-executeAllButton.\80\97\114\101\110\116 = mainFrame
-closeButton.\80\97\114\101\110\116 = mainFrame
-
-collectCoinsButton.\84\101\120\116 = "\67\111\108\108\101\99\116\32\67\111\105\110\115"
-removePlantsButton.\84\101\120\116 = "\82\101\109\111\118\101\32\80\108\97\110\116\115"
-plantPlantsButton.\84\101\120\116 = "\80\108\97\110\116\32\80\108\97\110\116\115"
-waterPlantsButton.\84\101\120\116 = "\87\97\116\101\114\32\80\108\97\110\116\115"
-executeAllButton.\84\101\120\116 = "\69\120\101\99\117\116\101\32\65\108\108\32\66\117\116\116\111\110\115"
-closeButton.\84\101\120\116 = "\67\108\111\115\101"
-
-collectCoinsButton.\80\97\114\101\110\116 = mainFrame
-removePlantsButton.\80\97\114\101\110\116 = mainFrame
-plantPlantsButton.\80\97\114\101\110\116 = mainFrame
-waterPlantsButton.\80\97\114\101\110\116 = mainFrame
-executeAllButton.\80\97\114\101\110\116 = mainFrame
-closeButton.\80\97\114\101\110\116 = mainFrame
-
-gui.\80\97\114\101\110\116 = player.\85\73\80\97\114\101\110\116.\67\104\105\108\100\82\101\110
-gui.\80\97\114\101\110\116\46\80\97\114\101\110\116 = player.\85\73\80\97\114\101\110\116.\70\114\97\109\101
-
-mainFrame.\80\97\114\101\110\116 = gui.\80\97\114\101\110\116
-
-collectCoinsButton.\80\97\114\101\110\116 = mainFrame
-removePlantsButton.\80\97\114\101\110\116 = mainFrame
-plantPlantsButton.\80\97\114\101\110\116 = mainFrame
-waterPlantsButton.\80\97\114\101\110\116 = mainFrame
-executeAllButton.\80\97\114\101\110\116 = mainFrame
-closeButton.\80\97\114\101\110\116 = mainFrame
-
-collectCoinsButton.\84\101\120\116 = "\67\111\108\108\101\99\116\32\67\111\105\110\115"
-removePlantsButton.\84\101\120\116 = "\82\101\109\111\118\101\32\80\108\97\110\116\115"
-plantPlantsButton.\84\101\120\116 = "\80\108\97\110\116\32\80\108\97\110\116\115"
-waterPlantsButton.\84\101\120\116 = "\87\97\116\101\114\32\80\108\97\110\116\115"
-executeAllButton.\84\101\120\116 = "\69\120\101\99\117\116\101\32\65\108\108\32\66\117\116\116\111\110\115"
-closeButton.\84\101\120\116 = "\67\108\111\115\101"
-
-collectCoinsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.1, 0)
-removePlantsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.2, 0)
-plantPlantsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.3, 0)
-waterPlantsButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.4, 0)
-executeAllButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -75, 0.5, 0)
-closeButton.\80\111\115\105\116\105\111\110 = UDim2.\110\101\119(0.5, -50, 0.9, 0)
-
-collectCoinsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-removePlantsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-plantPlantsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-waterPlantsButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-executeAllButton.\83\105\122\101 = UDim2.\110\101\119(0, 150, 0, 30)
-closeButton.\83\105\122\101 = UDim2.\110\101\119(0, 100, 0, 30)
-
-collectCoinsButton.\84\101\120\116 = "\67\111\108\108\101\99\116\32\67\111\105\110\115"
-removePlantsButton.\84\101\120\116 = "\82\101\109\111\118\101\32\80\108\97\110\116\115"
-plantPlantsButton.\84\101\120\116 = "\80\108\97\110\116\32\80\108\97\110\116\115"
-waterPlantsButton.\84\101\120\116 = "\87\97\116\101\114\32\80\108\97\110\116\115"
-executeAllButton.\84\101\120\116 = "\69\120\101\99\117\116\101\32\65\108\108\32\66\117\116\116\111\110\115"
-closeButton.\84\101\120\116 = "\67\108\111\115\101"
-
-collectCoinsButton.\65\117\116\111\82\101\115\105\122\101 = true
-removePlantsButton.\65\117\116\111\82\101\115\105\122\101 = true
-plantPlantsButton.\65\117\116\111\82\101\115\105\122\101 = true
-waterPlantsButton.\65\117\116\111\82\101\115\105\122\101 = true
-executeAllButton.\65\117\116\111\82\101\115\105\122\101 = true
-closeButton.\65\117\116\111\82\101\115\105\122\101 = true
-
-collectCoinsButton.\80\97\114\101\110\116 = mainFrame
-removePlantsButton.\80\97\114\101\110\116 = mainFrame
-plantPlantsButton.\80\97\114\101\110\116 = mainFrame
-waterPlantsButton.\80\97\114\101\110\116 = mainFrame
-executeAllButton.\80\97\114\101\110\116 = mainFrame
-closeButton.\80\97\114\101\110\116 = mainFrame
-
-collectCoinsButton.\78\97\109\101 = "\67\111\108\108\101\99\116\67\111\105\110\115\66\117\116\116\111\110"
-removePlantsButton.\78\97\109\101 = "\82\101\109\111\118\101\80\108\97\110\116\115\66\117\116\116\111\110"
-plantPlantsButton.\78\97\109\101 = "\80\108\97\110\116\80\108\97\110\116\115\66\117\116\116\111\110"
-waterPlantsButton.\78\97\109\101 = "\87\97\116\101\114\80\108\97\110\116\115\66\117\116\116\111\110"
-executeAllButton.\78\97\109\101 = "\69\120\101\99\117\116\101\65\108\108\66\117\116\116\111\110\115"
-closeButton.\78\97\109\101 = "\67\108\111\115\101\66\117\116\116\111\110"
-
-collectCoinsButton.\90\105\110\100\101\120 = 1
-removePlantsButton.\90\105\110\100\101\120 = 1
-plantPlantsButton.\90\105\110\100\101\120 = 1
-waterPlantsButton.\90\105\110\100\101\120 = 1
-executeAllButton.\90\105\110\100\101\120 = 1
-closeButton.\90\105\110\100\101\120 = 1
-
-collectCoinsButton.\67\108\105\99\107:Connect(function()
-    if not running then
-        \99\111\108\108\101\99\116\67\111\105\110\115()
-    end
-end)
-
-removePlantsButton.\67\108\105\99\107:Connect(function()
-    if not running then
-        \114\101\109\111\118\101\80\108\97\110\116\115()
-    end
-end)
-
-plantPlantsButton.\67\108\105\99\107:Connect(function()
-    if not running then
-        \112\108\97\110\116\80\108\97\110\116\115()
-    end
-end)
-
-waterPlantsButton.\67\108\105\99\107:Connect(function()
-    if not running then
-        \119\97\116\101\114\80\108\97\110\116\115()
-    end
-end)
-
-executeAllButton.\67\108\105\99\107:Connect(function()
-    if not running then
-        \99\111\108\108\101\99\116\67\111\105\110\115()
-        \114\101\109\111\118\101\80\108\97\110\116\115()
-        \112\108\97\110\116\80\108\97\110\116\115()
-        \119\97\116\101\114\80\108\97\110\116\115()
-    end
-end)
-
-closeButton.\67\108\105\99\107:Connect(function()
+closeButton.MouseButton1Click:Connect(function()
     running = false
     gui:Destroy()
 end)

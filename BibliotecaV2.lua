@@ -34,7 +34,7 @@ local opciones = {
 
     {nombre = "Pases DoubleDown", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pases%20DoubleDown.lua"))()'},
 
-    {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "TP2", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TP2.lua"))()'},
 
     {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
 

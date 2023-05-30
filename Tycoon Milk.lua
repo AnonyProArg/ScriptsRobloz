@@ -1,7 +1,3 @@
-Aquí tienes el código actualizado donde se ha eliminado el botón "Minimize":
-
-```lua
-
 local Players = game:GetService("Players")
 
 local Workspace = game:GetService("Workspace")
@@ -211,7 +207,3 @@ closeButton.MouseButton1Click:Connect(function()
     gui:Destroy()
 
 end)
-
-```
-
-Este código fusiona las funcionalidades del botón "Pases" con el código proporcionado anteriormente y elimina el botón "Minimize". Ahora tienes un único botón "Pases" que cambia el valor de los archivos en el directorio "GamepassFolder" a `true`.

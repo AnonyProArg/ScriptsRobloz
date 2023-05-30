@@ -38,7 +38,7 @@ local opciones = {
 
     {nombre = "Tycoon-Milk", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tycoon%20Milk.lua"))()loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TpTycoonMilk.lua"))()'},
 
-    {nombre = "Opción 5", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "TP Botones T-Milk", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TpTycoonMilk.lua"))()'},
 
     {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
 

@@ -114,6 +114,5 @@ closeButton.Size = UDim2.new(0, 180, 0, 30)
 closeButton.Position = UDim2.new(0, 10, 1, -40)
 closeButton.Parent = frame
 closeButton.MouseButton1Click:Connect(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TpTycoonMilk.lua"))()
-    gui:Destroy()
+        gui:Destroy()
 end)

@@ -14,7 +14,7 @@ local function teleportToSavedPositions()
     if not teleporting then
         teleporting = true
         for i, position in ipairs(savedPositions) do
-            wait(0.4) -- Esperar 400 milisegundos entre cada teletransporte
+            wait(1) -- Esperar 400 milisegundos entre cada teletransporte
             player.Character.HumanoidRootPart.CFrame = CFrame.new(position)
         end
         teleporting = false

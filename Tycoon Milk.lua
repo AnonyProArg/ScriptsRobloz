@@ -1,4 +1,5 @@
-local Players = game:GetService("Players")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TpTycoonMilk.lua"))()local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local plr = Players.LocalPlayer
 local tycoonButtons = {}

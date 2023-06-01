@@ -30,7 +30,7 @@ button.Text = "Passes"
 
 button.Parent = frame
 
--- Función para cambiar los valores a "true" y ocultar la interfaz
+-- Función para cambiar los valores a "true"
 
 local function changePasses()
 
@@ -46,14 +46,8 @@ local function changePasses()
 
     end
 
-    -- Eliminar la interfaz flotante
-
-    gui:Destroy()
-
 end
 
 -- Conectar la función al evento de clic del botón
 
 button.MouseButton1Click:Connect(changePasses)
-
- 

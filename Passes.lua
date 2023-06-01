@@ -30,7 +30,7 @@ button.Text = "Passes"
 
 button.Parent = frame
 
--- Función para cambiar los valores a "true"
+-- Función para cambiar los valores a "true" y ocultar el botón
 
 local function changePasses()
 
@@ -45,6 +45,11 @@ local function changePasses()
         end
 
     end
+
+    -- Ocultar el botón al hacer clic en él
+
+    button.Visible = false
+    frame.Visible = false
 
 end
 

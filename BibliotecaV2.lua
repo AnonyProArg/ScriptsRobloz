@@ -42,7 +42,7 @@ local opciones = {
 
     {nombre = "VIP", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/VIP.%20lua"))()'},
 
-{nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
+{nombre = "Passes", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Passes.lua "))()'},
 
     {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
 

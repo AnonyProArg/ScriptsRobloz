@@ -40,7 +40,7 @@ local opciones = {
 
     {nombre = "TP Ubicaciones", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TpTycoonMilk.lua"))()'},
 
-    {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "VIP", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/VIP.%20lua"))()'},
 
 {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
 

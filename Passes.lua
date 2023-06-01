@@ -49,7 +49,6 @@ local function changePasses()
     -- Ocultar el botón al hacer clic en él
 
     button.Visible = false
-    frame.Visible = false
 
 end
 

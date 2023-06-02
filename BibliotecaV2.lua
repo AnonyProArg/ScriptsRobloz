@@ -46,7 +46,7 @@ local opciones = {
 
     {nombre = "DexV3 allSuport", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua"))()'},
 
-    {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "RTX UP graphics", codigo = 'loadstring(game:HttpGet("https://pastefy.ga/xXkUxA0P/raw"))()'},
 
     {nombre = "Opción 5", codigo = 'loadstring(game:HttpGet("###"))()'},
 

@@ -44,7 +44,7 @@ local opciones = {
 
 {nombre = "Passes", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Passes.lua "))()'},
 
-    {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "DexV3 allSuport", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua"))()'},
 
     {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
 

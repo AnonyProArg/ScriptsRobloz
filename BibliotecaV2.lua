@@ -50,7 +50,7 @@ local opciones = {
 
     {nombre = "color or die", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NoWMoN/Color-0r-DIE/main/NoWMoN.lua"))()'},
 
-    {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Color or die pc", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0color"))()'},
 
     {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
 

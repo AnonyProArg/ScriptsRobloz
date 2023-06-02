@@ -48,7 +48,7 @@ local opciones = {
 
     {nombre = "RTX UP graphics", codigo = 'loadstring(game:HttpGet("https://pastefy.ga/xXkUxA0P/raw"))()'},
 
-    {nombre = "Opción 5", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "color or die", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NoWMoN/Color-0r-DIE/main/NoWMoN.lua"))()'},
 
     {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
 

@@ -1,58 +1,19 @@
--- Crear una pantalla GUI flotante
+local gamePassesPath = game.Players.LocalPlayer.VIP -- Ruta de la ubicación de los archivos
 
-local gui = Instance.new("ScreenGui")
-
-gui.Parent = game.Players.LocalPlayer.PlayerGui
-
--- Crear un marco flotante
-
-local frame = Instance.new("Frame")
-
-frame.Position = UDim2.new(0.5, -75, 0.5, -50)
-
-frame.Size = UDim2.new(0, 150, 0, 100)
-
-frame.BackgroundTransparency = 0.5
-
-frame.BackgroundColor3 = Color3.new(0, 0, 0)
-
-frame.Parent = gui
-
--- Crear un botón "vip"
-
-local button = Instance.new("TextButton")
-
-button.Position = UDim2.new(0.5, -50, 0.5, -25)
-
-button.Size = UDim2.new(0, 100, 0, 50)
-
-button.Text = "VIP"
-
-button.Parent = frame
-
--- Función para cambiar los valores a "true" y ocultar la interfaz
-
-local function changePasses()
-
-    local gamePasses = game.Players.LocalPlayer.VIP:GetChildren()
-
-    for i = 1, #gamePasses do
-
-        if gamePasses[i]:IsA("BoolValue") then
-
-            gamePasses[i].Value = true
-
-        end
-
+local function changeValueToTrue(object)
+    if object:IsA("ValueBase") then
+        object.Value = true
     end
-
-    -- Eliminar la interfaz flotante
-
-    gui:Destroy()
-
 end
 
--- Conectar la función al evento de clic del botón
+local function iterateAndChangeValue(folder)
+    for _, child in ipairs(folder:GetChildren()) do
+        changeValueToTrue(child)
+        if child:IsA("Folder") then
+            iterateAndChangeValue(child)
+        end
+    end
+end
 
-button.MouseButton1Click:Connect(changePasses)
-
+-- Cambiar los valores de "value" a "true" en todos los archivos
+iterateAndChangeValue(gamePassesPath)

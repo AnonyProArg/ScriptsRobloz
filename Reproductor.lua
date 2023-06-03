@@ -35,7 +35,7 @@ idTextBox.Parent = frame
 
 -- Crea un botón para agregar la música
 local addButton = Instance.new("TextButton")
-addButton.Size = UDim2.new(0, 100, 0, 30)
+addButton.Size = UDim2.new(0, 150, 0, 30)
 addButton.Position = UDim2.new(0, 50, 0, 80)
 addButton.Text = "Agregar música Temporal"
 addButton.Visible = false -- Inicialmente oculto

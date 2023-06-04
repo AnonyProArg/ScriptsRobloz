@@ -54,7 +54,7 @@ local opciones = {
 
     {nombre = "Color or Die Red", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/color%20o%20die%20map1.lua"))()'},
 
-    {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Tp C or die (Ep1)", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tp%20color%20or%20die.lua"))()'},
 
     {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
 

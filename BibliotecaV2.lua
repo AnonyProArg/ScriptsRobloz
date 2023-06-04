@@ -52,7 +52,7 @@ local opciones = {
 
     {nombre = "Color or die", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0color"))()'},
 
-    {nombre = "Opción 2", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Color or Die Red", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/color%20o%20die%20map1.lua"))()'},
 
     {nombre = "Opción 3", codigo = 'loadstring(game:HttpGet("###"))()'},
 

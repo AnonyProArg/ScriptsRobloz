@@ -1,23 +1,31 @@
--- Crear un ScreenGui para el menú
 local gui = Instance.new("ScreenGui")
 gui.Name = "MenuUI"
 gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- Crear un Frame para contener los elementos del menú
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 200, 0, 100)
-frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+frame.Size = UDim2.new(0, 200, 0, 140)
+frame.Position = UDim2.new(0.5, -100, 0.5, -70)
 frame.BackgroundColor3 = Color3.new(1, 1, 1)
 frame.Parent = gui
 
--- Crear un TextButton para el botón "AutoRecolect"
 local button = Instance.new("TextButton")
 button.Text = "AutoRecolect"
 button.Size = UDim2.new(1, -10, 0, 40)
 button.Position = UDim2.new(0, 5, 0, 5)
 button.Parent = frame
 
--- Función para ejecutar cuando se hace clic en el botón
+local closeButton = Instance.new("TextButton")
+closeButton.Text = "Cerrar"
+closeButton.Size = UDim2.new(1, -10, 0, 40)
+closeButton.Position = UDim2.new(0, 5, 0, 50)
+closeButton.Parent = frame
+
+local nextScriptButton = Instance.new("TextButton")
+nextScriptButton.Text = "Comprar Mejoras"
+nextScriptButton.Size = UDim2.new(1, -10, 0, 40)
+nextScriptButton.Position = UDim2.new(0, 5, 0, 95)
+nextScriptButton.Parent = frame
+
 local function onButtonClicked()
     local donutsDirectory = game.Workspace:FindFirstChild("Donuts")
     if donutsDirectory then
@@ -30,6 +38,30 @@ local function onButtonClicked()
     end
 end
 
--- Conectar la función al evento de clic del botón
-button.MouseButton1Click:Connect(onButtonClicked)
+local function onCloseButtonClicked()
+    gui:Destroy()
+end
 
+local function onNextScriptButtonClicked()
+    local replicatedStorage = game:GetService("ReplicatedStorage")
+    local remoteEvent = replicatedStorage:WaitForChild("Remotes"):WaitForChild("RemoteEvent")
+
+    local tycoonsDirectory = workspace:WaitForChild("Tycoons")
+
+    for _, tycoon in ipairs(tycoonsDirectory:GetChildren()) do
+        local buttonsDirectory = tycoon:WaitForChild("Unlocked"):WaitForChild("Buttons")
+
+        for _, button in ipairs(buttonsDirectory:GetChildren()) do
+            local args = {
+                [1] = "ButtonPress",
+                [2] = { tycoon, button }
+            }
+
+            remoteEvent:FireServer(unpack(args))
+        end
+    end
+end
+
+button.MouseButton1Click:Connect(onButtonClicked)
+closeButton.MouseButton1Click:Connect(onCloseButtonClicked)
+nextScriptButton.MouseButton1Click:Connect(onNextScriptButtonClicked)

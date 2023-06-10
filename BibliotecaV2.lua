@@ -58,7 +58,7 @@ local opciones = {
 
     {nombre = "RTX v2", codigo = 'loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Chillz-Enhancer-Shader-10451"))()'},
 
-    {nombre = "Opción 5", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "Donuts tycoon", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/DonutsTycoon.lua"))()'},
 
     {nombre = "Opción 6", codigo = 'loadstring(game:HttpGet("###"))()'},
 

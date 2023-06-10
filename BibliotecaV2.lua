@@ -56,7 +56,7 @@ local opciones = {
 
     {nombre = "Tp C or die (Ep1)", codigo = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tp%20color%20or%20die.lua"))()'},
 
-    {nombre = "Opción 4", codigo = 'loadstring(game:HttpGet("###"))()'},
+    {nombre = "RTX v2", codigo = 'loadstring(game:HttpGet("loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Chillz-Enhancer-Shader-10451"))()"))()'},
 
     {nombre = "Opción 5", codigo = 'loadstring(game:HttpGet("###"))()'},
 

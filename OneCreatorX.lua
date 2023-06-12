@@ -321,12 +321,9 @@ local MyCafeSection = Window:MakeTab({
 MyCafeSection:AddButton({
     Name = "Para Puesto 1",
     Callback = function()
-        local numRepeticiones = 10000-- Cambia este valor si deseas más repeticiones
-
-for repeticion = 1, numRepeticiones do
+        while true do
   workspace:WaitForChild("Plots"):WaitForChild("Plot1"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-wait(2)
   game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
@@ -347,12 +344,9 @@ end
 MyCafeSection:AddButton({
     Name = "Para Puesto 2",
     Callback = function()
-        local numRepeticiones = 10000-- Cambia este valor si deseas más repeticiones
-
-for repeticion = 1, numRepeticiones do
+       while true do
   workspace:WaitForChild("Plots"):WaitForChild("Plot2"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-wait(2)
   game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
@@ -372,12 +366,9 @@ end
 MyCafeSection:AddButton({
     Name = "Para Puesto 3",
     Callback = function()
-        local numRepeticiones = 10000-- Cambia este valor si deseas más repeticiones
-
-for repeticion = 1, numRepeticiones do
+       while true do
   workspace:WaitForChild("Plots"):WaitForChild("Plot3"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-wait(2)
   game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
@@ -397,12 +388,9 @@ end
 MyCafeSection:AddButton({
     Name = "Para Puesto 4",
     Callback = function()
-        local numRepeticiones = 10000-- Cambia este valor si deseas más repeticiones
-
-for repeticion = 1, numRepeticiones do
+        while true do
   workspace:WaitForChild("Plots"):WaitForChild("Plot4"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-wait(2)
   game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
@@ -422,12 +410,9 @@ end
 MyCafeSection:AddButton({
     Name = "Para Puesto 5",
     Callback = function()
-        local numRepeticiones = 10000-- Cambia este valor si deseas más repeticiones
-
-for repeticion = 1, numRepeticiones do
+        while true do
   workspace:WaitForChild("Plots"):WaitForChild("Plot5"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-wait(2)
   game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
@@ -447,13 +432,10 @@ end
 MyCafeSection:AddButton({
     Name = "Para Puesto 6",
     Callback = function()
-        local numRepeticiones = 10000-- Cambia este valor si deseas más repeticiones
-
-for repeticion = 1, numRepeticiones do
-
+      while true do
  workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-wait(2)
+
   game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
@@ -463,6 +445,7 @@ wait(2)
   workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
 
   workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
+
 wait(2)
 end
 

@@ -10,26 +10,29 @@ local function disableCollisionExceptFloor()
     end
 end
 
-local floatingMenu = Instance.new("ScreenGui")
-floatingMenu.Name = "FloatingMenu"
-floatingMenu.Parent = playerGui
-
-local menuFrame = Instance.new("Frame")
-menuFrame.Name = "MenuFrame"
-menuFrame.Size = UDim2.new(0, 200, 0, 150)
-menuFrame.Position = UDim2.new(1, -210, 0, 10)
-menuFrame.BackgroundTransparency = 0.5
-menuFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-menuFrame.Parent = floatingMenu
-
+local isCollisionDisabled = false
 local disableCollisionButton = Instance.new("TextButton")
 disableCollisionButton.Name = "DisableCollisionButton"
-disableCollisionButton.Text = "Quitar Colisión (Excepto Suelo)"
+disableCollisionButton.Text = "Quitar Colisión"
 disableCollisionButton.Size = UDim2.new(0, 180, 0, 50)
 disableCollisionButton.Position = UDim2.new(0.5, -90, 0, 20)
 disableCollisionButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 disableCollisionButton.TextColor3 = Color3.new(1, 1, 1)
-disableCollisionButton.Parent = menuFrame
+disableCollisionButton.Parent = playerGui
+
+disableCollisionButton.Activated:Connect(function()
+    if not isCollisionDisabled then
+        isCollisionDisabled = true
+        disableCollisionButton.Text = "Activar Colisión"
+        while isCollisionDisabled do
+            disableCollisionExceptFloor()
+            wait(0.001)
+        end
+    else
+        isCollisionDisabled = false
+        disableCollisionButton.Text = "Quitar Colisión"
+    end
+end)
 
 local closeButton = Instance.new("TextButton")
 closeButton.Name = "CloseButton"
@@ -38,9 +41,9 @@ closeButton.Size = UDim2.new(0, 180, 0, 50)
 closeButton.Position = UDim2.new(0.5, -90, 0, 80)
 closeButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 closeButton.TextColor3 = Color3.new(1, 1, 1)
-closeButton.Parent = menuFrame
+closeButton.Parent = playerGui
 
-disableCollisionButton.Activated:Connect(disableCollisionExceptFloor)
 closeButton.Activated:Connect(function()
-    floatingMenu:Destroy()
+    disableCollisionButton:Destroy()
+    closeButton:Destroy()
 end)

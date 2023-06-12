@@ -41,6 +41,122 @@ GeneralesSection:AddButton({
     end
 })
 
+-- Paso adicional: Agregar botones en la sección "Generales"
+GeneralesSection:AddButton({
+    Name = "Dex V3",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Dex%20Explorer.lua.txt"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "Teleport Players v1",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "Spy Mobil",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HoodProject/Espa-oles/main/Turtle%20Spy.lua"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "Spy PC",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "Teclado Virtual",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "VIP",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/VIP.%20lua"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "Passes",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Passes.lua "))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "RTX UP graphics",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastefy.ga/xXkUxA0P/raw"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "Reproductor Music ID",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Reproductor.lua"))()
+    end
+})
+
+GeneralesSection:AddButton({
+    Name = "RTX Opc2",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Chillz-Enhancer-Shader-10451"))()
+    end
+})
+
+-- Paso adicional: Crear una sección llamada "Meepcity"
+local MeepcitySection = Window:MakeTab({
+    Name = "Meepcity",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "Meepcity"
+})
+
+-- Paso adicional: Agregar botones en la sección "Meepcity"
+MeepcitySection:AddButton({
+    Name = "Colocar Items en posición del jugador",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/ColocarYenMeep.lua"))()
+    end
+})
+
+MeepcitySection:AddButton({
+    Name = "Menú para las Plantas",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/plantsMeepC.txt"))()
+    end
+})
+
+MeepcitySection:AddButton({
+    Name = "Menú con AutoPesca y+",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yLegendzz/Scripts/main/Meepcity"))()
+    end
+})
+
+MeepcitySection:AddButton({
+    Name = "Menús con Diferentes opciones",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/MeepCity-Meepcity-cracked-6349"))()
+    end
+})
+
+MeepcitySection:AddButton({
+    Name = "Obtener Plus (sin más opciones)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/gestion/main/PlusMeep"))()
+    end
+})
+
 -- Paso adicional: Crear una sección llamada "Tycoons"
 local TycoonsSection = Window:MakeTab({
     Name = "Tycoons",
@@ -50,11 +166,11 @@ local TycoonsSection = Window:MakeTab({
     Name = "Tycoons"
 })
 
--- Paso adicional: Crear un botón llamado "Milk" que ejecuta el código para Tycoon Milk
+-- Paso adicional: Agregar botón en la sección "Tycoons"
 TycoonsSection:AddButton({
-    Name = "Milk",
+    Name = "Donuts Tycoon",
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tycoon%20Milk.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/DonutsTycoon.lua"))()
     end
 })
 

@@ -14,7 +14,7 @@ local GeneralesSection = Window:MakeTab({
 })
 
 GeneralesSection:AddButton({
-    Name = "Evita Censura",
+    Name = "Evita Censura(Beta, no termines la palabra)",
     Callback = function()
         local letterDictionary = {
     ["a"] = "ᴀ",

@@ -174,6 +174,7 @@ TycoonsSection:AddButton({
     Name = "Milk :) Por corregir",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tycoon%20Milk.lua"))()
+  end
 })
 
 -- Sección de Doors

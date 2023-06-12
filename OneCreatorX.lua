@@ -170,6 +170,12 @@ TycoonsSection:AddButton({
     end
 })
 
+TycoonsSection:AddButton({
+    Name = "Milk :) Por corregir",
+    Callback = function()
+        https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tycoon%20Milk.lua
+})
+
 -- Sección de Doors
 local DoorsSection = Window:MakeTab({
     Name = "Doors",

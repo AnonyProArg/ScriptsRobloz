@@ -402,13 +402,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
+
+game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
   workspace:WaitForChild("Plots"):WaitForChild("Plot1"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-  game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
 
-  wait(30)
+  wait(27)
 
   workspace:WaitForChild("Plots"):WaitForChild("Plot1"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
 
@@ -503,13 +504,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
+
+game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot2.Ovens.Starter,"Icey")
   workspace:WaitForChild("Plots"):WaitForChild("Plot2"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-  game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot2.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
 
-  wait(30)
+  wait(27)
 
   workspace:WaitForChild("Plots"):WaitForChild("Plot2"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
 
@@ -603,13 +605,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
+
+game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot3.Ovens.Starter,"Icey")
   workspace:WaitForChild("Plots"):WaitForChild("Plot3"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-  game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot3.Ovens.Starter,"Icey")
 
   -- Esperar 30 segundos
 
-  wait(30)
+  wait(27)
 
   workspace:WaitForChild("Plots"):WaitForChild("Plot3"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
 
@@ -703,13 +706,13 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-  workspace:WaitForChild("Plots"):WaitForChild("Plot4"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-
-  game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot4.Ovens.Starter,"Icey")
+ 
+game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot4.Ovens.Starter,"Icey")
+ workspace:WaitForChild("Plots"):WaitForChild("Plot4"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
   -- Esperar 30 segundos
 
-  wait(30)
+  wait(27)
 
   workspace:WaitForChild("Plots"):WaitForChild("Plot4"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
 
@@ -803,13 +806,13 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-  workspace:WaitForChild("Plots"):WaitForChild("Plot5"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
-  game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot5.Ovens.Starter,"Icey")
+game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot5.Ovens.Starter,"Icey")
+  workspace:WaitForChild("Plots"):WaitForChild("Plot5"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
   -- Esperar 30 segundos
 
-  wait(30)
+  wait(27)
 
   workspace:WaitForChild("Plots"):WaitForChild("Plot5"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
 
@@ -904,13 +907,17 @@ local function getNil(name, class)
 
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
 
- workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
 
- game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot6.Ovens.Starter,"Icey")
+game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot6.Ovens.Starter,"Icey")
 
+wait(1)
+
+workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
+
+ 
   -- Esperar 30 segundos
 
-  wait(30)
+  wait(27)
 
   workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
 

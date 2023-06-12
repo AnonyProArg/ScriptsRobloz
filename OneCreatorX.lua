@@ -25,20 +25,9 @@ GeneralesSection:AddButton({
 GeneralesSection:AddButton({
     Name = "Atravesar All v1",
     Callback = function()
-        local player = game.Players.LocalPlayer
-        local playerGui = player:WaitForChild("PlayerGui")
-
-        local function disableCollisionExceptFloor()
-            local parts = player.Character:GetDescendants()
-            for _, part in ipairs(parts) do
-                if part:IsA("BasePart") and part ~= workspace.Terrain then
-                    part.CanCollide = false
-                end
-            end
-        end
-
-        disableCollisionExceptFloor()
-    end
+        
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Nocolision.lua"))()
+   end
 })
 
 -- Paso adicional: Agregar botones en la sección "Generales"

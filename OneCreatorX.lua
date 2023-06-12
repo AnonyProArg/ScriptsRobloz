@@ -112,6 +112,13 @@ GeneralesSection:AddButton({
     end
 })
 
+GeneralesSection:AddButton({
+    Name = "Puntos de TP en la ubicación Player",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TpTycoonMilk.lua"))()
+    end
+})
+
 -- Paso adicional: Crear una sección llamada "Meepcity"
 local MeepcitySection = Window:MakeTab({
     Name = "Meepcity",
@@ -174,6 +181,60 @@ TycoonsSection:AddButton({
     end
 })
 
+-- Sección de Doors
+local DoorsSection = Window:MakeTab({
+    Name = "Doors",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "Doors"
+})
+
+-- Paso adicional: Agregar botones en la sección "Doors"
+DoorsSection:AddButton({
+    Name = "Para Fluxus Requiere Key",
+    Callback = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSHUB_Loader.lua"),true))()
+    end
+})
+
+DoorsSection:AddButton({
+    Name = "No Key Cualquier Ejecutador",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/mstudio45/MSDOORS/7bd97c2d956a775d683c2d7973d79715b30998ea/MSDOORS/Moonsec.lua"))()
+    end
+})
+
+-- Paso adicional: Crear una sección llamada "Colorea o Muere"
+local ColoreaOMuereSection = Window:MakeTab({
+    Name = "Colorea o Muere",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "Colorea o Muere"
+})
+
+-- Paso adicional: Agregar botones en la sección "Colorea o Muere"
+ColoreaOMuereSection:AddButton({
+    Name = "Ver los objetos atraves de muros",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0color"))()
+    end
+})
+
+ColoreaOMuereSection:AddButton({
+    Name = "Remueve Muros del Ep1",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/color%20o%20die%20map1.lua"))()
+    end
+})
+
+ColoreaOMuereSection:AddButton({
+    Name = "Tp a Objetivos (EnCreaccion)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tp%20color%20or%20die.lua"))()
+    end
+})
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

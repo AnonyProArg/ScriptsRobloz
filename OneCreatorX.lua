@@ -34,7 +34,7 @@ GeneralesSection:AddButton({
 GeneralesSection:AddButton({
     Name = "Dex V3",
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Dex%20Explorer.lua.txt"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua"))()
     end
 })
 

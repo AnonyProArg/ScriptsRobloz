@@ -322,10 +322,16 @@ MyCafeSection:AddButton({
     Name = "Multi Puestos (Beta-funcional-PresentaBug)",
     Callback = function()
 local userInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+local Ingredients = workspace:WaitForChild("Ingredients")
 
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "NumberSelectionGui"
-screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.Parent = PlayerGui
 
 local frame = Instance.new("Frame")
 frame.Size = UDim2.new(0, 200, 0, 100)
@@ -335,7 +341,7 @@ frame.BorderSizePixel = 2
 frame.BorderColor3 = Color3.new(0, 0, 0)
 frame.Parent = screenGui
 
-local label = Instance.new("TextButton") -- Corregido: Cambiado a TextButton
+local label = Instance.new("TextButton")
 label.Size = UDim2.new(1, 0, 0, 30)
 label.Position = UDim2.new(0, 0, 0, 0)
 label.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -365,53 +371,46 @@ local function createButton(number)
         frame:Destroy()
 
         local plotNumber = tostring(number)
+        local Remotes = ReplicatedStorage:WaitForChild("Remotes")
+        local Plots = workspace:WaitForChild("Plots")
 
         local function executeCafeteraActions(cafeteraName)
-            -- Dar los ítems al jugador para cada cafetera
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
-
- wait (0.2)  
-         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
-   
- wait (0.2)  
-                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
-
- wait (0.2)  
-        
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
-   
- wait (0.2)  
-                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
-   
- wait (0.2)  
-                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
-
- wait (0.2)  
-        
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
-   
- wait (0.2)  
-                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
-   
- wait (0.2)  
-                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
+            Remotes.TI_0:FireServer(Ingredients.Sweetener)
+wait(1)
+            Remotes.TI_0:FireServer(Ingredients.Milk)
+wait(1)
+            Remotes.TI_0:FireServer(Ingredients.Beans)
+wait(1)
+            Remotes.TI_0:FireServer(Ingredients.Sweetener)
+wait(1)
+            Remotes.TI_0:FireServer(Ingredients.Milk)
+wait(1)
+            Remotes.TI_0:FireServer(Ingredients.Beans)
+wait(1)
+           Remotes.TI_0:FireServer(Ingredients.Sweetener)
+wait(1)
+            Remotes.TI_0:FireServer(Ingredients.Milk)
+wait(1)
+            Remotes.TI_0:FireServer(Ingredients.Beans)
 
             -- Acciones específicas de la cafetera
-            game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots["Plot" .. plotNumber].Ovens[cafeteraName], "Icey")
-            workspace:WaitForChild("Plots"):WaitForChild("Plot" .. plotNumber):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-            wait(35)
+            Remotes.StartBake:FireServer(Plots["Plot" .. plotNumber].Ovens[cafeteraName], "Icey")
+            Plots["Plot" .. plotNumber].Ovens[cafeteraName].ConverterData.noob:FireServer()
 
-            while wait() do
-                workspace:WaitForChild("Plots"):WaitForChild("Plot" .. plotNumber):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
+            RunService.Heartbeat:Wait(0.5)
+
+            while true do
+                Plots["Plot" .. plotNumber].Ovens[cafeteraName].ConverterData.__REMOTE:FireServer()
+                RunService.Heartbeat:Wait()
             end
         end
 
         local function startCafeteras()
-            for _, cafetera in ipairs(workspace.Plots["Plot" .. plotNumber].Ovens:GetChildren()) do
+            for _, cafetera in ipairs(Plots["Plot" .. plotNumber].Ovens:GetChildren()) do
                 spawn(function()
                     executeCafeteraActions(cafetera.Name)
                 end)
-                wait(5)
+                RunService.Heartbeat:Wait(8)
             end
         end
 
@@ -419,8 +418,13 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"
 
         local function checkShelfInfo()
             while true do
-                workspace.Plots["Plot" .. plotNumber].Shelf.Info:FireServer()
-                wait(1) -- Intervalo de espera en segundos antes de verificar nuevamente
+                local success, result = pcall(function()
+                    Plots["Plot" .. plotNumber].Shelf.Info:FireServer()
+                end)
+                if not success then
+                    print("Error al obtener la información del estante:", result)
+                end
+                RunService.Heartbeat:Wait(1) -- Intervalo de espera en segundos antes de verificar nuevamente
             end
         end
 
@@ -434,13 +438,12 @@ end
 
 userInputService.MouseIconEnabled = true
 
-game.Players.PlayerRemoving:Connect(function(player)
-    if player == game.Players.LocalPlayer then
+Players.PlayerRemoving:Connect(function(player)
+    if player == LocalPlayer then
         screenGui:Destroy()
         userInputService.MouseIconEnabled = false
     end
 end)
-
 
     end
 })

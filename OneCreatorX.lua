@@ -321,7 +321,7 @@ local MyCafeSection = Window:MakeTab({
 MyCafeSection:AddButton({
     Name = "Multi Puestos (Beta-funcional-PresentaBug)",
     Callback = function()
- local userInputService = game:GetService("UserInputService")
+local userInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
@@ -361,19 +361,12 @@ local function addIngredients(cafeteraName, ingredientCount)
         Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans,
-        Ingredients.Flavor,
-        Ingredients.Sweetener,
+       Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans,
-        Ingredients.Flavor,
-        Ingredients.Sweetener,
+       Ingredients.Sweetener,
         Ingredients.Milk,
-        Ingredients.Beans,
-        Ingredients.Flavor,
-        Ingredients.Sweetener,
-        Ingredients.Milk,
-        Ingredients.Beans,
-        Ingredients.Flavor
+        Ingredients.Beans
     }
 
     local ingredientIndex = 1
@@ -411,7 +404,7 @@ local function createButton(number)
             local ovensFolder = Plots["Plot" .. plotNumber].Ovens
             local converterData = ovensFolder[cafeteraName].ConverterData
 
-            addIngredients(cafeteraName, 13) -- Agrega 4 ingredientes a cada máquina
+            addIngredients(cafeteraName, 9) -- Agrega 4 ingredientes a cada máquina
 
             Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Icey")
             converterData.noob:FireServer()

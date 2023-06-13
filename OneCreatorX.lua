@@ -835,104 +835,68 @@ end
 MyCafeSection:AddButton({
     Name = "Para Puesto 6",
     Callback = function()
-      while true do
 
-local function getNil(name, class)
-            for _, v in next, getnilinstances() do
-                if v.ClassName == class and v.Name == name then
-                    return v
-                end
-            end
-        end
+ local cafeterasDisponibles = {"Starter", "Cafetera2", "Cafetera3", "Cafetera4"} -- Agrega más nombres de cafeteras si es necesario
 
-        local args = {
-            [1] = getNil("Sweetener", "MeshPart")
-        }
+-- Crear una lista para almacenar las cafeteras del usuario
+local cafeterasUsuario = {}
 
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = getNil("Milk", "MeshPart")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = getNil("Sweetener", "MeshPart")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = getNil("Milk", "MeshPart")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-        args = {
-            [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-        }
-
-        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-
-game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot6.Ovens.Starter,"Icey")
-
-wait(1)
-
-workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-
- 
-  -- Esperar 30 segundos
-
-  wait(27)
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
+-- Verificar las cafeteras del usuario
+for _, cafetera in ipairs(cafeterasDisponibles) do
+    if game.workspace.Plots.Plot6.Ovens:FindFirstChild(cafetera) then
+        table.insert(cafeterasUsuario, cafetera)
+    end
 end
+
+local function executeCafeteraActions(cafeteraName)
+    -- Dar los ítems al jugador para cada cafetera
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Flavor"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Flavor"))
+
+
+
+    -- Acciones específicas de la cafetera
+    game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot6.Ovens[cafeteraName], "Icey")
+    workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
+    wait(28)
+    workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
+
+    workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
+
+    -- Reiniciar el proceso de la cafetera
+    executeCafeteraActions(cafeteraName)
+end
+
+local function startCafeteras()
+    for i = 1, #cafeterasUsuario do
+        local cafetera = cafeterasUsuario[i]
+        spawn(function()
+            -- Esperar 1 segundo antes de iniciar la cafetera
+            wait(i - 1)
+            executeCafeteraActions(cafetera)
+        end)
+    end
+end
+
+-- Iniciar el proceso de las cafeteras
+startCafeteras()
 
     end
 })

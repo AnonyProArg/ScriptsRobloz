@@ -451,7 +451,7 @@ local function executeCafeteraActions(plotNumber, cafeteraName)
 
     while converterData.__REMOTE do
         converterData.__REMOTE:FireServer()
-        wait(1) -- Espera 1 tick antes de la siguiente iteración
+        wait(1.5) 
     end
 end
 
@@ -472,19 +472,49 @@ local function startCafeteras(plotNumber)
     end
 end
 
+local function deleteFillCopyAndBounds(cafeteraName)
+    local ovensFolder = workspace:WaitForChild("Plots")["Plot" .. selectedNumber].Ovens
+    local fillCopy = ovensFolder[cafeteraName]:FindFirstChild("FillCopy")
+    local bounds = ovensFolder[cafeteraName]:FindFirstChild("Bounds")
+    
+    if fillCopy then
+        fillCopy:Destroy()
+    end
+    
+    if bounds then
+        bounds:Destroy()
+    end
+end
+
 if selectedNumber then
     startCafeteras(selectedNumber)
 end
 
+spawn(function()
+    while true do
+        if selectedNumber then
+            local shelfInfo = workspace.Plots["Plot" .. selectedNumber].Shelf.Info
+            print(shelfInfo)
+        end
+        wait(2) -- Espera 2 segundos antes de ejecutar nuevamente
+    end
+end)
+
 while true do
-    wait(60) -- Espera 1 minuto antes de ejecutar nuevamente
+    wait(40) -- Espera 30 segundos antes de eliminar FillCopy y Bounds
+    
+    if selectedNumber then
+        for _, cafetera in ipairs(workspace:WaitForChild("Plots")["Plot" .. selectedNumber].Ovens:GetChildren()) do
+            deleteFillCopyAndBounds(cafetera.Name)
+        end
+    end
+    
+    wait(45) -- Espera 20 segundos antes de ejecutar nuevamente
     
     if selectedNumber then
         startCafeteras(selectedNumber)
     end
 end
-
-
 
 
     end

@@ -361,10 +361,10 @@ local function addIngredients(cafeteraName, ingredientCount)
         Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans,
-       Ingredients.Sweetener,
+        Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans,
-       Ingredients.Sweetener,
+        Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans
     }
@@ -409,11 +409,9 @@ local function createButton(number)
             Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Icey")
             converterData.noob:FireServer()
 
-            RunService.Heartbeat:Wait()
-
-            while true do
+            while converterData.__REMOTE do
                 converterData.__REMOTE:FireServer()
-                RunService.Heartbeat:Wait()
+                wait(1) -- Espera 1 tick antes de la siguiente iteración
             end
         end
 
@@ -422,7 +420,7 @@ local function createButton(number)
                 spawn(function()
                     executeCafeteraActions(cafetera.Name)
                 end)
-                RunService.Heartbeat:Wait(5)
+                wait(5) -- Espera 5 segundos antes de ejecutar la siguiente cafetera
             end
         end
 
@@ -436,7 +434,7 @@ local function createButton(number)
                 if not success then
                     print("Error al obtener la información del estante:", result)
                 end
-                RunService.Heartbeat:Wait(1) -- Intervalo de espera en segundos antes de verificar nuevamente
+                wait(1) -- Espera 1 segundo antes de verificar nuevamente
             end
         end
 
@@ -456,6 +454,7 @@ Players.PlayerRemoving:Connect(function(player)
         userInputService.MouseIconEnabled = false
     end
 end)
+
 
 
     end

@@ -898,9 +898,9 @@ local function startCafeteras()
         end
     end
 end
+
 -- Iniciar el proceso de las cafeteras
 startCafeteras()
-end
     end
 })
 

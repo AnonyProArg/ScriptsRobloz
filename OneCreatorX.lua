@@ -888,14 +888,17 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"
 end
 
 local function startCafeteras()
-    for i = 1, #cafeterasUsuario do
-        local cafetera = cafeterasUsuario[i]
+    for i, cafetera in ipairs(cafeterasUsuario) do
         spawn(function()
-            -- Esperar 1 segundo antes de iniciar la cafetera
-            wait(i - 1)
             executeCafeteraActions(cafetera)
         end)
+        if i ~= #cafeterasUsuario then
+            -- Esperar 1 segundo antes de iniciar la siguiente cafetera
+            wait(0.5)
+        end
     end
+end
+
 end
 
 -- Iniciar el proceso de las cafeteras

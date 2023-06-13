@@ -319,590 +319,107 @@ local MyCafeSection = Window:MakeTab({
 
 -- Paso adicional: Agregar botones en la sección "Colorea o Muere"
 MyCafeSection:AddButton({
-    Name = "Para Puesto 1",
+    Name = "Multi Puestos (Beta-funcional-PresentaBug)",
     Callback = function()
-        while true do
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot1.Ovens.Starter,"Icey")
- 
-  wait(1)
- workspace:WaitForChild("Plots"):WaitForChild("Plot1"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-
-
-  -- Esperar 30 segundos
-
-  wait(27)
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot1"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot1"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
-end
-
-    end
-})
-
-
-MyCafeSection:AddButton({
-    Name = "Para Puesto 2",
-    Callback = function()
-       while true do
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot2.Ovens.Starter,"Icey")
-
-  wait(1)
-  workspace:WaitForChild("Plots"):WaitForChild("Plot2"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-
-
-  -- Esperar 30 segundos
-
-  wait(27)
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot2"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot2"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
-end
-
-    end
-})
-
-MyCafeSection:AddButton({
-    Name = "Para Puesto 3",
-    Callback = function()
-       while true do
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot3.Ovens.Starter,"Icey")
- 
-  wait(1)
- workspace:WaitForChild("Plots"):WaitForChild("Plot3"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-
-
-  -- Esperar 30 segundos
-
-  wait(27)
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot3"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot3"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
-end
-
-    end
-})
-
-MyCafeSection:AddButton({
-    Name = "Para Puesto 4",
-    Callback = function()
-        while true do
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
- 
-game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot4.Ovens.Starter,"Icey")
-
-  wait(1)
- workspace:WaitForChild("Plots"):WaitForChild("Plot4"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-
-  -- Esperar 30 segundos
-
-  wait(27)
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot4"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot4"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
-end
-
-    end
-})
-
-MyCafeSection:AddButton({
-    Name = "Para Puesto 5",
-    Callback = function()
-        while true do
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Sweetener", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
-local args = {
-    [1] = getNil("Milk", "MeshPart")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Beans")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Milk")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-local args = {
-    [1] = workspace:WaitForChild("Ingredients"):WaitForChild("Flavor")
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(unpack(args))
-
-game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot5.Ovens.Starter,"Icey")
-
-  wait(1)
- workspace:WaitForChild("Plots"):WaitForChild("Plot5"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-
-  -- Esperar 30 segundos
-
-  wait(27)
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot5"):WaitForChild("Ovens"):WaitForChild("Starter"):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
-
-  workspace:WaitForChild("Plots"):WaitForChild("Plot5"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
-end
-
-    end
-})
-
-MyCafeSection:AddButton({
-    Name = "Para Puesto 6",
-    Callback = function()
-
- local cafeterasDisponibles = {"Starter", "Honey", "XL Basic", "Cafetera4"} -- Agrega más nombres de cafeteras si es necesario
-
--- Crear una lista para almacenar las cafeteras del usuario
-local cafeterasUsuario = {}
-
--- Verificar las cafeteras del usuario
-for _, cafetera in ipairs(cafeterasDisponibles) do
-    local cafeterasEncontradas = game.workspace.Plots.Plot6.Ovens:GetChildren()
-    for _, cafeteraEncontrada in ipairs(cafeterasEncontradas) do
-        if cafeteraEncontrada.Name == cafetera then
-            table.insert(cafeterasUsuario, cafeteraEncontrada)
-        end
-    end
-end
-
-local function executeCafeteraActions(cafeteraName)
-    -- Dar los ítems al jugador para cada cafetera
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+local userInputService = game:GetService("UserInputService")
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "NumberSelectionGui"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 200, 0, 100)
+frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+frame.BackgroundColor3 = Color3.new(1, 1, 1)
+frame.BorderSizePixel = 2
+frame.BorderColor3 = Color3.new(0, 0, 0)
+frame.Parent = screenGui
+
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1, 0, 0, 30)
+label.Position = UDim2.new(0, 0, 0, 0)
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+label.TextColor3 = Color3.new(1, 1, 1)
+label.Text = "Selecciona un número:"
+label.Font = Enum.Font.SourceSans
+label.FontSize = Enum.FontSize.Size18
+label.Parent = frame
+
+local buttonContainer = Instance.new("Frame")
+buttonContainer.Size = UDim2.new(1, 0, 0, 70)
+buttonContainer.Position = UDim2.new(0, 0, 0, 30)
+buttonContainer.Parent = frame
+
+local function createButton(number)
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0, 40, 0, 40)
+    button.Position = UDim2.new((number - 1) * 0.2, 0, 0.5, -20)
+    button.BackgroundColor3 = Color3.new(0, 0, 0)
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Text = tostring(number)
+    button.Font = Enum.Font.SourceSans
+    button.FontSize = Enum.FontSize.Size18
+    button.Parent = buttonContainer
+
+    button.MouseButton1Click:Connect(function()
+        frame:Destroy()
+
+        local plotNumber = tostring(number)
+
+        local function executeCafeteraActions(cafeteraName)
+            -- Dar los ítems al jugador para cada cafetera
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Flavor"))
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Flavor"))
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
 
+            -- Acciones específicas de la cafetera
+            game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots["Plot" .. plotNumber].Ovens[cafeteraName], "Icey")
+            workspace:WaitForChild("Plots"):WaitForChild("Plot" .. plotNumber):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
+            wait(35)
 
-
-    -- Acciones específicas de la cafetera
-    game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots.Plot6.Ovens[cafeteraName], "Icey")
-    workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()
-    wait(28)
-    workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
-
-    workspace:WaitForChild("Plots"):WaitForChild("Plot6"):WaitForChild("Shelf"):WaitForChild("Info"):FireServer()
-
-    -- Reiniciar el proceso de la cafetera
-    executeCafeteraActions(cafeteraName)
-end
-
-local function startCafeteras()
-    for i, cafetera in ipairs(cafeterasUsuario) do
-        spawn(function()
-            executeCafeteraActions(cafetera)
-        end)
-        if i ~= #cafeterasUsuario then
-            -- Esperar 1 segundo antes de iniciar la siguiente cafetera
-            wait(0.5)
+            while wait() do
+                workspace:WaitForChild("Plots"):WaitForChild("Plot" .. plotNumber):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("__REMOTE"):FireServer()
+            end
         end
-    end
+
+        local function startCafeteras()
+            for _, cafetera in ipairs(workspace.Plots["Plot" .. plotNumber].Ovens:GetChildren()) do
+                spawn(function()
+                    executeCafeteraActions(cafetera.Name)
+                end)
+                wait(2)
+            end
+        end
+
+        startCafeteras()
+
+        while wait() do
+            workspace.Plots["Plot" .. plotNumber].Shelf.Info:FireServer()
+        end
+    end)
 end
 
--- Iniciar el proceso de las cafeteras
-startCafeteras()
+for i = 1, 6 do
+    createButton(i)
+end
+
+userInputService.MouseIconEnabled = true
+
+
     end
 })
+
 
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({

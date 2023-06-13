@@ -372,6 +372,14 @@ local function createButton(number)
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
 
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Sweetener"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Milk"))
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TI_0"):FireServer(workspace:WaitForChild("Ingredients"):WaitForChild("Beans"))
+
             -- Acciones específicas de la cafetera
             game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(workspace.Plots["Plot" .. plotNumber].Ovens[cafeteraName], "Icey")
             workspace:WaitForChild("Plots"):WaitForChild("Plot" .. plotNumber):WaitForChild("Ovens"):WaitForChild(cafeteraName):WaitForChild("ConverterData"):WaitForChild("noob"):FireServer()

@@ -356,6 +356,26 @@ buttonContainer.Size = UDim2.new(1, 0, 0, 70)
 buttonContainer.Position = UDim2.new(0, 0, 0, 30)
 buttonContainer.Parent = frame
 
+local function addIngredients(cafeteraName)
+    local ingredients = {
+        Ingredients.Sweetener,
+        Ingredients.Milk,
+        Ingredients.Beans,
+        Ingredients.Sweetener,
+        Ingredients.Milk,
+        Ingredients.Beans,
+        Ingredients.Sweetener,
+        Ingredients.Milk,
+        Ingredients.Beans
+    }
+    
+    for _, ingredient in ipairs(ingredients) do
+        for i = 1, 9 do
+            ReplicatedStorage.Remotes.TI_0:FireServer(ingredient)
+        end
+    end
+end
+
 local function createButton(number)
     local button = Instance.new("TextButton")
     button.Size = UDim2.new(0, 40, 0, 40)
@@ -375,29 +395,13 @@ local function createButton(number)
         local Plots = workspace:WaitForChild("Plots")
 
         local function executeCafeteraActions(cafeteraName)
-            Remotes.TI_0:FireServer(Ingredients.Sweetener)
-wait(1)
-            Remotes.TI_0:FireServer(Ingredients.Milk)
-wait(1)
-            Remotes.TI_0:FireServer(Ingredients.Beans)
-wait(1)
-            Remotes.TI_0:FireServer(Ingredients.Sweetener)
-wait(1)
-            Remotes.TI_0:FireServer(Ingredients.Milk)
-wait(1)
-            Remotes.TI_0:FireServer(Ingredients.Beans)
-wait(1)
-           Remotes.TI_0:FireServer(Ingredients.Sweetener)
-wait(1)
-            Remotes.TI_0:FireServer(Ingredients.Milk)
-wait(1)
-            Remotes.TI_0:FireServer(Ingredients.Beans)
+            addIngredients(cafeteraName)
 
             -- Acciones específicas de la cafetera
             Remotes.StartBake:FireServer(Plots["Plot" .. plotNumber].Ovens[cafeteraName], "Icey")
             Plots["Plot" .. plotNumber].Ovens[cafeteraName].ConverterData.noob:FireServer()
 
-            RunService.Heartbeat:Wait(0.5)
+            RunService.Heartbeat:Wait()
 
             while true do
                 Plots["Plot" .. plotNumber].Ovens[cafeteraName].ConverterData.__REMOTE:FireServer()
@@ -410,7 +414,7 @@ wait(1)
                 spawn(function()
                     executeCafeteraActions(cafetera.Name)
                 end)
-                RunService.Heartbeat:Wait(8)
+                RunService.Heartbeat:Wait(5)
             end
         end
 
@@ -444,6 +448,7 @@ Players.PlayerRemoving:Connect(function(player)
         userInputService.MouseIconEnabled = false
     end
 end)
+
 
     end
 })

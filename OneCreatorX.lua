@@ -356,6 +356,8 @@ buttonContainer.Size = UDim2.new(1, 0, 0, 70)
 buttonContainer.Position = UDim2.new(0, 0, 0, 30)
 buttonContainer.Parent = frame
 
+local selectedNumber = nil
+
 local function addIngredients(cafeteraName, ingredientCount)
     local ingredients = {
         Ingredients.Sweetener,
@@ -395,50 +397,7 @@ local function createButton(number)
 
     button.MouseButton1Click:Connect(function()
         frame:Destroy()
-
-        local plotNumber = tostring(number)
-        local Remotes = ReplicatedStorage:WaitForChild("Remotes")
-        local Plots = workspace:WaitForChild("Plots")
-
-        local function executeCafeteraActions(cafeteraName)
-            local ovensFolder = Plots["Plot" .. plotNumber].Ovens
-            local converterData = ovensFolder[cafeteraName].ConverterData
-
-            addIngredients(cafeteraName, 9) -- Agrega 4 ingredientes a cada máquina
-
-            Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Icey")
-            converterData.noob:FireServer()
-
-            while converterData.__REMOTE do
-                converterData.__REMOTE:FireServer()
-                wait(1) -- Espera 1 tick antes de la siguiente iteración
-            end
-        end
-
-        local function startCafeteras()
-            for _, cafetera in ipairs(Plots["Plot" .. plotNumber].Ovens:GetChildren()) do
-                spawn(function()
-                    executeCafeteraActions(cafetera.Name)
-                end)
-                wait(5) -- Espera 5 segundos antes de ejecutar la siguiente cafetera
-            end
-        end
-
-        startCafeteras()
-
-        local function checkShelfInfo()
-            while true do
-                local success, result = pcall(function()
-                    Plots["Plot" .. plotNumber].Shelf.Info:FireServer()
-                end)
-                if not success then
-                    print("Error al obtener la información del estante:", result)
-                end
-                wait(1) -- Espera 1 segundo antes de verificar nuevamente
-            end
-        end
-
-        spawn(checkShelfInfo)
+        selectedNumber = number
     end)
 end
 
@@ -454,6 +413,51 @@ Players.PlayerRemoving:Connect(function(player)
         userInputService.MouseIconEnabled = false
     end
 end)
+
+local function executeCafeteraActions(plotNumber, cafeteraName)
+    local ovensFolder = workspace:WaitForChild("Plots")["Plot" .. plotNumber].Ovens
+    local converterData = ovensFolder[cafeteraName].ConverterData
+
+    addIngredients(cafeteraName, 9) -- Agrega 4 ingredientes a cada máquina
+
+    ReplicatedStorage.Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Icey")
+    converterData.noob:FireServer()
+
+    while converterData.__REMOTE do
+        converterData.__REMOTE:FireServer()
+        wait(1) -- Espera 1 tick antes de la siguiente iteración
+    end
+end
+
+local function startCafeteras(plotNumber)
+    local Plots = workspace:WaitForChild("Plots")
+    local plot = Plots["Plot" .. plotNumber]
+    
+    if not plot then
+        print("El número de puesto seleccionado no existe.")
+        return
+    end
+    
+    for _, cafetera in ipairs(plot.Ovens:GetChildren()) do
+        spawn(function()
+            executeCafeteraActions(plotNumber, cafetera.Name)
+        end)
+        wait(5) -- Espera 5 segundos antes de ejecutar la siguiente cafetera
+    end
+end
+
+if selectedNumber then
+    startCafeteras(selectedNumber)
+end
+
+while true do
+    wait(60) -- Espera 1 minuto antes de ejecutar nuevamente
+    
+    if selectedNumber then
+        startCafeteras(selectedNumber)
+    end
+end
+
 
 
 

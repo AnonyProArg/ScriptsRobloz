@@ -321,7 +321,7 @@ local MyCafeSection = Window:MakeTab({
 MyCafeSection:AddButton({
     Name = "Multi Puestos (Beta-funcional-PresentaBug)",
     Callback = function()
-local userInputService = game:GetService("UserInputService")
+ local userInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
@@ -356,23 +356,36 @@ buttonContainer.Size = UDim2.new(1, 0, 0, 70)
 buttonContainer.Position = UDim2.new(0, 0, 0, 30)
 buttonContainer.Parent = frame
 
-local function addIngredients(cafeteraName)
+local function addIngredients(cafeteraName, ingredientCount)
     local ingredients = {
         Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans,
+        Ingredients.Flavor,
         Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans,
+        Ingredients.Flavor,
         Ingredients.Sweetener,
         Ingredients.Milk,
-        Ingredients.Beans
+        Ingredients.Beans,
+        Ingredients.Flavor,
+        Ingredients.Sweetener,
+        Ingredients.Milk,
+        Ingredients.Beans,
+        Ingredients.Flavor
     }
-    
-    for _, ingredient in ipairs(ingredients) do
-        for i = 1, 9 do
-            ReplicatedStorage.Remotes.TI_0:FireServer(ingredient)
+
+    local ingredientIndex = 1
+    local ingredientsAdded = 0
+
+    while ingredientsAdded < ingredientCount do
+        ReplicatedStorage.Remotes.TI_0:FireServer(ingredients[ingredientIndex])
+        ingredientIndex = ingredientIndex + 1
+        if ingredientIndex > #ingredients then
+            ingredientIndex = 1
         end
+        ingredientsAdded = ingredientsAdded + 1
     end
 end
 
@@ -395,16 +408,18 @@ local function createButton(number)
         local Plots = workspace:WaitForChild("Plots")
 
         local function executeCafeteraActions(cafeteraName)
-            addIngredients(cafeteraName)
+            local ovensFolder = Plots["Plot" .. plotNumber].Ovens
+            local converterData = ovensFolder[cafeteraName].ConverterData
 
-            -- Acciones específicas de la cafetera
-            Remotes.StartBake:FireServer(Plots["Plot" .. plotNumber].Ovens[cafeteraName], "Icey")
-            Plots["Plot" .. plotNumber].Ovens[cafeteraName].ConverterData.noob:FireServer()
+            addIngredients(cafeteraName, 13) -- Agrega 4 ingredientes a cada máquina
+
+            Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Icey")
+            converterData.noob:FireServer()
 
             RunService.Heartbeat:Wait()
 
             while true do
-                Plots["Plot" .. plotNumber].Ovens[cafeteraName].ConverterData.__REMOTE:FireServer()
+                converterData.__REMOTE:FireServer()
                 RunService.Heartbeat:Wait()
             end
         end

@@ -392,9 +392,9 @@ local function addIngredients(cafeteraName, ingredientCount)
         Ingredients.Sweetener,
         Ingredients.Milk,
         Ingredients.Beans,
-        Ingredients.Sweetener,
+        Ingredients.Flavor,
         Ingredients.Milk,
-        Ingredients.Beans
+        Ingredients.Flavor
     }
 
     local ingredientIndex = 1
@@ -446,7 +446,7 @@ local function executeCafeteraActions(plotNumber, cafeteraName)
 
     addIngredients(cafeteraName, 9) -- Agrega 4 ingredientes a cada máquina
 
-    ReplicatedStorage.Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Icey")
+    ReplicatedStorage.Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Boba Smoothie")
     converterData.noob:FireServer()
 
     while converterData.__REMOTE do

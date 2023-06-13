@@ -444,9 +444,9 @@ local function executeCafeteraActions(plotNumber, cafeteraName)
     local ovensFolder = workspace:WaitForChild("Plots")["Plot" .. plotNumber].Ovens
     local converterData = ovensFolder[cafeteraName].ConverterData
 
-ReplicatedStorage.Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Boba Smoothie")
+    ReplicatedStorage.Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Boba Smoothie")
 
-wait(1)
+    wait(1)
 
     addIngredients(cafeteraName, 9) -- Agrega 4 ingredientes a cada máquina
 
@@ -454,19 +454,19 @@ wait(1)
 
     while converterData.__REMOTE do
         converterData.__REMOTE:FireServer()
-        wait(1.5) 
+        wait(1.5)
     end
 end
 
 local function startCafeteras(plotNumber)
     local Plots = workspace:WaitForChild("Plots")
     local plot = Plots["Plot" .. plotNumber]
-    
+
     if not plot then
         print("El número de puesto seleccionado no existe.")
         return
     end
-    
+
     for _, cafetera in ipairs(plot.Ovens:GetChildren()) do
         spawn(function()
             executeCafeteraActions(plotNumber, cafetera.Name)
@@ -479,11 +479,11 @@ local function deleteFillCopyAndBounds(cafeteraName)
     local ovensFolder = workspace:WaitForChild("Plots")["Plot" .. selectedNumber].Ovens
     local fillCopy = ovensFolder[cafeteraName]:FindFirstChild("FillCopy")
     local bounds = ovensFolder[cafeteraName]:FindFirstChild("Bounds")
-    
+
     if fillCopy then
         fillCopy:Destroy()
     end
-    
+
     if bounds then
         bounds:Destroy()
     end
@@ -496,24 +496,30 @@ end
 spawn(function()
     while true do
         if selectedNumber then
-            local shelfInfo = workspace.Plots["Plot" .. selectedNumber].Shelf.Info
-            print(shelfInfo)
+            local plot = workspace:WaitForChild("Plots"):FindFirstChild("Plot" .. selectedNumber)
+            if plot then
+                local shelf = plot:WaitForChild("Shelf")
+                local info = shelf:WaitForChild("Info")
+                info:FireServer()
+            else
+                print("El número de puesto seleccionado no existe.")
+            end
         end
         wait(2) -- Espera 2 segundos antes de ejecutar nuevamente
     end
 end)
 
 while true do
-    wait(40) -- Espera 30 segundos antes de eliminar FillCopy y Bounds
-    
+    wait(500) -- Espera 30 segundos antes de eliminar FillCopy y Bounds
+
     if selectedNumber then
         for _, cafetera in ipairs(workspace:WaitForChild("Plots")["Plot" .. selectedNumber].Ovens:GetChildren()) do
             deleteFillCopyAndBounds(cafetera.Name)
         end
     end
-    
-    wait(45) -- Espera 20 segundos antes de ejecutar nuevamente
-    
+
+    wait(25) -- Espera 20 segundos antes de ejecutar nuevamente
+
     if selectedNumber then
         startCafeteras(selectedNumber)
     end

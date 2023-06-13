@@ -836,7 +836,7 @@ MyCafeSection:AddButton({
     Name = "Para Puesto 6",
     Callback = function()
 
- local cafeterasDisponibles = {"Starter", "Cafetera2", "Cafetera3", "Cafetera4"} -- Agrega más nombres de cafeteras si es necesario
+ local cafeterasDisponibles = {"Starter", "Honey", "XL Basic", "Cafetera4"} -- Agrega más nombres de cafeteras si es necesario
 
 -- Crear una lista para almacenar las cafeteras del usuario
 local cafeterasUsuario = {}

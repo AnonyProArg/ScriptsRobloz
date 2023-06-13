@@ -843,8 +843,11 @@ local cafeterasUsuario = {}
 
 -- Verificar las cafeteras del usuario
 for _, cafetera in ipairs(cafeterasDisponibles) do
-    if game.workspace.Plots.Plot6.Ovens:FindFirstChild(cafetera) then
-        table.insert(cafeterasUsuario, cafetera)
+    local cafeterasEncontradas = game.workspace.Plots.Plot6.Ovens:GetChildren()
+    for _, cafeteraEncontrada in ipairs(cafeterasEncontradas) do
+        if cafeteraEncontrada.Name == cafetera then
+            table.insert(cafeterasUsuario, cafeteraEncontrada)
+        end
     end
 end
 

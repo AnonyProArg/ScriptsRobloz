@@ -444,9 +444,12 @@ local function executeCafeteraActions(plotNumber, cafeteraName)
     local ovensFolder = workspace:WaitForChild("Plots")["Plot" .. plotNumber].Ovens
     local converterData = ovensFolder[cafeteraName].ConverterData
 
+ReplicatedStorage.Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Boba Smoothie")
+
+wait(1)
+
     addIngredients(cafeteraName, 9) -- Agrega 4 ingredientes a cada máquina
 
-    ReplicatedStorage.Remotes.StartBake:FireServer(ovensFolder[cafeteraName], "Boba Smoothie")
     converterData.noob:FireServer()
 
     while converterData.__REMOTE do

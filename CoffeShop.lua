@@ -169,7 +169,7 @@ while true do
         end
     end
 
-    wait(25) -- Espera 20 segundos antes de ejecutar nuevamente
+    wait(31) -- Espera 20 segundos antes de ejecutar nuevamente
 
     if selectedNumber then
         startCafeteras(selectedNumber)

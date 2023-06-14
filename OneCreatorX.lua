@@ -345,14 +345,12 @@ local MyCafeSection = Window:MakeTab({
 
 -- Paso adicional: Agregar botones en la sección "Colorea o Muere"
 MyCafeSection:AddButton({
-    Name = "Multi Puestos (Beta-funcional-PresentaBug)",
+    Name = "Multi Puestos (Cafeteras duplicadas+ NoFun)",
     Callback = function()
-hhhhhh
 
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua"))()
     end
 })
-
 
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({

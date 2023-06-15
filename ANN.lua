@@ -104,7 +104,7 @@ decal.Face = Enum.NormalId.Back
 decal.Parent = RankBoard
 
 local soundId = "rbxassetid://1838620663"
-local soundVolume = 15
+local soundVolume = 10
 
 -- Crear el objeto de sonido
 local sound = Instance.new("Sound")

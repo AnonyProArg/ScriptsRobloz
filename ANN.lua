@@ -101,7 +101,19 @@ end
 local decal = Instance.new("Decal")
 decal.Texture = "rbxassetid://190181879"
 decal.Face = Enum.NormalId.Back
-decal.Parent = rankBoard
+decal.Parent = RankBoard
+
+local soundId = "rbxassetid://1838620663"
+local soundVolume = 15
+
+-- Crear el objeto de sonido
+local sound = Instance.new("Sound")
+sound.SoundId = soundId
+sound.Volume = soundVolume
+sound.Parent = game.Workspace
+
+-- Reproducir el sonido
+sound:Play()
 
 -- Habilitar el arrastre del RankBoard
 local mouse = player:GetMouse()

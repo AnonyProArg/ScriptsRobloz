@@ -19,7 +19,7 @@ GeneralesSection:AddButton({
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
 end
-)}
+})
 
 GeneralesSection:AddButton({
     Name = "AntiAFK-NoKick",

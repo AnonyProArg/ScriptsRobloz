@@ -13,7 +13,7 @@ for _, frame in ipairs(framePath:GetChildren()) do
 end
 
 local textLabel = game.Workspace.Folder.RankBoard.SurfaceGui.TextLabel
-textLabel.Text = "TOP SUSCRIPTORES"
+textLabel.Text = "Feliz Cumpleaños mí amor ❤️"
 textLabel.TextColor3 = Color3.new(1, 0, 0)
 textLabel.TextScaled = false
 textLabel.TextSize = 38

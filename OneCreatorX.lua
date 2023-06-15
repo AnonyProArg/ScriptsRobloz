@@ -14,6 +14,14 @@ local GeneralesSection = Window:MakeTab({
 })
 
 GeneralesSection:AddButton({
+    Name = "InfityYield (Comandos Hacks)",
+    Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end
+)}
+
+GeneralesSection:AddButton({
     Name = "AntiAFK-NoKick",
     Callback = function()
 wait(0.5)local ba=Instance.new("ScreenGui")

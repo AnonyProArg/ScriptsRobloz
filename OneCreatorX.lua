@@ -357,13 +357,14 @@ local ParaAnn = Window:MakeTab({
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 }):AddSection({
-    Name = "My Cafetería (My Coffee)"
+    Name = "ParaAnn❤️"
 })
 
 -- Paso adicional: Agregar botones en la sección "Colorea o Muere"
 ParaAnn:AddButton({
     Name = " Para Ann❤️",
     Callback = function()
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/ANN.lua"))()
 
 end

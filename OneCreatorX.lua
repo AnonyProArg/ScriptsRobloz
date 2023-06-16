@@ -360,24 +360,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
     end
 })
 
-local ParaAnn = Window:MakeTab({
-    Name = "ParaAnn❤️",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-}):AddSection({
-    Name = "ParaAnn❤️"
-})
-
--- Paso adicional: Agregar botones en la sección "Colorea o Muere"
-ParaAnn:AddButton({
-    Name = " Para Ann❤️",
-    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/ANN.lua"))()
-
-end
-})
-
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

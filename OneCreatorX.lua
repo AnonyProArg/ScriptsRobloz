@@ -282,7 +282,7 @@ TycoonsSection:AddButton({
 })
 
 TycoonsSection:AddButton({
-    Name = "Milk :) Por corregir",
+    Name = "Milk :) Mejorado Full AutoFarmAfk",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tycoon%20Milk.lua"))()
   end

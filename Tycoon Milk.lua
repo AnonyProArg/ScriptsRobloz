@@ -1,4 +1,4 @@
-local Players = game:GetService("Players")
+rlocal Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local plr = Players.LocalPlayer
 local tycoonButtons = {}
@@ -86,6 +86,14 @@ CreateButton("Auto Process Milk", "Auto processes milk", function()
         firetouchinterest(plr.Character.HumanoidRootPart, Tycoon.Buttons.Process, 0)
         wait(0.1)
         firetouchinterest(plr.Character.HumanoidRootPart, Tycoon.Buttons.Process, 1)
+        wait(0.1)
+        firetouchinterest(plr.Character.HumanoidRootPart, Tycoon.Buttons.Cow6, 0)
+        wait(0.1)
+        firetouchinterest(plr.Character.HumanoidRootPart, Tycoon.Buttons.Cow6, 1)
+        wait(0.1)
+        firetouchinterest(plr.Character.HumanoidRootPart, Tycoon.Buttons.Upgrade, 0)
+        wait(0.1)
+        firetouchinterest(plr.Character.HumanoidRootPart, Tycoon.Buttons.Upgrade 1)
         wait(0.1)
     end
 end)

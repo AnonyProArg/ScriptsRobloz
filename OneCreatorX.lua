@@ -360,6 +360,47 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
     end
 })
 
+local Specter = Window:MakeTab({
+    Name = "Specter",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "Specter"
+})
+
+-- Paso adicional: Agregar botones en la sección "Colorea o Muere"
+Specter:AddButton({
+    Name = "GamePasses",
+    Callback = function()
+
+local gamePassesPath = game.Players.LocalPlayer.Data.Gamepasses
+
+local function changeValueToTrue(object)
+    if object:IsA("ValueBase") then
+        object.Value = true
+    end
+end
+
+local function iterateAndChangeValue(folder)
+    for _, child in ipairs(folder:GetChildren()) do
+        changeValueToTrue(child)
+        if child:IsA("Folder") then
+            iterateAndChangeValue(child)
+        end
+    end
+end
+
+-- Cambiar los valores de "Value" a "true" en todos los archivos
+if gamePassesPath:IsA("Folder") then
+    iterateAndChangeValue(gamePassesPath)
+else
+    warn("gamePassesPath no es una carpeta válida")
+end
+
+
+    end
+})
+
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

@@ -370,7 +370,7 @@ local Specter = Window:MakeTab({
 
 -- Paso adicional: Agregar botones en la sección "Colorea o Muere"
 Specter:AddButton({
-    Name = "GamePasses",
+    Name = "GamePasses B",
     Callback = function()
 
 local gamePassesPath = game.Players.LocalPlayer.Data.Gamepasses

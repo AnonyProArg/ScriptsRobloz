@@ -401,6 +401,15 @@ end
     end
 })
 
+Specter:AddButton({
+    Name = "Atajos F.Beta",
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Specter.lua"))()
+
+end
+})
+
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

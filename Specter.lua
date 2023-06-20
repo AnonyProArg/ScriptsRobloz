@@ -24,6 +24,11 @@ local function getWaterPositions()
         end
     end
 
+  local bone = workspace.House.Bone
+    if bone and bone:IsA("BasePart") then
+        table.insert(waterPositions, bone.Position)
+    end
+
     local rock1 = workspace.House.Rock1
     if rock1 then
         table.insert(waterPositions, rock1.Position + Vector3.new(0, 2, 0))

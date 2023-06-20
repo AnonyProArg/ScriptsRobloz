@@ -76,6 +76,7 @@ local function teleportToVanSpawn()
     local vanSpawn = workspace.Van:FindFirstChild("Spawn")
     if vanSpawn then
         LocalPlayer.Character:MoveTo(vanSpawn.Position)
+       Game.Workspace.House.Walls:Destroy()
     end
 end
 

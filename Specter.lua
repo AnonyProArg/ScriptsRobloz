@@ -80,7 +80,6 @@ end
 local function teleportToVanSpawn()
     local vanSpawn = workspace.Van:FindFirstChild("Spawn")
     if vanSpawn then
-        LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Physics)
         LocalPlayer.Character:MoveTo(vanSpawn.Position)
         LocalPlayer.Character.Humanoid.WalkSpeed = 15
         Game.Workspace.House.Walls:Destroy()

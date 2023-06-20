@@ -76,8 +76,19 @@ local function teleportToVanSpawn()
     local vanSpawn = workspace.Van:FindFirstChild("Spawn")
     if vanSpawn then
         LocalPlayer.Character:MoveTo(vanSpawn.Position)
-     LocalPlayer.Character.Humanoid.WalkSpeed = 15
-       Game.Workspace.House.Walls:Destroy()
+        LocalPlayer.Character.Humanoid.WalkSpeed = 15
+
+        -- Desactivar colisión del jugador con todos los objetos excepto el suelo
+        local ignoreList = {}
+        for _, obj in ipairs(workspace:GetDescendants()) do
+            if obj:IsA("BasePart") and obj ~= workspace.Terrain then
+                table.insert(ignoreList, obj)
+                obj.CanCollide = false
+            end
+        end
+        LocalPlayer.Character:SetAttribute("NoCollision", ignoreList)
+
+        Game.Workspace.House.Walls:Destroy()
     end
 end
 

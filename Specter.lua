@@ -40,13 +40,8 @@ end
     if bone and bone:IsA("BasePart") then
         table.insert(waterPositions, bone.Position)
     end
-
-    local rock1 = workspace.House.EE.Rock1
-    if rock1 and rock1:IsA("BasePart") then
-        table.insert(waterPositions, rock1.Position)
     end
-end
-
+  
 local currentRoomIndex = 1
 local currentWaterIndex = 1
 

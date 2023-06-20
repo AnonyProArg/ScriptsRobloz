@@ -5,7 +5,7 @@ local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 local roomPositions = {}
 local waterPositions = {}
 local savedPosition = nil
-local floatingButtons = {} -- Tabla para almacenar los botones flotantes
+local floatingButtons = {}
 
 local function getRoomPositions()
     local roomsFolder = workspace.House.Rooms
@@ -16,8 +16,7 @@ local function getRoomPositions()
     end
 end
 
-
-    local function getWaterPositions()
+local function getWaterPositions()
     local watersFolder = workspace.House.Waters
     for _, water in ipairs(watersFolder:GetDescendants()) do
         if water:IsA("BasePart") then
@@ -25,23 +24,18 @@ end
         end
     end
 
-    local bone = workspace.House.Bone
-    if bone and bone:IsA("BasePart") then
-        table.insert(waterPositions, bone.Position)
-    end
-
     local rock1 = workspace.House.Rock1
-    if rock1 and rock1:IsA("BasePart") then
-        table.insert(waterPositions, rock1.Position)
+    if rock1 then
+        table.insert(waterPositions, rock1.Position + Vector3.new(0, 2, 0))
+    end
+
+    local eeRock1 = workspace.House.EE.Rock1
+    if eeRock1 then
+        table.insert(waterPositions, eeRock1.Position + Vector3.new(0, 2, 0))
     end
 end
 
-   local bone = workspace.House.Bone
-    if bone and bone:IsA("BasePart") then
-        table.insert(waterPositions, bone.Position)
-    end
-end
-  
+
 local currentRoomIndex = 1
 local currentWaterIndex = 1
 
@@ -89,7 +83,7 @@ local function destroyFloatingButtons()
     for _, button in ipairs(floatingButtons) do
         button:Destroy()
     end
-    floatingButtons = {} -- Limpiar la tabla de botones flotantes
+    floatingButtons = {}
 end
 
 local screenGui = Instance.new("ScreenGui")
@@ -109,7 +103,7 @@ local function createButton(text, clickFunc)
     button.Parent = screenGui
     button.MouseButton1Click:Connect(clickFunc)
     yOffset = yOffset + buttonHeight + buttonSpacing
-    table.insert(floatingButtons, button) -- Agregar el botón a la tabla de botones flotantes
+    table.insert(floatingButtons, button)
 end
 
 createButton("Ir a la siguiente habitación", gotoNextRoomPosition)

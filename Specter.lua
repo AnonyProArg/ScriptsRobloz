@@ -16,12 +16,23 @@ local function getRoomPositions()
     end
 end
 
-local function getWaterPositions()
+
+    local function getWaterPositions()
     local watersFolder = workspace.House.Waters
     for _, water in ipairs(watersFolder:GetDescendants()) do
         if water:IsA("BasePart") then
             table.insert(waterPositions, water.Position)
         end
+    end
+
+    local bone = workspace.House.Bone
+    if bone and bone:IsA("BasePart") then
+        table.insert(waterPositions, bone.Position)
+    end
+
+    local rock1 = workspace.House.Rock1
+    if rock1 and rock1:IsA("BasePart") then
+        table.insert(waterPositions, rock1.Position)
     end
 end
 
@@ -79,69 +90,29 @@ local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "ButtonGui"
 screenGui.Parent = PlayerGui
 
-local roomButton = Instance.new("TextButton")
-roomButton.Name = "RoomButton"
-roomButton.Text = "Ir a la siguiente habitación"
-roomButton.Size = UDim2.new(0, 200, 0, 50)
-roomButton.Position = UDim2.new(0, 10, 0, 10)
-roomButton.Parent = screenGui
-roomButton.MouseButton1Click:Connect(gotoNextRoomPosition)
-table.insert(floatingButtons, roomButton) -- Agregar el botón a la tabla de botones flotantes
+local yOffset = 10
+local buttonHeight = 30
+local buttonSpacing = 5
 
-local waterButton = Instance.new("TextButton")
-waterButton.Name = "WaterButton"
-waterButton.Text = "Ir a la siguiente posición de agua"
-waterButton.Size = UDim2.new(0, 200, 0, 50)
-waterButton.Position = UDim2.new(0, 10, 0, 70)
-waterButton.Parent = screenGui
-waterButton.MouseButton1Click:Connect(gotoNextWaterPosition)
-table.insert(floatingButtons, waterButton) -- Agregar el botón a la tabla de botones flotantes
+local function createButton(text, clickFunc)
+    local button = Instance.new("TextButton")
+    button.Name = "Button"
+    button.Text = text
+    button.Size = UDim2.new(0, 200, 0, buttonHeight)
+    button.Position = UDim2.new(0, 10, 0, yOffset)
+    button.Parent = screenGui
+    button.MouseButton1Click:Connect(clickFunc)
+    yOffset = yOffset + buttonHeight + buttonSpacing
+    table.insert(floatingButtons, button) -- Agregar el botón a la tabla de botones flotantes
+end
 
-local tpButton = Instance.new("TextButton")
-tpButton.Name = "TPButton"
-tpButton.Text = "Luz"
-tpButton.Size = UDim2.new(0, 200, 0, 50)
-tpButton.Position = UDim2.new(0, 10, 0, 130)
-tpButton.Parent = screenGui
-tpButton.MouseButton1Click:Connect(teleportToFuseBox)
-table.insert(floatingButtons, tpButton) -- Agregar el botón a la tabla de botones flotantes
-
-local tpSavedButton = Instance.new("TextButton")
-tpSavedButton.Name = "TPSavedButton"
-tpSavedButton.Text = "Guardar ubicación"
-tpSavedButton.Size = UDim2.new(0, 200, 0, 50)
-tpSavedButton.Position = UDim2.new(0, 10, 0, 190)
-tpSavedButton.Parent = screenGui
-tpSavedButton.MouseButton1Click:Connect(savePlayerLocation)
-table.insert(floatingButtons, tpSavedButton) -- Agregar el botón a la tabla de botones flotantes
-
-local tpSavedLocationButton = Instance.new("TextButton")
-tpSavedLocationButton.Name = "TPSavedLocationButton"
-tpSavedLocationButton.Text = "TP a ubicación guardada"
-tpSavedLocationButton.Size = UDim2.new(0, 200, 0, 50)
-tpSavedLocationButton.Position = UDim2.new(0, 10, 0, 250)
-tpSavedLocationButton.Parent = screenGui
-tpSavedLocationButton.MouseButton1Click:Connect(teleportToSavedLocation)
-table.insert(floatingButtons, tpSavedLocationButton) -- Agregar el botón a la tabla de botones flotantes
-
-local vanButton = Instance.new("TextButton")
-vanButton.Name = "VanButton"
-vanButton.Text = "Ir a la Van"
-vanButton.Size = UDim2.new(0, 200, 0, 50)
-vanButton.Position = UDim2.new(0, 10, 0, 310)
-vanButton.Parent = screenGui
-vanButton.MouseButton1Click:Connect(teleportToVanSpawn)
-table.insert(floatingButtons, vanButton) -- Agregar el botón a la tabla de botones flotantes
-
-local destroyButtonsButton = Instance.new("TextButton")
-destroyButtonsButton.Name = "DestroyButtonsButton"
-destroyButtonsButton.Text = "Destruir botones flotantes"
-destroyButtonsButton.Size = UDim2.new(0, 200, 0, 50)
-destroyButtonsButton.Position = UDim2.new(0, 10, 0, 370)
-destroyButtonsButton.Parent = screenGui
-destroyButtonsButton.MouseButton1Click:Connect(destroyFloatingButtons)
-table.insert(floatingButtons, destroyButtonsButton) -- Agregar el botón a la tabla de botones flotantes
+createButton("Ir a la siguiente habitación", gotoNextRoomPosition)
+createButton("Ir a la siguiente posición de agua", gotoNextWaterPosition)
+createButton("Luz", teleportToFuseBox)
+createButton("Guardar ubicación", savePlayerLocation)
+createButton("TP a ubicación guardada", teleportToSavedLocation)
+createButton("Ir a la Van", teleportToVanSpawn)
+createButton("Destruir botones flotantes", destroyFloatingButtons)
 
 getRoomPositions()
 getWaterPositions()
-

@@ -40,7 +40,7 @@ end
     if bone and bone:IsA("BasePart") then
         table.insert(waterPositions, bone.Position)
     end
-    end
+
   
 local currentRoomIndex = 1
 local currentWaterIndex = 1

@@ -83,16 +83,6 @@ local function teleportToVanSpawn()
         LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Physics)
         LocalPlayer.Character:MoveTo(vanSpawn.Position)
         LocalPlayer.Character.Humanoid.WalkSpeed = 15
-
-        -- Restablecer la colisión del jugador con el suelo
-        local ignoreList = LocalPlayer.Character:GetAttribute("NoCollision")
-        if ignoreList then
-            for _, obj in ipairs(ignoreList) do
-                obj.CanCollide = true
-            end
-            LocalPlayer.Character:RemoveAttribute("NoCollision")
-        end
-
         Game.Workspace.House.Walls:Destroy()
     end
 end

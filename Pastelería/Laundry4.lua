@@ -26,7 +26,7 @@ local function invokeClothingProcess()
     
     while true do
         for i = 1, #clothingList, 20 do
-            local endIndex = math.min(i + 8, #clothingList)
+            local endIndex = math.min(i + 4, #clothingList)
             
             for j = i, endIndex do
                 invokeClothing(clothingList[j].Name)

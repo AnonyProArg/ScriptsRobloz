@@ -81,11 +81,12 @@ local function HandleHornos(hornoList)
         }
 
         game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(unpack(bakeArgs))
+wait(1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(smokePoint)
-        wait(4)
+        wait(3)
 
         currentIndex = currentIndex % #hornoList + 1
-        wait(4) -- Reducimos el tiempo de espera entre hornos a 10 segundos
+        wait(3) -- Reducimos el tiempo de espera entre hornos a 10 segundos
     end
 end
 

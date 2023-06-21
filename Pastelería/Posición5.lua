@@ -1,3 +1,6 @@
+local player = game.Players.LocalPlayer
+local userInputService = game:GetService("UserInputService")
+
 local function FireServerAndWait(childName)
     local ingredientCollider = workspace.Ingredients:WaitForChild(childName):WaitForChild("Ingredient_Collider")
     game:GetService("ReplicatedStorage").Remotes.TI_0:FireServer(ingredientCollider)
@@ -61,7 +64,7 @@ local function addExtraIngredients(horno, ingredientCount)
     end
 end
 
-local function HandleHornos(hornoList)
+local function HandleHornos(hornoList, waitTime)
     local currentIndex = 1
 
     while true do
@@ -80,12 +83,12 @@ local function HandleHornos(hornoList)
         }
 
         game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(unpack(bakeArgs))
-wait(0.5)
+        wait(0.5)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(smokePoint)
-        wait(4)
+        wait(waitTime)
 
         currentIndex = currentIndex % #hornoList + 1
-        wait(4) -- Reducimos el tiempo de espera entre hornos a 10 segundos
+        wait(waitTime) -- Reducimos el tiempo de espera entre hornos a 10 segundos
     end
 end
 
@@ -99,5 +102,35 @@ for _, horno in ipairs(workspace.Plots.Plot5.Ovens:GetChildren()) do
     })
 end
 
--- Ejecutar el bucle principal
-HandleHornos(hornoList)
+-- Crear una función para mostrar el cuadro de texto y obtener la entrada del usuario
+local function ShowTextBox()
+    -- Crear una instancia de la clase TextBox
+    local textBox = Instance.new("TextBox")
+    textBox.Size = UDim2.new(0, 200, 0, 30) -- Establecer el tamaño del cuadro de texto
+    textBox.Position = UDim2.new(0.5, -100, 0.5, -15) -- Establecer la posición del cuadro de texto
+    textBox.AnchorPoint = Vector2.new(0.5, 0.5) -- Establecer el punto de anclaje en el centro
+    textBox.FontSize = Enum.FontSize.Size14 -- Establecer el tamaño de fuente
+    textBox.ClearTextOnFocus = true -- Borrar el texto cuando se hace clic en el cuadro de texto
+    textBox.PlaceholderText = "Ingresa un valor" -- Establecer el texto de marcador de posición
+
+    -- Obtener la entrada del usuario cuando se presione la tecla Enter
+    textBox.FocusLost:Connect(function(enterPressed)
+        if enterPressed then
+            local enteredText = textBox.Text
+            textBox:Destroy() -- Destruir el cuadro de texto después de obtener la entrada
+
+            -- Ejecutar el script con el nuevo valor ingresado
+            local waitTime = tonumber(enteredText) or 3 -- Convertir la entrada en un número o usar 3 segundos por defecto
+            HandleHornos(hornoList, waitTime)
+        end
+    end)
+
+    -- Parentar el cuadro de texto al jugador local
+    textBox.Parent = game.Players.LocalPlayer.PlayerGui
+
+    -- Enfocar el cuadro de texto
+    textBox:CaptureFocus()
+end
+
+-- Llamar a la función para mostrar el cuadro de texto
+ShowTextBox()

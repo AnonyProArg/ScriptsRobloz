@@ -1,5 +1,3 @@
-
-
 local washingMachines = workspace.Plots.Plot5.WashingMachines:GetChildren()
 
 local function startWashingMachine(washingMachine)
@@ -71,8 +69,8 @@ spawn(function()
 end)
 
 local walkPositions = {
-    Vector3.new(-131.013, 5.57671, 22.0016,
-    Vector3.new(-106.621, 5.57671, -11.1147))
+    Vector3.new(-131.013, 5.57671, 22.0016),
+    Vector3.new(-106.621, 5.57671, -11.1147)
 }
 
 local function walkToPosition(position)

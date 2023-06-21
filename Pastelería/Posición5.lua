@@ -73,7 +73,7 @@ local function HandleHornos(hornoList)
 
         local bakeArgs = {
             [1] = horno,
-            [2] = "Cookies"
+            [2] = "Exotic"
         }
 
         game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(unpack(bakeArgs))

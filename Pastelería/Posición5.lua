@@ -1,17 +1,15 @@
-
 local function FireServerAndWait(childName)
     local ingredientCollider = workspace.Ingredients:WaitForChild(childName):WaitForChild("Ingredient_Collider")
     game:GetService("ReplicatedStorage").Remotes.TI_0:FireServer(ingredientCollider)
 end
 
 local function addIngredients(horno, ingredientCount)
-    local ingredients = {
-        "Creamer",
-        "Cheese",
-        "Yogurt",
-        "Milk",
-        "Baking Powder"
-    }
+    local ingredientsFolder = workspace.Ingredients
+    local ingredients = {}
+
+    for _, ingredient in ipairs(ingredientsFolder:GetChildren()) do
+        table.insert(ingredients, ingredient.Name)
+    end
 
     local ingredientChunks = {}
 
@@ -25,7 +23,11 @@ local function addIngredients(horno, ingredientCount)
     end
 
     for _, chunk in ipairs(ingredientChunks) do
-        FireServerAndWait(unpack(chunk))
+        for _, ingredient in ipairs(chunk) do
+            spawn(function()
+                FireServerAndWait(ingredient)
+            end)
+        end
         wait(0.8)
     end
 end
@@ -51,12 +53,13 @@ local function addExtraIngredients(horno, ingredientCount)
 
     for _, chunk in ipairs(ingredientChunks) do
         for _, ingredient in ipairs(chunk) do
-            FireServerAndWait(ingredient)
+            spawn(function()
+                FireServerAndWait(ingredient)
+            end)
         end
         wait(1)
     end
 end
-
 
 local function HandleHornos(hornoList)
     local currentIndex = 1
@@ -78,10 +81,10 @@ local function HandleHornos(hornoList)
 
         game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(unpack(bakeArgs))
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(smokePoint)
-        wait(3)
+        wait(4)
 
         currentIndex = currentIndex % #hornoList + 1
-        wait(3) -- Reducimos el tiempo de espera entre hornos a 10 segundos
+        wait(4) -- Reducimos el tiempo de espera entre hornos a 10 segundos
     end
 end
 

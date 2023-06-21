@@ -6,46 +6,6 @@ local function startWashingMachine(washingMachine)
     end
 end
 
-for i, washingMachine in ipairs(washingMachines) do
-    spawn(function()
-        startWashingMachine(washingMachine)
-    end)
-end
-
-local function updateClothingList()
-    return workspace.Debris.Clothing:GetChildren()
-end
-
-local function invokeClothing(clothingName)
-    game:GetService("ReplicatedStorage").Events.GrabClothing:FireServer(workspace.Debris.Clothing:FindFirstChild(clothingName))
-end
-
-local function invokeClothingProcess()
-    local clothingList = updateClothingList()
-    local lastIndex = 1
-    
-    while true do
-        for i = 1, #clothingList, 20 do
-            local endIndex = math.min(i + 4, #clothingList)
-            
-            for j = i, endIndex do
-                invokeClothing(clothingList[j].Name)
-            end
-            
-            wait(1)
-            
-            if endIndex == #clothingList and i >= lastIndex then
-                lastIndex = i
-                wait(2)
-            end
-        end
-        
-        wait()
-    end
-end
-
-spawn(invokeClothingProcess)
-
 local function stopWashingMachine(washingMachine)
     while true do
         game:GetService("ReplicatedStorage").Events.UnloadWashingMachine:FireServer(washingMachine)
@@ -53,20 +13,42 @@ local function stopWashingMachine(washingMachine)
     end
 end
 
-for i, washingMachine in ipairs(washingMachines) do
-    spawn(function()
-        stopWashingMachine(washingMachine)
-    end)
+local function invokeClothing(clothingName)
+    game:GetService("ReplicatedStorage").Events.GrabClothing:FireServer(workspace.Debris.Clothing:FindFirstChild(clothingName))
 end
 
-spawn(function()
+local function invokeClothingProcess()
+    local clothingList = workspace.Debris.Clothing:GetChildren()
+    local lastIndex = 1
+
+    while true do
+        for i = lastIndex, #clothingList, 20 do
+            local endIndex = math.min(i + 8, #clothingList)
+
+            for j = i, endIndex do
+                invokeClothing(clothingList[j].Name)
+            end
+
+            wait(1)
+
+            if endIndex == #clothingList and i >= lastIndex then
+                lastIndex = i
+                wait(2)
+            end
+        end
+
+        wait()
+    end
+end
+
+local function dropClothesInChute()
     while true do
         for i = 1, 5 do
             game:GetService("ReplicatedStorage").Events.DropClothesInChute:FireServer()
         end
         wait(1)
     end
-end)
+end
 
 local walkPositions = {
     Vector3.new(-131.013, 5.57671, 22.0016),
@@ -80,14 +62,36 @@ local function walkToPosition(position)
     wait(1)
 end
 
-while true do
-    -- Ida
-    for _, position in ipairs(walkPositions) do
-        walkToPosition(position)
+-- Función para iniciar las lavadoras y "spam"
+local function startSpam()
+    for i, washingMachine in ipairs(washingMachines) do
+        spawn(function()
+            startWashingMachine(washingMachine)
+        end)
     end
-    
-    -- Vuelta
-    for i = #walkPositions, 1, -1 do
-        walkToPosition(walkPositions[i])
+
+    spawn(invokeClothingProcess)
+
+    for i, washingMachine in ipairs(washingMachines) do
+        spawn(function()
+            stopWashingMachine(washingMachine)
+        end)
+    end
+
+    spawn(dropClothesInChute)
+
+    while true do
+        -- Ida
+        for _, position in ipairs(walkPositions) do
+            walkToPosition(position)
+        end
+
+        -- Vuelta
+        for i = #walkPositions, 1, -1 do
+            walkToPosition(walkPositions[i])
+        end
     end
 end
+
+-- Iniciar el "spam"
+startSpam()

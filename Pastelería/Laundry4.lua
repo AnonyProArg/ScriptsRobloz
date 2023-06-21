@@ -1,4 +1,4 @@
-local washingMachines = workspace.Plots.Plot5.WashingMachines:GetChildren()
+local washingMachines = workspace.Plots.Plot4.WashingMachines:GetChildren()
 
 local function startWashingMachine(washingMachine)
     while wait() do

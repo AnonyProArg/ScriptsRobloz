@@ -415,11 +415,11 @@ local Bakery = Window:MakeTab({
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 }):AddSection({
-    Name = "Bakery Simulator"
+    Name = "Simulador de Panadería"
 })
 
 Bakery:AddButton({
-    Name = "Simulador de Panadería",
+    Name = "Puesto 5",
     Callback = function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Exe5.lua"))()

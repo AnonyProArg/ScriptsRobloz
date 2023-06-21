@@ -410,6 +410,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
+Specter:AddButton({
+    Name = "Reconectar/Rejoin",
+    Callback = function()
+
+game:GetService("ReplicatedStorage"):WaitForChild("Rejoin"):FireServer(true)
+
+end
+})
+
 local Bakery = Window:MakeTab({
     Name = "Bakery Simulator",
     Icon = "rbxassetid://4483345998",

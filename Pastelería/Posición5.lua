@@ -80,6 +80,7 @@ local function HandleHornos(hornoList)
         }
 
         game:GetService("ReplicatedStorage").Remotes.StartBake:FireServer(unpack(bakeArgs))
+wait(0.5)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(smokePoint)
         wait(4)
 

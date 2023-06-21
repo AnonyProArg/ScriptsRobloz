@@ -445,6 +445,32 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
+local Laundry = Window:MakeTab({
+    Name = "Laundry Simulator",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "Simulador de Lavandería"
+})
+
+Laundry:AddButton({
+    Name = "Puesto 4",
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Laundry4.lua"))()
+
+end
+})
+
+Laundry:AddButton({
+    Name = "Puesto 5",
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Laundry5.lua"))()
+
+end
+})
+
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

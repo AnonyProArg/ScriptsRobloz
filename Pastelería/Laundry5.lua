@@ -1,3 +1,5 @@
+
+
 local washingMachines = workspace.Plots.Plot5.WashingMachines:GetChildren()
 
 local function startWashingMachine(washingMachine)
@@ -26,7 +28,7 @@ local function invokeClothingProcess()
     
     while true do
         for i = 1, #clothingList, 20 do
-            local endIndex = math.min(i + 4, #clothingList)
+            local endIndex = math.min(i + 8, #clothingList)
             
             for j = i, endIndex do
                 invokeClothing(clothingList[j].Name)
@@ -67,3 +69,27 @@ spawn(function()
         wait(1)
     end
 end)
+
+local walkPositions = {
+    Vector3.new(-131.013, 5.57671, 22.0016,
+    Vector3.new(-106.621, 5.57671, -11.1147))
+}
+
+local function walkToPosition(position)
+    local humanoid = game.Players.LocalPlayer.Character.Humanoid
+    humanoid:MoveTo(position)
+    humanoid.MoveToFinished:Wait()
+    wait(1)
+end
+
+while true do
+    -- Ida
+    for _, position in ipairs(walkPositions) do
+        walkToPosition(position)
+    end
+    
+    -- Vuelta
+    for i = #walkPositions, 1, -1 do
+        walkToPosition(walkPositions[i])
+    end
+end

@@ -410,6 +410,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
+local Bakery = Window:MakeTab({
+    Name = "Bakery Simulator",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "Bakery Simulator"
+})
+
+Bakery:AddButton({
+    Name = "Simulador de Panadería",
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Exe5.lua"))()
+
+end
+})
+
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

@@ -47,6 +47,12 @@ closeButton.Parent = surfaceGui
 
 local espFolder = Instance.new("Folder")
 espFolder.Name = "ESPFolder"
+espFolder.Parent = game.Workspace -- Agregar el Folder al Workspace para que los cuadros ESP sean visibles
+
+local speedEnabled = false
+local CS = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+local connections = {}
+local PLESP = false
 
 local function updateESP()
     espFolder:ClearAllChildren()
@@ -92,7 +98,7 @@ end)
 closeButton.MouseButton1Click:Connect(function()
     buttonGui:Destroy()
     part:Destroy()
- end)
+end)
 
 game.Players.PlayerAdded:Connect(function(player)
     player.CharacterAdded:Connect(function(character)
@@ -107,7 +113,5 @@ game.Players.PlayerRemoving:Connect(function(player)
         updateESP()
     end
 end)
-
-espFolder.Parent = game.Workspace -- Agregar el Folder al Workspace para que los cuadros ESP sean visibles
 
 part.Parent = game.Workspace -- Mover el Part al Workspace para que aparezca frente al jugador

@@ -36,12 +36,12 @@ local function getWaterPositions()
 
     local rock1 = workspace.House.Rock1
     if rock1 then
-        table.insert(waterPositions, rock1.Position + Vector3.new(0, 2, 0))
+        table.insert(waterPositions, rock1.Position + Vector3.new(0, 4, 0))
     end
 
     local eeRock1 = workspace.House.EE.Rock1
     if eeRock1 then
-        table.insert(waterPositions, eeRock1.Position + Vector3.new(0, 2, 0))
+        table.insert(waterPositions, eeRock1.Position + Vector3.new(0, 4, 0))
     end
 end
 

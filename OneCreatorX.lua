@@ -411,6 +411,36 @@ end
 })
 
 Specter:AddButton({
+    Name = "Water",
+    Callback = function()
+
+function buscarYReemplazar()
+    local jugador = game.Players.LocalPlayer -- Obtener el jugador local
+    local waterParent = workspace.House.Waters -- Obtener el padre de todos los objetos Water
+    
+    local function buscarWater(objeto)
+        for _, child in pairs(objeto:GetChildren()) do
+            if child.Name == "Water" and child:IsA("Part") then -- Verificar si el objeto es un Water
+                local running = child:FindFirstChild("Running") -- Buscar el objeto Running dentro del Water
+                
+                if running and running.Value == true then -- Verificar si el objeto Running existe y su valor es true
+                    -- Copiar la posición del Water y reemplazarla por la del jugador
+                    jugador.Character:SetPrimaryPartCFrame(child.CFrame)
+                    return -- Salir de la función una vez que se ha encontrado un Water con Playing en true
+                end
+            end
+            
+            buscarWater(child) -- Llamar recursivamente a la función para buscar en los hijos
+        end
+    end
+    
+    buscarWater(waterParent) -- Iniciar la búsqueda desde el objeto padre
+end
+
+end
+})
+
+Specter:AddButton({
     Name = "Reconectar/Rejoin",
     Callback = function()
 

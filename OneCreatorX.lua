@@ -518,6 +518,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
+local 3D = Window:MakeTab({
+    Name = "Menus Modo Panel",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "En Desarrollo"
+})
+
+
+3D:AddButton({
+    Name = "Biblioteca V3 en construcción",
+    Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/BibliotecaV3.lua'))()
+
+end
+})
+
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

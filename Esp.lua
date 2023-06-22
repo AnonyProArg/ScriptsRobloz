@@ -1,51 +1,54 @@
--- Crear ScreenGui
-local gui = Instance.new("ScreenGui")
-gui.Parent = game.Players.LocalPlayer.PlayerGui
+local buttonGui = Instance.new("ScreenGui")
+buttonGui.Name = "ButtonGui"
+buttonGui.Parent = game.Players.LocalPlayer.PlayerGui
 
--- Crear Frame
-local frame = Instance.new("Frame")
-frame.Name = "MainFrame"
-frame.Position = UDim2.new(0.5, -100, 0.2, -100)
-frame.Size = UDim2.new(0, 200, 0, 150)
-frame.BackgroundColor3 = Color3.new(1, 1, 1)
-frame.BackgroundTransparency = 0.5
-frame.Parent = gui
+local part = Instance.new("Part")
+part.Name = "ButtonPart"
+part.Anchored = true
+part.Size = Vector3.new(8, 8, 0.2)
 
--- Crear botones
+local playerPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local playerLookVector = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector
+
+part.Position = playerPosition + (playerLookVector * 2) -- Ajuste en la posición para que esté frente al jugador a 2 unidades
+part.CFrame = CFrame.lookAt(part.Position, playerPosition) -- Hacer que el Part mire hacia el jugador
+
+part.Transparency = 0.5
+part.CanCollide = false
+part.Parent = game.Workspace
+
+local surfaceGui = Instance.new("SurfaceGui")
+surfaceGui.Parent = part
+
+-- Botones
 local speedButton = Instance.new("TextButton")
 speedButton.Name = "SpeedButton"
-speedButton.Position = UDim2.new(0, 10, 0, 10)
-speedButton.Size = UDim2.new(0, 180, 0, 40)
+speedButton.Size = UDim2.new(0.4, 0, 0.2, 0)
+speedButton.Position = UDim2.new(0.05, 0, 0.1, 0)
 speedButton.BackgroundColor3 = Color3.new(0, 1, 0)
 speedButton.Text = "Speed"
-speedButton.Parent = frame
+speedButton.Parent = surfaceGui
 
 local espButton = Instance.new("TextButton")
 espButton.Name = "ESPButton"
-espButton.Position = UDim2.new(0, 10, 0, 60)
-espButton.Size = UDim2.new(0, 180, 0, 40)
+espButton.Size = UDim2.new(0.4, 0, 0.2, 0)
+espButton.Position = UDim2.new(0.55, 0, 0.1, 0)
 espButton.BackgroundColor3 = Color3.new(0, 0, 1)
-espButton.Text = "Enable Player ESP"
-espButton.Parent = frame
+espButton.Text = "ESP"
+espButton.Parent = surfaceGui
 
 local closeButton = Instance.new("TextButton")
 closeButton.Name = "CloseButton"
-closeButton.Position = UDim2.new(0, 10, 0, 110)
-closeButton.Size = UDim2.new(0, 180, 0, 30)
+closeButton.Size = UDim2.new(0.4, 0, 0.2, 0)
+closeButton.Position = UDim2.new(0.3, 0, 0.5, 0)
 closeButton.BackgroundColor3 = Color3.new(1, 0, 0)
-closeButton.Text = "Close Script"
-closeButton.Parent = frame
+closeButton.Text = "Close"
+closeButton.Parent = surfaceGui
 
--- Funcionalidad de los botones
-local speedEnabled = false
-local H = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
-local CS = H.WalkSpeed -- Guardar la velocidad original del jugador
-local PLESP = false
 local espFolder = Instance.new("Folder")
-espFolder.Name = "ESP"
-espFolder.Parent = game.CoreGui
+espFolder.Name = "ESPFolder"
 
-function updateESP()
+local function updateESP()
     espFolder:ClearAllChildren()
     for i, v in pairs(game.Players:GetPlayers()) do
         if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
@@ -66,14 +69,14 @@ speedButton.MouseButton1Click:Connect(function()
     speedEnabled = not speedEnabled
     if speedEnabled then
         local moveConnection
-        moveConnection = H:GetPropertyChangedSignal("MoveDirection"):Connect(function()
-            H.WalkSpeed = 35
+        moveConnection = game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 35
             wait()
-            H.WalkSpeed = CS
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = CS
         end)
         table.insert(connections, moveConnection)
     else
-        H.WalkSpeed = CS
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = CS
     end
 end)
 
@@ -87,8 +90,9 @@ espButton.MouseButton1Click:Connect(function()
 end)
 
 closeButton.MouseButton1Click:Connect(function()
-    gui:Destroy()
-end)
+    buttonGui:Destroy()
+    part:Destroy()
+ end)
 
 game.Players.PlayerAdded:Connect(function(player)
     player.CharacterAdded:Connect(function(character)
@@ -104,3 +108,6 @@ game.Players.PlayerRemoving:Connect(function(player)
     end
 end)
 
+espFolder.Parent = game.Workspace -- Agregar el Folder al Workspace para que los cuadros ESP sean visibles
+
+part.Parent = game.Workspace -- Mover el Part al Workspace para que aparezca frente al jugador

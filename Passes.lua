@@ -1,4 +1,4 @@
-local gamePassesPath = game.Players.LocalPlayer.GamePasses -- Ruta de la ubicación de los archivos
+local gamePassesPath = game.Players.LocalPlayer.Gamepasses
 
 local function changeValueToTrue(object)
     if object:IsA("ValueBase") then
@@ -15,5 +15,9 @@ local function iterateAndChangeValue(folder)
     end
 end
 
--- Cambiar los valores de "value" a "true" en todos los archivos
-iterateAndChangeValue(gamePassesPath)
+-- Cambiar los valores de "Value" a "true" en todos los archivos
+if gamePassesPath:IsA("Folder") then
+    iterateAndChangeValue(gamePassesPath)
+else
+    warn("gamePassesPath no es una carpeta válida")
+end

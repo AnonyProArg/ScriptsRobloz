@@ -518,7 +518,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
-local 3D = Window:MakeTab({
+local DZy = Window:MakeTab({
     Name = "Menus Modo Panel",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -526,9 +526,10 @@ local 3D = Window:MakeTab({
     Name = "En Desarrollo"
 })
 
-3D:AddButton({
+DZy:AddButton({
     Name = "Biblioteca V3 en construcción",
     Callback = function()
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/BibliotecaV3.lua'))()
 
 end

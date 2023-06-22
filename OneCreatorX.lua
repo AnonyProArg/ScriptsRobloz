@@ -14,6 +14,14 @@ local GeneralesSection = Window:MakeTab({
 })
 
 GeneralesSection:AddButton({
+    Name = "ESP Players",
+    Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Esp.lua'))()
+
+end
+})
+
+GeneralesSection:AddButton({
     Name = "InfityYield (Comandos Hacks)",
     Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()

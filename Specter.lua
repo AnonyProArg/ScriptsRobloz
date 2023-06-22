@@ -5,7 +5,12 @@ local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 local roomPositions = {}
 local waterPositions = {}
 local savedPosition = nil
+local extraPositions = {}
 local floatingButtons = {}
+
+local currentRoomIndex = 1
+local currentWaterIndex = 1
+local currentExtraIndex = 1
 
 local function getRoomPositions()
     local roomsFolder = workspace.House.Rooms
@@ -24,7 +29,7 @@ local function getWaterPositions()
         end
     end
 
-  local bone = workspace.House.Bone
+    local bone = workspace.House.Bone
     if bone and bone:IsA("BasePart") then
         table.insert(waterPositions, bone.Position)
     end
@@ -39,10 +44,6 @@ local function getWaterPositions()
         table.insert(waterPositions, eeRock1.Position + Vector3.new(0, 2, 0))
     end
 end
-
-
-local currentRoomIndex = 1
-local currentWaterIndex = 1
 
 local function gotoNextRoomPosition()
     if currentRoomIndex <= #roomPositions then
@@ -82,10 +83,25 @@ local function teleportToVanSpawn()
     if vanSpawn then
         LocalPlayer.Character:MoveTo(vanSpawn.Position)
         LocalPlayer.Character.Humanoid.WalkSpeed = 15
-        Game.Workspace.House.Walls:Destroy()
+        workspace.House.Walls:Destroy()
     end
 end
 
+local function getExtraPositions()
+    local eeFolder = workspace.House.EE
+    for _, part in ipairs(eeFolder:GetDescendants()) do
+        if part:IsA("BasePart") then
+            table.insert(extraPositions, part.Position)
+        end
+    end
+end
+
+local function gotoNextExtraPosition()
+    if currentExtraIndex <= #extraPositions then
+        LocalPlayer.Character:MoveTo(extraPositions[currentExtraIndex])
+        currentExtraIndex = currentExtraIndex + 1
+    end
+end
 
 local function destroyFloatingButtons()
     for _, button in ipairs(floatingButtons) do
@@ -120,7 +136,11 @@ createButton("Luz", teleportToFuseBox)
 createButton("Guardar ubicación", savePlayerLocation)
 createButton("TP a ubicación guardada", teleportToSavedLocation)
 createButton("Ir a la Van", teleportToVanSpawn)
+createButton("Ítems Extras", gotoNextExtraPosition)
 createButton("Destruir botones flotantes", destroyFloatingButtons)
 
 getRoomPositions()
 getWaterPositions()
+getExtraPositions()
+
+LocalPlayer.Character.Humanoid.Gravity = 300

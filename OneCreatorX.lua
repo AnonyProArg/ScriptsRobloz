@@ -134,7 +134,7 @@ GeneralesSection:AddButton({
 
 -- Paso adicional: Crear el botón "Atravesar All v1" en la sección "Generales"
 GeneralesSection:AddButton({
-    Name = "Atravesar All v1",
+    Name = "Atravesar All v1 Broken(Roto)",
     Callback = function()
         
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Nocolision.lua"))()

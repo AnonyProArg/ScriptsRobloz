@@ -78,7 +78,7 @@ local function HandleHornos(hornoList, waitTime)
 
         local bakeArgs = {
             [1] = horno,
-            [2] = "Exotic"
+            [2] = "Boba Smoothie"
         }
 
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("StartBake"):FireServer(unpack(bakeArgs))

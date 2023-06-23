@@ -1,3 +1,4 @@
+local gamePassesPath = game.Players.LocalPlayer.GamePasses
 local gamePassesPath = game.Players.LocalPlayer.Gamepasses
 
 local function changeValueToTrue(object)

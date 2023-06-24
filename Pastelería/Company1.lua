@@ -43,7 +43,7 @@ spawn(function()
 end)
 
 spawn(function()
-    clickMoneyLoop(74, "TextButton", "Instance")
+    clickMoneyLoop(200, "TextButton", "Instance")
 end)
 
 

@@ -35,8 +35,6 @@ for i = 1, buttonCount do
 
     button.MouseButton1Click:Connect(function()
         while true do
-game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
-
             local directory = game.Workspace.Tycoon.Tycoons[companyName].Buttons
 
             local leftFoot = character:WaitForChild("LeftFoot")
@@ -51,6 +49,8 @@ game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]
             end
 
             wait(5)
+
+game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
 
             if not screenGui:IsDescendantOf(game) then
                 break

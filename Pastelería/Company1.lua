@@ -1,9 +1,9 @@
-local function clickMoneyLoop()
+local function clickMoneyLoop(amount, buttonType, instanceType)
     while true do
         local args = {
-            [1] = 74,
-            [2] = "TextButton",
-            [3] = "Instance"
+            [1] = amount,
+            [2] = buttonType,
+            [3] = instanceType
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("ClickMoney"):InvokeServer(unpack(args))
@@ -18,6 +18,16 @@ local function collectMoneyLoop()
     end
 end
 
-spawn(clickMoneyLoop)
-spawn(collectMoneyLoop)
+spawn(function()
+    clickMoneyLoop(400, "TextButton", "Instance")
+end)
 
+spawn(function()
+    clickMoneyLoop(196, "TextButton", "Instance")
+end)
+
+spawn(function()
+    clickMoneyLoop(74, "TextButton", "Instance")
+end)
+
+spawn(collectMoneyLoop)

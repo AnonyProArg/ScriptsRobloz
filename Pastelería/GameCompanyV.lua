@@ -64,7 +64,7 @@ local posicion = jugador.Character.HumanoidRootPart.Position
 -- Calcular la posición central de la plataforma
 local mitadX = math.floor(posicion.X)
 local mitadZ = math.floor(posicion.Z)
-local mitadY = math.floor(posicion.Y) +3 -- Ajusta la altura de la plataforma a la altura del jugador + 1
+local mitadY = math.floor(posicion.Y) + 4 -- Ajusta la altura de la plataforma a la altura del jugador + 1
 
 -- Crear la plataforma en la posición central
 local plataforma = Instance.new("Part")
@@ -76,6 +76,49 @@ plataforma.Parent = workspace
 
 -- Imprimir la posición de la plataforma en la consola
 print("Plataforma generada en la posición: ", plataforma.Position)
+
+-- Obtener el jugador local
+local jugadorLocal = game.Players.LocalPlayer
+
+-- Crear las paredes
+local alturaPared = 10
+
+-- Crear la primera pared al lado izquierdo del jugador
+local primeraPared = Instance.new("Part")
+primeraPared.Size = Vector3.new(1, alturaPared, 10)
+primeraPared.Position = jugadorLocal.Character.HumanoidRootPart.Position - Vector3.new(2, 0, 0)
+primeraPared.BrickColor = BrickColor.new("Bright blue")
+primeraPared.CanCollide = true
+primeraPared.Anchored = true
+primeraPared.Parent = game.Workspace
+
+-- Crear la segunda pared al lado derecho del jugador
+local segundaPared = Instance.new("Part")
+segundaPared.Size = Vector3.new(1, alturaPared, 10)
+segundaPared.Position = jugadorLocal.Character.HumanoidRootPart.Position + Vector3.new(2, 0, 0)
+segundaPared.BrickColor = BrickColor.new("Bright blue")
+segundaPared.CanCollide = true
+segundaPared.Anchored = true
+segundaPared.Parent = game.Workspace
+
+-- Crear la tercera pared detrás del jugador
+local terceraPared = Instance.new("Part")
+terceraPared.Size = Vector3.new(10, alturaPared, 1)
+terceraPared.Position = jugadorLocal.Character.HumanoidRootPart.Position - Vector3.new(0, 0, 2)
+terceraPared.BrickColor = BrickColor.new("Bright blue")
+terceraPared.CanCollide = true
+terceraPared.Anchored = true
+terceraPared.Parent = game.Workspace
+
+-- Crear la cuarta pared frente al jugador
+local cuartaPared = Instance.new("Part")
+cuartaPared.Size = Vector3.new(10, alturaPared, 1)
+cuartaPared.Position = jugadorLocal.Character.HumanoidRootPart.Position + Vector3.new(0, 0, 2)
+cuartaPared.BrickColor = BrickColor.new("Bright blue")
+cuartaPared.CanCollide = true
+cuartaPared.Anchored = true
+cuartaPared.Parent = game.Workspace
+
 
 -- Obtener el personaje del jugador local
 local player = game.Players.LocalPlayer

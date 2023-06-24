@@ -3,6 +3,22 @@ screenGui.Parent = game.Players.LocalPlayer.PlayerGui
 
 local buttonCount = 6
 
+local function findHead(obj)
+    if obj.Name == "Head" then
+        return obj
+    else
+        for _, child in ipairs(obj:GetChildren()) do
+            local foundObj = findHead(child)
+            if foundObj then
+                return foundObj
+            end
+        end
+    end
+end
+
+local player = game.Players.LocalPlayer
+local character = player.Character
+
 for i = 1, buttonCount do
     local companyName = "Company " .. i
 
@@ -17,49 +33,26 @@ for i = 1, buttonCount do
         while true do
             local directory = game.Workspace.Tycoon.Tycoons[companyName].Buttons
 
-            local player = game.Players.LocalPlayer
-            local character = player.Character
             local leftFoot = character:WaitForChild("LeftFoot")
             local newPosition = leftFoot.Position
 
             for _, button in pairs(directory:GetChildren()) do
-                local head = button.Head
-                head.Position = newPosition
+                button.Head.Position = newPosition
             end
 
             wait(5)
 
-            local entrance = game.Workspace.Tycoon.Tycoons[companyName].Entrance
-
-            local function findHead(obj)
-                if obj.Name == "Head" then
-                    return obj
-                else
-                    for _, child in ipairs(obj:GetChildren()) do
-                        local foundObj = findHead(child)
-                        if foundObj then
-                            return foundObj
-                        end
-                    end
-                end
-            end
-
-            local head = findHead(entrance)
-            if head then
-                head.CanCollide = true
-                head.Transparency = 0
-            end
-
             local purchasedObjects = game.Workspace.Tycoon.Tycoons[companyName].PurchasedObjects
-            local computerUpgrade2 = purchasedObjects.ComputerUpgrade2 -- Asegúrate de que el objeto "ComputerUpgrade2" se llame correctamente en el directorio
+            local computerUpgrade2 = purchasedObjects:WaitForChild("ComputerUpgrade2")
             local screen = computerUpgrade2.Monitor.Other.Screen
-            screen.Size = Vector3.new(25, 12, 12) -- Asegúrate de proporcionar los tres componentes del vector
+            screen.CanCollide = false
+           Screen.Size = Vector3.new(10, 5, 10)
 
-            local clickDetector = computerUpgrade2.Monitor.Other.Screen.ClickDetector
+            local head = character:WaitForChild("Head")
+            screen.Position = head.Position
+
+            local clickDetector = screen:WaitForChild("ClickDetector")
             clickDetector.MaxActivationDistance = 900
-
-            local textLabel = computerUpgrade2.Monitor.Other.Screen.SurfaceGui.Frame.TextLabel
-            textLabel.Text = "---------------OneCreatorX" -- Asegúrate de proporcionar un valor de texto válido
 
             if not screenGui:IsDescendantOf(game) then
                 break

@@ -97,7 +97,7 @@ local hornoList = {}
 for _, horno in ipairs(workspace.Plots.Plot5.Ovens:GetChildren()) do
     table.insert(hornoList, {
         Horno = horno,
-        Posicion = horno.Fill.Position -- Corregido el nombre de la variable hornoScreen a horno.Screen
+        Posicion = horno.Sceen.Position -- Corregido el nombre de la variable hornoScreen a horno.Screen
     })
 end
 

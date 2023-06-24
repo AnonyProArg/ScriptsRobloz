@@ -131,9 +131,6 @@ if character and character:FindFirstChild("Humanoid") then
     while true do
         -- Cambiar el valor de Sit
         humanoid.Sit = not humanoid.Sit
-
-game:GetService("ReplicatedStorage").CollectMoney:InvokeServer()
-
         -- Esperar 2 segundos antes de cambiar nuevamente
         wait(2)
     end

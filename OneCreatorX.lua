@@ -296,6 +296,20 @@ TycoonsSection:AddButton({
   end
 })
 
+TycoonsSection:AddButton({
+    Name = "Games Company Verify",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/GameCompanyV.lua"))()
+  end
+})
+
+TycoonsSection:AddButton({
+    Name = "Auto Comprar/AutoBuy",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Company.lua"))()
+  end
+})
+
 -- Sección de Doors
 local DoorsSection = Window:MakeTab({
     Name = "Doors",

@@ -42,9 +42,4 @@ spawn(function()
     clickMoneyLoop(74, "TextButton", "Instance")
 end)
 
-spawn(function()
-    clickMoneyLoop(200, "TextButton", "Instance")
-end)
-
-
 spawn(collectMoneyLoop)

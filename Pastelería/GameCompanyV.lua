@@ -64,7 +64,7 @@ local posicion = jugador.Character.HumanoidRootPart.Position
 -- Calcular la posición central de la plataforma
 local mitadX = math.floor(posicion.X)
 local mitadZ = math.floor(posicion.Z)
-local mitadY = math.floor(posicion.Y) +2 -- Ajusta la altura de la plataforma a la altura del jugador + 1
+local mitadY = math.floor(posicion.Y) +3 -- Ajusta la altura de la plataforma a la altura del jugador + 1
 
 -- Crear la plataforma en la posición central
 local plataforma = Instance.new("Part")

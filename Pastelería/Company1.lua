@@ -7,7 +7,7 @@ local function clickMoneyLoop()
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("ClickMoney"):InvokeServer(unpack(args))
-        wait(0.2)
+        wait(0.15)
     end
 end
 

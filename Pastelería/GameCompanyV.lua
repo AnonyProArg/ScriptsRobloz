@@ -1,4 +1,3 @@
-
 -- Crear la ScreenGUI
 local gui = Instance.new("ScreenGui")
 gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -58,6 +57,26 @@ for i, companyName in ipairs(companies) do
     valueLabel:Destroy()
 end
 
+-- Obtener el jugador y su posición
+local jugador = game.Players.LocalPlayer
+local posicion = jugador.Character.HumanoidRootPart.Position
+
+-- Calcular la posición central de la plataforma
+local mitadX = math.floor(posicion.X)
+local mitadZ = math.floor(posicion.Z)
+local mitadY = math.floor(posicion.Y)  -- Ajusta la altura de la plataforma a la altura del jugador + 1
+
+-- Crear la plataforma en la posición central
+local plataforma = Instance.new("Part")
+plataforma.Size = Vector3.new(10, 1, 10)
+plataforma.Position = Vector3.new(mitadX, mitadY, mitadZ)
+plataforma.BrickColor = BrickColor.new("Bright blue") -- Cambia el color de la plataforma si lo deseas
+plataforma.Anchored = true -- Asegura la plataforma en su posición
+plataforma.Parent = workspace
+
+-- Imprimir la posición de la plataforma en la consola
+print("Plataforma generada en la posición: ", plataforma.Position)
+
 -- Obtener el personaje del jugador local
 local player = game.Players.LocalPlayer
 local character = player.Character
@@ -71,6 +90,6 @@ if character and character:FindFirstChild("Humanoid") then
         humanoid.Sit = not humanoid.Sit
 
         -- Esperar 2 segundos antes de cambiar nuevamente
-        wait(2)
+        wait(5)
     end
 end

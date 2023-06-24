@@ -12,6 +12,11 @@ Frame.BackgroundTransparency = 0.5
 Frame.BackgroundColor3 = Color3.new(0, 0, 0)
 Frame.Parent = ScreenGui
 
+-- Función para destruir el UI
+local function DestroyUI()
+    ScreenGui:Destroy()
+end
+
 -- Crear los 6 botones
 for i = 1, 6 do
     local Button = Instance.new("TextButton")
@@ -24,9 +29,10 @@ for i = 1, 6 do
     Button.Text = "Posición " .. i
     Button.Parent = Frame
 
-    -- Evento de clic para ejecutar el script
+    -- Evento de clic para ejecutar el script y destruir el UI
     Button.MouseButton1Click:Connect(function()
         local scriptUrl = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Cafe" .. i .. ".lua"
         loadstring(game:HttpGet(scriptUrl))()
+        DestroyUI()
     end)
 end

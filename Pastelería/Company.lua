@@ -23,6 +23,8 @@ local character = player.Character
 for i = 1, buttonCount do
     local companyName = "Company " .. i
 
+game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
+
     local button = Instance.new("TextButton")
     button.Name = companyName
     button.Text = companyName
@@ -49,8 +51,6 @@ for i = 1, buttonCount do
             end
 
             wait(5)
-
-game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
 
             local purchasedObjects = game.Workspace.Tycoon.Tycoons[companyName].PurchasedObjects
             local computerUpgrade2 = purchasedObjects:WaitForChild("ComputerUpgrade2")

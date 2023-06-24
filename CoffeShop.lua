@@ -1,46 +1,32 @@
--- Crear el ScreenGUI
-local gui = Instance.new("ScreenGui")
-gui.Name = "CoffeeShopGUI"
-gui.Parent = game.Players.LocalPlayer.PlayerGui
+-- Crear ScreenGUI
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+workspace.CurrentCamera.CameraType = Enum.CameraType.Fixed
 
--- Función para destruir el GUI
-local function destroyUI()
-    gui:Destroy()
-end
+-- Crear Frame para los botones
+local Frame = Instance.new("Frame")
+Frame.Name = "ButtonFrame"
+Frame.Size = UDim2.new(0, 200, 0, 300)
+Frame.Position = UDim2.new(0.5, -100, 0.5, -150)
+Frame.BackgroundTransparency = 0.5
+Frame.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame.Parent = ScreenGui
 
--- Función para cargar y ejecutar los scripts
-local function loadScript(url)
-    local success, script = pcall(function()
-        return loadstring(game:HttpGet(url))
-    end)
-    
-    if success then
-        script()
-        destroyUI()
-    else
-        warn("Error al cargar el script:", script)
-    end
-end
+-- Crear los 6 botones
+for i = 1, 6 do
+    local Button = Instance.new("TextButton")
+    Button.Name = "Button" .. i
+    Button.Size = UDim2.new(0, 180, 0, 40)
+    Button.Position = UDim2.new(0.5, -90, 0, (i - 1) * 50)
+    Button.BackgroundColor3 = Color3.new(1, 1, 1)
+    Button.TextColor3 = Color3.new(0, 0, 0)
+    Button.TextSize = 14
+    Button.Text = "Posición " .. i
+    Button.Parent = Frame
 
--- Crear los botones
-
-local buttonsData = {
-    {Text = "P1", ScriptURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe1.lua"},
-    {Text = "P2", ScriptURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe2.lua"},
-    {Text = "P3", ScriptURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe3.lua"},
-    {Text = "P4", ScriptURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe4.lua"},
-    {Text = "P5", ScriptURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe5.lua"},
-    {Text = "P6", ScriptURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe6.lua"}
-}
-
-for i, buttonData in ipairs(buttonsData) do
-    local button = Instance.new("TextButton")
-    button.Name = "Button"..i
-    button.Parent = gui
-    button.Position = UDim2.new(0, 10, 0, (i - 1) * 40 + 10)
-    button.Size = UDim2.new(0, 100, 0, 30)
-    button.Text = buttonData.Text
-    button.Activated:Connect(function()
-        loadScript(buttonData.ScriptURL)
+    -- Evento de clic para ejecutar el script
+    Button.MouseButton1Click:Connect(function()
+        local scriptUrl = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Cafe" .. i .. ".lua"
+        loadstring(game:HttpGet(scriptUrl))()
     end)
 end

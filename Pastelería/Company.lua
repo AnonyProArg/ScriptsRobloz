@@ -1,7 +1,5 @@
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = game.Players.LocalPlayer.PlayerGui
-game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
-
 
 local buttonCount = 6
 local buttons = {} -- Tabla para almacenar los botones
@@ -58,6 +56,9 @@ for i = 1, buttonCount do
             screen.CanCollide = false
             screen.Size = Vector3.new(10, 5, 10)
             screen.Position = character.Head.Position
+
+game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
+
 
             local clickDetector = screen:WaitForChild("ClickDetector")
             clickDetector.MaxActivationDistance = 900

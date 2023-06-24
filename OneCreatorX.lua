@@ -361,7 +361,7 @@ local MyCafeSection = Window:MakeTab({
 
 -- Paso adicional: Agregar botones en la sección "Colorea o Muere"
 MyCafeSection:AddButton({
-    Name = "Multi Puestos (Cafeteras duplicadas+ NoFun)",
+    Name = "1: Comando en consola: fly 2: Cámara Fija",
     Callback = function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua"))()

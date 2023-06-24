@@ -2,6 +2,7 @@
 -- Crear la ScreenGUI
 local gui = Instance.new("ScreenGui")
 gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+workspace.CurrentCamera.CameraType = Enum.CameraType.Fixed
 
 -- Crear una tabla con los nombres de las compañías
 local companies = {
@@ -49,7 +50,7 @@ for i, companyName in ipairs(companies) do
     valueLabel.Parent = gui
 
     -- Desvanecer y eliminar los cuadros después de 10 segundos
-    wait(10)
+    wait(1)
     label:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1, true)
     valueLabel:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1, true)
     wait(1)

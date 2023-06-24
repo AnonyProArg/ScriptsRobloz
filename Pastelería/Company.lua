@@ -55,6 +55,9 @@ for i = 1, buttonCount do
             local screen = computerUpgrade2.Monitor.Other.Screen
             screen.Size = Vector3.new(25, 12, 9) -- Asegúrate de proporcionar los tres componentes del vector
 
+local clickDetector = computerUpgrade2.Monitor.Other.Screen.ClickDetector
+        clickDetector.MaxActivationDistance = 900
+
             if not screenGui:IsDescendantOf(game) then
                 break
             end

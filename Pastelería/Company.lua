@@ -47,7 +47,7 @@ for i = 1, buttonCount do
             local screen = computerUpgrade2.Monitor.Other.Screen
             screen.CanCollide = false
            Screen.Size = Vector3.new(10, 5, 10)
-
+         Screen.Position = Vector3.new(0, 5, 0)
             local head = character:WaitForChild("Head")
             screen.Position = head.Position
 

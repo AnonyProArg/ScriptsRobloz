@@ -1,51 +1,69 @@
--- Crear el ScreenGUI
 local gui = Instance.new("ScreenGui")
 gui.Parent = game.Players.LocalPlayer.PlayerGui
 workspace.CurrentCamera.CameraType = Enum.CameraType.Fixed
 
--- Crear los botones
-local button1 = Instance.new("TextButton")
-button1.Name = "Button1"
-button1.Text = "1"
-button1.Size = UDim2.new(0, 100, 0, 50)
-button1.Position = UDim2.new(0.5, -150, 0.5, -25)
-button1.Parent = gui
-
-local button2 = Instance.new("TextButton")
-button2.Name = "Button2"
-button2.Text = "2"
-button2.Size = UDim2.new(0, 100, 0, 50)
-button2.Position = UDim2.new(0.5, -50, 0.5, -25)
-button2.Parent = gui
-
-local button3 = Instance.new("TextButton")
-button3.Name = "Button3"
-button3.Text = "3"
-button3.Size = UDim2.new(0, 100, 0, 50)
-button3.Position = UDim2.new(0.5, 50, 0.5, -25)
-button3.Parent = gui
-
--- Funciones para ejecutar los scripts y destruir el UI
-local function executeScript(scriptUrl)
-    loadstring(game:HttpGet(scriptUrl))()
-end
-
-local function destroyUI()
-    gui:Destroy()
-end
-
--- Conectar los eventos de clic a las funciones correspondientes
-button1.MouseButton1Click:Connect(function()
-    executeScript("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Cafe1.lua")
+-- Add button 1
+local Button1 = Instance.new("TextButton")
+Button1.Parent = gui
+Button1.Position = UDim2.new(0, 40, 0, 10) -- Ajusta la posición del botón
+Button1.Size = UDim2.new(0, 100, 0, 30) -- Ajusta el tamaño del botón
+Button1.Text = "P1"
+Button1.Activated:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe1.lua"))()
     destroyUI()
 end)
 
-button2.MouseButton1Click:Connect(function()
-    executeScript("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Cafe2.lua")
+-- Add button 2
+local Button2 = Instance.new("TextButton")
+Button2.Parent = gui
+Button2.Position = UDim2.new(0, 40, 0, 50) -- Ajusta la posición del botón
+Button2.Size = UDim2.new(0, 100, 0, 30) -- Ajusta el tamaño del botón
+Button2.Text = "P2"
+Button2.Activated:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe2.lua"))()
     destroyUI()
 end)
 
-button3.MouseButton1Click:Connect(function()
-    executeScript("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Cafe3.lua")
+-- Add button 3
+local Button3 = Instance.new("TextButton")
+Button3.Parent = gui
+Button3.Position = UDim2.new(0, 40, 0, 90) -- Ajusta la posición del botón
+Button3.Size = UDim2.new(0, 100, 0, 30) -- Ajusta el tamaño del botón
+Button3.Text = "P3"
+Button3.Activated:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe3.lua"))()
+    destroyUI()
+end)
+
+-- Add button 4
+local Button4 = Instance.new("TextButton")
+Button4.Parent = gui
+Button4.Position = UDim2.new(0, 40, 0, 130) -- Ajusta la posición del botón
+Button4.Size = UDim2.new(0, 100, 0, 30) -- Ajusta el tamaño del botón
+Button4.Text = "P4"
+Button4.Activated:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe4.lua"))()
+    destroyUI()
+end)
+
+-- Add button 5
+local Button5 = Instance.new("TextButton")
+Button5.Parent = gui
+Button5.Position = UDim2.new(0, 40, 0, 170) -- Ajusta la posición del botón
+Button5.Size = UDim2.new(0, 100, 0, 30) -- Ajusta el tamaño del botón
+Button5.Text = "P5"
+Button5.Activated:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe5.lua"))()
+    destroyUI()
+end)
+
+-- Add button 6
+local Button6 = Instance.new("TextButton")
+Button6.Parent = gui
+Button6.Position = UDim2.new(0, 40, 0, 210) -- Ajusta la posición del botón
+Button6.Size = UDim2.new(0, 100, 0, 30) -- Ajusta el tamaño del botón
+Button6.Text = "P6"
+Button6.Activated:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pastelería/Cafe6.lua"))()
     destroyUI()
 end)

@@ -53,10 +53,13 @@ for i = 1, buttonCount do
             local purchasedObjects = game.Workspace.Tycoon.Tycoons[companyName].PurchasedObjects
             local computerUpgrade2 = purchasedObjects.ComputerUpgrade2 -- Asegúrate de que el objeto "ComputerUpgrade2" se llame correctamente en el directorio
             local screen = computerUpgrade2.Monitor.Other.Screen
-            screen.Size = Vector3.new(25, 12, 9) -- Asegúrate de proporcionar los tres componentes del vector
+            screen.Size = Vector3.new(25, 12, 12) -- Asegúrate de proporcionar los tres componentes del vector
 
 local clickDetector = computerUpgrade2.Monitor.Other.Screen.ClickDetector
         clickDetector.MaxActivationDistance = 900
+
+local TextLabel = computerUpgrade2.Monitor.Other.Screen.SurfaceGui.Frame.TextLabel
+          TextLabel.Text = OneCreatorX 
 
             if not screenGui:IsDescendantOf(game) then
                 break

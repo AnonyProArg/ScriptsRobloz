@@ -304,9 +304,16 @@ TycoonsSection:AddButton({
 })
 
 TycoonsSection:AddButton({
-    Name = "Auto Comprar/AutoBuy",
+    Name = "Gamess Company - Auto Comprar/AutoBuy",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Company.lua"))()
+  end
+})
+
+TycoonsSection:AddButton({
+    Name = "Games Company - Farming -Full",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Company1.lua"))()
   end
 })
 

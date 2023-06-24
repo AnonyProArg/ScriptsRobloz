@@ -52,16 +52,6 @@ game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]
 
             wait(5)
 
-            local purchasedObjects = game.Workspace.Tycoon.Tycoons[companyName].PurchasedObjects
-            local computerUpgrade2 = purchasedObjects:WaitForChild("ComputerUpgrade2")
-            local screen = computerUpgrade2.Monitor.Other.Screen
-            screen.CanCollide = false
-            screen.Size = Vector3.new(10, 5, 10)
-            screen.Position = character.Head.Position
-
-            local clickDetector = screen:WaitForChild("ClickDetector")
-            clickDetector.MaxActivationDistance = 900
-
             if not screenGui:IsDescendantOf(game) then
                 break
             end

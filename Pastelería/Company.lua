@@ -53,7 +53,7 @@ for i = 1, buttonCount do
             local purchasedObjects = game.Workspace.Tycoon.Tycoons[companyName].PurchasedObjects
             local computerUpgrade2 = purchasedObjects.ComputerUpgrade2 -- Asegúrate de que el objeto "ComputerUpgrade2" se llame correctamente en el directorio
             local screen = computerUpgrade2.Monitor.Other.Screen
-            screen.Size = Vector3.new(25, 12, 6) -- Asegúrate de proporcionar los tres componentes del vector
+            screen.Size = Vector3.new(25, 12, 9) -- Asegúrate de proporcionar los tres componentes del vector
 
             if not screenGui:IsDescendantOf(game) then
                 break

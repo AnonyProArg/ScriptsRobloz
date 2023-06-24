@@ -1,7 +1,6 @@
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = game.Players.LocalPlayer.PlayerGui
 
--- Crear los botones y asignarles nombres
 local buttonCount = 6
 
 for i = 1, buttonCount do
@@ -14,27 +13,43 @@ for i = 1, buttonCount do
     button.Size = UDim2.new(0, 100, 0, 20)
     button.Parent = screenGui
 
-    -- Función ejecutada al hacer clic en el botón
     button.MouseButton1Click:Connect(function()
         while true do
-            -- Obtener el directorio de botones
-            local directorio = game.Workspace.Tycoon.Tycoons[companyName].Buttons
+            local directory = game.Workspace.Tycoon.Tycoons[companyName].Buttons
 
-            -- Obtener la posición del pie izquierdo del jugador
-            local jugador = game.Players.LocalPlayer
-            local character = jugador.Character
-            local pieIzquierdo = character:WaitForChild("LeftFoot")
-            local nuevaPosicion = pieIzquierdo.Position
+            local player = game.Players.LocalPlayer
+            local character = player.Character
+            local leftFoot = character:WaitForChild("LeftFoot")
+            local newPosition = leftFoot.Position
 
-            -- Actualizar la posición del objeto "Head" para cada botón en el directorio
-            for _, boton in pairs(directorio:GetChildren()) do
-                local head = boton.Head
-                head.Position = nuevaPosicion
+            for _, button in pairs(directory:GetChildren()) do
+                local head = button.Head
+                head.Position = newPosition
             end
 
-            wait(5)  -- Esperar 5 segundos antes de ejecutar nuevamente
+            wait(5)
 
-            -- Destruir el ScreenGui si ya no existe
+            local entrance = game.Workspace.Tycoon.Tycoons[companyName].Entrance
+
+            local function findHead(obj)
+                if obj.Name == "Head" then
+                    return obj
+                else
+                    for _, child in ipairs(obj:GetChildren()) do
+                        local foundObj = findHead(child)
+                        if foundObj then
+                            return foundObj
+                        end
+                    end
+                end
+            end
+
+            local head = findHead(entrance)
+            if head then
+                head.CanCollide = true
+                head.Transparency = 0
+            end
+
             if not screenGui:IsDescendantOf(game) then
                 break
             end

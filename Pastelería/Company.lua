@@ -23,8 +23,6 @@ local character = player.Character
 for i = 1, buttonCount do
     local companyName = "Company " .. i
 
-game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
-
     local button = Instance.new("TextButton")
     button.Name = companyName
     button.Text = companyName
@@ -37,6 +35,8 @@ game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]
 
     button.MouseButton1Click:Connect(function()
         while true do
+game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
+
             local directory = game.Workspace.Tycoon.Tycoons[companyName].Buttons
 
             local leftFoot = character:WaitForChild("LeftFoot")

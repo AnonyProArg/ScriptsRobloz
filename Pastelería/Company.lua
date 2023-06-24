@@ -1,5 +1,7 @@
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
+
 
 local buttonCount = 6
 local buttons = {} -- Tabla para almacenar los botones

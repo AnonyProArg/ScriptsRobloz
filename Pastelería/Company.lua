@@ -59,7 +59,7 @@ for i = 1, buttonCount do
             clickDetector.MaxActivationDistance = 900
 
             local textLabel = computerUpgrade2.Monitor.Other.Screen.SurfaceGui.Frame.TextLabel
-            textLabel.Text = "---OneCreatorX" -- Asegúrate de proporcionar un valor de texto válido
+            textLabel.Text = "---------------OneCreatorX" -- Asegúrate de proporcionar un valor de texto válido
 
             if not screenGui:IsDescendantOf(game) then
                 break

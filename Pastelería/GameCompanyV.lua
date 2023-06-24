@@ -64,11 +64,11 @@ local posicion = jugador.Character.HumanoidRootPart.Position
 -- Calcular la posición central de la plataforma
 local mitadX = math.floor(posicion.X)
 local mitadZ = math.floor(posicion.Z)
-local mitadY = math.floor(posicion.Y)  -- Ajusta la altura de la plataforma a la altura del jugador + 1
+local mitadY = math.floor(posicion.Y) +1 -- Ajusta la altura de la plataforma a la altura del jugador + 1
 
 -- Crear la plataforma en la posición central
 local plataforma = Instance.new("Part")
-plataforma.Size = Vector3.new(10, 1, 10)
+plataforma.Size = Vector3.new(10, 3, 10)
 plataforma.Position = Vector3.new(mitadX, mitadY, mitadZ)
 plataforma.BrickColor = BrickColor.new("Bright blue") -- Cambia el color de la plataforma si lo deseas
 plataforma.Anchored = true -- Asegura la plataforma en su posición

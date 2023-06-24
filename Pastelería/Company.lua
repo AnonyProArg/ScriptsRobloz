@@ -50,15 +50,14 @@ for i = 1, buttonCount do
 
             wait(5)
 
+game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
+
             local purchasedObjects = game.Workspace.Tycoon.Tycoons[companyName].PurchasedObjects
             local computerUpgrade2 = purchasedObjects:WaitForChild("ComputerUpgrade2")
             local screen = computerUpgrade2.Monitor.Other.Screen
             screen.CanCollide = false
             screen.Size = Vector3.new(10, 5, 10)
             screen.Position = character.Head.Position
-
-game.Workspace.Tycoon.Tycoons[companyName].Buttons["Buy Red Laser Gun - [$10000]"]:Remove()
-
 
             local clickDetector = screen:WaitForChild("ClickDetector")
             clickDetector.MaxActivationDistance = 900

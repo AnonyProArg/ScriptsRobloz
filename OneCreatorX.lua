@@ -227,6 +227,13 @@ GeneralesSection:AddButton({
     end
 })
 
+GeneralesSection:AddButton({
+    Name = "Caminar Sobre plataformas",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/CaminarPlataforma.lua"))()
+    end
+})
+
 -- Paso adicional: Crear una sección llamada "Meepcity"
 local MeepcitySection = Window:MakeTab({
     Name = "Meepcity",

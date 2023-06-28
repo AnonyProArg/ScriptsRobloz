@@ -11,7 +11,7 @@ local function executeSpam(zone, time)
         local gasPumps = workspace.Map.Zones["1"][tostring(zone)].GasStation.GasPumps
         while true do
             game:GetService("ReplicatedStorage").Remotes.Game.ClientToggleUseGasStation:FireServer(gasPumps, true)
-            wait(0.1)
+            wait(0.2)
         end
     end)
 

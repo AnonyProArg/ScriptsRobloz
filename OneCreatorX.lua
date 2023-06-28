@@ -248,6 +248,13 @@ GeneralesSection:AddButton({
     end
 })
 
+GeneralesSection:AddButton({
+    Name = "Plataforma +10 de altura",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/%2B10DeAltura.lua"))()
+    end
+})
+
 -- Paso adicional: Crear una sección llamada "Meepcity"
 local MeepcitySection = Window:MakeTab({
     Name = "Meepcity",

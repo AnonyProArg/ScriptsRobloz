@@ -583,7 +583,7 @@ local DZy = Window:MakeTab({
 })
 
 DZy:AddButton({
-    Name = "Biblioteca V3 en construcción",
+    Name = "Auto Alejarse de jugadores",
     Callback = function()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/BibliotecaV3.lua'))()

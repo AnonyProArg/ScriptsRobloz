@@ -29,7 +29,7 @@ local flightButton = Instance.new("TextButton")
 flightButton.Name = "FlightButton"
 flightButton.Size = UDim2.new(0, 100, 0, 50)
 flightButton.Position = UDim2.new(0.5, -50, 0.5, -25)
-flightButton.Text = "Toggle Flight"
+flightButton.Text = "Caer/NoCaer"
 flightButton.Parent = screenGui
 
 -- Conectar el evento de clic del botón a la función toggleFlight

@@ -574,6 +574,24 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
+local Cesped = Window:MakeTab({
+    Name = "Corta Cesped",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+}):AddSection({
+    Name = "Face Betas"
+})
+
+Cesped:AddButton({
+    Name = "Auto Farm del 1-9(todavía no renace)",
+    Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/EjecuteAllCespet.lua'))()
+
+end
+})
+
+
 local DZy = Window:MakeTab({
     Name = "Menus Modo Panel",
     Icon = "rbxassetid://4483345998",

@@ -592,6 +592,15 @@ end
 })
 
 DZy:AddButton({
+    Name = "AutoAlejarse y regresar(Nodeactiva)",
+    Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejarse%2B.lua'))()
+
+end
+})
+
+DZy:AddButton({
     Name = "Biblioteca V3 en construcción",
     Callback = function()
 

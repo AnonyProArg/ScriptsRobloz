@@ -591,6 +591,15 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
+DZy:AddButton({
+    Name = "Biblioteca V3 en construcción",
+    Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejar%2B10.lua'))()
+
+end
+})
+
 -- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",

@@ -241,6 +241,13 @@ GeneralesSection:AddButton({
     end
 })
 
+GeneralesSection:AddButton({
+    Name = "TP jugador cercano",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Tp%20jugador%20cercano.lua"))()
+    end
+})
+
 -- Paso adicional: Crear una sección llamada "Meepcity"
 local MeepcitySection = Window:MakeTab({
     Name = "Meepcity",

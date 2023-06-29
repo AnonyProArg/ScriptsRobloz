@@ -618,7 +618,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 end
 })
 
--- Paso 5: Notificar al usuario con el título "OneCreatorX", contenido "Derechos reservados para OneCreatorX"
 OrionLib:MakeNotification({
     Name = "OneCreatorX",
     Content = "Derechos reservados para OneCreatorX",
@@ -626,5 +625,4 @@ OrionLib:MakeNotification({
     Time = 5
 })
 
--- Paso 15: Finalizar el script (REQUERIDO)
 OrionLib:Init()

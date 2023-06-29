@@ -51,7 +51,7 @@ local function dropClothesInChute()
 end
 
 local walkPositions = {
-    Vector3.new(131.265, 5.57671, -43.5038),
+    Vector3.new(-132.559, 4.49802, -44.7912),
     Vector3.new(-106.621, 5.57671, -11.1147)
 }
 

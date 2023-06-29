@@ -560,7 +560,7 @@ Laundry:AddButton({
     Name = "AutoGame(Puesto disponibles 3,4,5,6)",
     Callback = function()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Laundry4.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua"))()
 
 end
 })

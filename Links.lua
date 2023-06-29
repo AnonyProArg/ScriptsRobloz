@@ -4,3 +4,11 @@ Caminar sobre plataformas:https://github.com/AnonyProArg/ScriptsRobloz/blob/main
 Modo Espectador:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/ModoEspectador.lua
 Dex v3:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Dexv3.lua
 Atravesar Paredes:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Nocolision.lua
+Caer:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Caer.lua
+Alejarse de jugadores:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejarse%2B.lua
+Laundry Simulator:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua
+Inmortalv1(God):https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/inmortal%20v4.txt
+Inmortalv2(God):https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/inmortal%20versi%C3%B3n%203.txt
+Inmortalv3(God):https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/InmortalV2.txt
+My Coffee Shop(Mí Cafetería):https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua
+Tycoon de leche(Mili):https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Tycoon%20Milk.lua

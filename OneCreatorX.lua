@@ -557,19 +557,10 @@ local Laundry = Window:MakeTab({
 })
 
 Laundry:AddButton({
-    Name = "Puesto 4",
+    Name = "AutoGame(Puesto disponibles 3,4,5,6)",
     Callback = function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Laundry4.lua"))()
-
-end
-})
-
-Laundry:AddButton({
-    Name = "Puesto 5",
-    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Laundry5.lua"))()
 
 end
 })

@@ -21,7 +21,7 @@ title.Size = UDim2.new(1, 0, 0, 50)
 title.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 title.BorderSizePixel = 0
 title.Font = Enum.Font.GothamBold
-title.Text = "0neCreatorX"
+title.Text = "Laundry X"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 30
 

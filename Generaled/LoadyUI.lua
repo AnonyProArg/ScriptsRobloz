@@ -7,7 +7,7 @@ Window:Game({
     Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua",
     UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","OneCreatorX%203.lua"),
     Custom = {
-        Name = "OneCreatorX-Generales" 
+        Name = "Generales-Tools" 
     } 
 })
 

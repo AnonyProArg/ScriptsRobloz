@@ -595,7 +595,7 @@ DZy:AddButton({
     Name = "Auto Alejarse de jugadores",
     Callback = function()
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/BibliotecaV3.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejar%2B10.lua'))()
 
 end
 })
@@ -613,7 +613,7 @@ DZy:AddButton({
     Name = "Biblioteca V3 en construcción",
     Callback = function()
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejar%2B10.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua'))()
 
 end
 })

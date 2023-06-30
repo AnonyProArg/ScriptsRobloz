@@ -6,15 +6,17 @@ screenGui.Parent = game.Players.LocalPlayer.PlayerGui
 
 local frame = Instance.new("Frame")
 frame.Name = "ScriptBox"
-frame.Size = UDim2.new(0.5, 0, 1, 0)
-frame.Position = UDim2.new(0.25, 0, 0, 0)
-frame.BackgroundTransparency = 0.5
+frame.Size = UDim2.new(0.5, 0, 0.7, 0)
+frame.Position = UDim2.new(0.25, 0, 0.15, 0)
+frame.BackgroundTransparency = 0.8
 frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BorderSizePixel = 2
+frame.BorderColor3 = Color3.new(0.5, 0.5, 0.5)
 frame.Parent = screenGui
 
 local backgroundText = Instance.new("TextLabel")
 backgroundText.Name = "BackgroundText"
-backgroundText.Size = UDim2.new(1, 0, 1, 0)
+backgroundText.Size = UDim2.new(1, 0, 0.1, 0)
 backgroundText.Position = UDim2.new(0, 0, 0, 0)
 backgroundText.BackgroundTransparency = 1
 backgroundText.Text = "0neCreatorX"
@@ -23,40 +25,79 @@ backgroundText.Font = Enum.Font.SourceSansBold
 backgroundText.TextSize = 50
 backgroundText.Parent = frame
 
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Size = UDim2.new(0, 30, 0, 30)
+closeButton.Position = UDim2.new(1, -30, 0, 0)
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.new(1, 1, 1)
+closeButton.BackgroundColor3 = Color3.new(0, 0, 0)
+closeButton.BackgroundTransparency = 0.5
+closeButton.BorderSizePixel = 0
+closeButton.Font = Enum.Font.SourceSans
+closeButton.TextSize = 18
+closeButton.Parent = frame
+
 local minimizeButton = Instance.new("TextButton")
 minimizeButton.Name = "MinimizeButton"
-minimizeButton.Size = UDim2.new(0, 50, 0, 50)
-minimizeButton.Position = UDim2.new(1, -100, 0, 0)
+minimizeButton.Size = UDim2.new(0, 30, 0, 30)
+minimizeButton.Position = UDim2.new(0, 0, 0, 0)
 minimizeButton.Text = "-"
 minimizeButton.TextColor3 = Color3.new(1, 1, 1)
 minimizeButton.BackgroundColor3 = Color3.new(0, 0, 0)
+minimizeButton.BackgroundTransparency = 0.5
 minimizeButton.BorderSizePixel = 0
 minimizeButton.Font = Enum.Font.SourceSans
-minimizeButton.TextSize = 24
-minimizeButton.Parent = screenGui
+minimizeButton.TextSize = 18
+minimizeButton.Parent = frame
 
 local maximizeButton = Instance.new("TextButton")
 maximizeButton.Name = "MaximizeButton"
-maximizeButton.Size = UDim2.new(0, 50, 0, 50)
-maximizeButton.Position = UDim2.new(1, -50, 0, 0)
-maximizeButton.Text = "↑↓"
+maximizeButton.Size = UDim2.new(0, 30, 0, 30)
+maximizeButton.Position = UDim2.new(0, 0, 0, 0)
+maximizeButton.Text = "+"
 maximizeButton.TextColor3 = Color3.new(1, 1, 1)
 maximizeButton.BackgroundColor3 = Color3.new(0, 0, 0)
+maximizeButton.BackgroundTransparency = 0.5
 maximizeButton.BorderSizePixel = 0
 maximizeButton.Font = Enum.Font.SourceSans
-maximizeButton.TextSize = 24
-maximizeButton.Draggable = true
-maximizeButton.Parent = screenGui
+maximizeButton.TextSize = 18
+maximizeButton.Visible = false
+maximizeButton.Parent = frame
+
+local isMinimized = true
+
+local function minimizeInterface()
+    frame.Visible = false
+    minimizeButton.Visible = false
+    maximizeButton.Visible = true
+    isMinimized = true
+end
+
+local function maximizeInterface()
+    frame.Visible = true
+    minimizeButton.Visible = true
+    maximizeButton.Visible = false
+    isMinimized = false
+end
+
+local function closeInterface()
+    screenGui:Destroy()
+end
+
+closeButton.MouseButton1Click:Connect(closeInterface)
+minimizeButton.MouseButton1Click:Connect(minimizeInterface)
+maximizeButton.MouseButton1Click:Connect(maximizeInterface)
 
 local linkURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Links.lua"
 local response = game:HttpGet(linkURL)
 local fileList = {}
 
 for line in response:gmatch("[^\r\n]+") do
-	local name, url = line:match("([^:]+):(.+)")
-	if name and url then
-		fileList[name] = url
-	end
+    local name, url = line:match("([^:]+):(.+)")
+    if name and url then
+        fileList[name] = url
+    end
 end
 
 local scrollPosition = 0
@@ -64,99 +105,136 @@ local searchInput = ""
 
 local searchBox = Instance.new("TextBox")
 searchBox.Name = "SearchBox"
-searchBox.Size = UDim2.new(1, -60, 0, 30)
-searchBox.Position = UDim2.new(0, 0, 0, 0)
+searchBox.AnchorPoint = Vector2.new(0.5, 0)
+searchBox.Position = UDim2.new(0.5, 0, 0, 40)
+searchBox.Size = UDim2.new(0.8, 0, 0, 30)
 searchBox.Text = ""
 searchBox.TextColor3 = Color3.new(1, 1, 1)
 searchBox.BackgroundColor3 = Color3.new(0, 0, 0)
-searchBox.BorderSizePixel = 0
-searchBox.ClearTextOnFocus = false
+searchBox.BackgroundTransparency = 0.8
+searchBox.BorderSizePixel = 2
 searchBox.Font = Enum.Font.SourceSans
 searchBox.TextSize = 18
 searchBox.PlaceholderText = "Search"
+searchBox.TextXAlignment = Enum.TextXAlignment.Center
 searchBox.Parent = frame
 
-local function toggleInterface()
-	if frame.Visible then
-		frame.Visible = false
-		minimizeButton.Text = "+"
-	else
-		frame.Visible = true
-		minimizeButton.Text = "-"
-	end
-end
+local buttonContainer = Instance.new("ScrollingFrame")
+buttonContainer.Name = "ButtonContainer"
+buttonContainer.Size = UDim2.new(1, -20, 1, -150)
+buttonContainer.Position = UDim2.new(0, 10, 0, 110)
+buttonContainer.BackgroundColor3 = Color3.new(0, 0, 0)
+buttonContainer.BackgroundTransparency = 0.8
+buttonContainer.BorderSizePixel = 2
+buttonContainer.BorderColor3 = Color3.new(0.5, 0.5, 0.5)
+buttonContainer.ScrollBarThickness = 8
+buttonContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
+buttonContainer.Parent = frame
 
-minimizeButton.MouseButton1Click:Connect(toggleInterface)
-maximizeButton.MouseButton1Click:Connect(toggleInterface)
+local arrowUpButton = Instance.new("TextButton")
+arrowUpButton.Name = "ArrowUpButton"
+arrowUpButton.Size = UDim2.new(0, 30, 0, 30)
+arrowUpButton.Position = UDim2.new(1, -30, 0, 0)
+arrowUpButton.Text = "^"
+arrowUpButton.TextColor3 = Color3.new(1, 1, 1)
+arrowUpButton.BackgroundColor3 = Color3.new(0, 0, 0)
+arrowUpButton.BackgroundTransparency = 0.5
+arrowUpButton.BorderSizePixel = 0
+arrowUpButton.Font = Enum.Font.SourceSans
+arrowUpButton.TextSize = 18
+arrowUpButton.Visible = false
+arrowUpButton.Parent = frame
 
-local function generateButtons()
-	for _, button in ipairs(frame:GetChildren()) do
-		if button:IsA("TextButton") then
-			button:Destroy()
-		end
-	end
+local arrowDownButton = Instance.new("TextButton")
+arrowDownButton.Name = "ArrowDownButton"
+arrowDownButton.Size = UDim2.new(0, 30, 0, 30)
+arrowDownButton.Position = UDim2.new(1, -30, 1, -30)
+arrowDownButton.Text = "v"
+arrowDownButton.TextColor3 = Color3.new(1, 1, 1)
+arrowDownButton.BackgroundColor3 = Color3.new(0, 0, 0)
+arrowDownButton.BackgroundTransparency = 0.5
+arrowDownButton.BorderSizePixel = 0
+arrowDownButton.Font = Enum.Font.SourceSans
+arrowDownButton.TextSize = 18
+arrowDownButton.Visible = false
+arrowDownButton.Parent = frame
 
-	local filteredList = {}
-	for name, url in pairs(fileList) do
-		if name:lower():find(searchInput:lower()) then
-			table.insert(filteredList, { name = name, url = url })
-		end
-	end
-
-	local buttonCount = 0
-	local maxButtons = math.floor((frame.AbsoluteSize.Y - 30) / 60)
-
-	for i = 1 + scrollPosition, #filteredList do
-		local linkData = filteredList[i]
-		local name = linkData.name
-		local url = linkData.url
-
-		local button = Instance.new("TextButton")
-		button.Name = name
-		button.Size = UDim2.new(1, 0, 0, 50)
-		button.Position = UDim2.new(0, 0, 0, 30 + buttonCount * 60)
-		button.Text = name
-		button.TextColor3 = Color3.new(1, 1, 1)
-		button.BackgroundColor3 = Color3.new(0, 0, 0)
-		button.BorderSizePixel = 0
-		button.Font = Enum.Font.SourceSans
-		button.TextSize = 20
-		button.Parent = frame
-
-		button.MouseButton1Click:Connect(function()
+local function updateButtons()
+    for _, button in ipairs(buttonContainer:GetChildren()) do
+        if button:IsA("TextButton") then
+            button:Destroy()
+        end
+    end
+    
+    local filteredFiles = {}
+    
+    for name, url in pairs(fileList) do
+        if string.find(string.lower(name), string.lower(searchInput)) then
+            table.insert(filteredFiles, {name = name, url = url})
+        end
+    end
+    
+    table.sort(filteredFiles, function(a, b)
+        return a.name < b.name
+    end)
+    
+    buttonContainer.CanvasSize = UDim2.new(0, 0, 0, #filteredFiles * 40)
+    
+    for i, fileData in ipairs(filteredFiles) do
+        local button = Instance.new("TextButton")
+        button.Name = fileData.name
+        button.Size = UDim2.new(1, 0, 0, 30)
+        button.Position = UDim2.new(0, 0, 0, (i - 1) * 40)
+        button.Text = fileData.name
+        button.TextColor3 = Color3.new(1, 1, 1)
+        button.BackgroundColor3 = Color3.new(0, 0, 0)
+        button.BackgroundTransparency = 0.5
+        button.BorderSizePixel = 0
+        button.Font = Enum.Font.SourceSans
+        button.TextSize = 18
+        button.Parent = buttonContainer
+        button.MouseButton1Click:Connect(function()
 			print("Se ha hecho clic en el botón " .. name)
 			local scriptCode = "loadstring(game:HttpGet('" .. url .. "'))()"
 			loadstring(scriptCode)()
 		end)
-
-		buttonCount = buttonCount + 1
-
-		if buttonCount >= maxButtons then
-			break
-		end
-	end
-end
-
-local function updateScrollPosition(delta)
-	scrollPosition = math.max(0, scrollPosition + delta)
-	generateButtons()
-end
-
-frame.MouseWheelForward:Connect(function()
-	updateScrollPosition(-1)
-end)
-
-frame.MouseWheelBackward:Connect(function()
-	updateScrollPosition(1)
-end)
-
-local function updateSearch(input)
-	searchInput = input
-	generateButtons()
+    end
 end
 
 searchBox:GetPropertyChangedSignal("Text"):Connect(function()
-	updateSearch(searchBox.Text)
+    searchInput = searchBox.Text
+    updateButtons()
 end)
 
-generateButtons()
+local function updateScrollButtons()
+    if scrollPosition > 0 then
+        arrowUpButton.Visible = true
+    else
+        arrowUpButton.Visible = false
+    end
+    
+    if scrollPosition < buttonContainer.CanvasSize.Y.Offset - buttonContainer.AbsoluteSize.Y then
+        arrowDownButton.Visible = true
+    else
+        arrowDownButton.Visible = false
+    end
+end
+
+arrowUpButton.MouseButton1Click:Connect(function()
+    if scrollPosition > 0 then
+        scrollPosition = scrollPosition - 40
+        buttonContainer.CanvasPosition = Vector2.new(0, scrollPosition)
+        updateScrollButtons()
+    end
+end)
+
+arrowDownButton.MouseButton1Click:Connect(function()
+    if scrollPosition < buttonContainer.CanvasSize.Y.Offset - buttonContainer.AbsoluteSize.Y then
+        scrollPosition = scrollPosition + 40
+        buttonContainer.CanvasPosition = Vector2.new(0, scrollPosition)
+        updateScrollButtons()
+    end
+end)
+
+updateButtons()
+updateScrollButtons()

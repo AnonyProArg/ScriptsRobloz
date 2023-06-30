@@ -45,8 +45,8 @@ searchBox.Parent = frame
 
 local buttonContainer = Instance.new("ScrollingFrame")
 buttonContainer.Name = "ButtonContainer"
-buttonContainer.Size = UDim2.new(1, -20, 1, -150)
-buttonContainer.Position = UDim2.new(0, 10, 0, 110)
+buttonContainer.Size = UDim2.new(1, -20, 1, -80)
+buttonContainer.Position = UDim2.new(0, 10, 0, 80)
 buttonContainer.BackgroundColor3 = Color3.new(0, 0, 0)
 buttonContainer.BackgroundTransparency = 0.8
 buttonContainer.BorderSizePixel = 2
@@ -55,33 +55,22 @@ buttonContainer.ScrollBarThickness = 8
 buttonContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
 buttonContainer.Parent = frame
 
-local arrowUpButton = Instance.new("TextButton")
-arrowUpButton.Name = "ArrowUpButton"
-arrowUpButton.Size = UDim2.new(0, 30, 0, 30)
-arrowUpButton.Position = UDim2.new(1, -30, 0, 0)
-arrowUpButton.Text = "^"
-arrowUpButton.TextColor3 = Color3.new(1, 1, 1)
-arrowUpButton.BackgroundColor3 = Color3.new(0, 0, 0)
-arrowUpButton.BackgroundTransparency = 0.5
-arrowUpButton.BorderSizePixel = 0
-arrowUpButton.Font = Enum.Font.SourceSans
-arrowUpButton.TextSize = 18
-arrowUpButton.Visible = false
-arrowUpButton.Parent = frame
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Size = UDim2.new(0, 30, 0, 30)
+closeButton.Position = UDim2.new(1, -30, 0, 0)
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.new(1, 1, 1)
+closeButton.BackgroundColor3 = Color3.new(0, 0, 0)
+closeButton.BackgroundTransparency = 0.5
+closeButton.BorderSizePixel = 0
+closeButton.Font = Enum.Font.SourceSans
+closeButton.TextSize = 18
+closeButton.Parent = frame
 
-local arrowDownButton = Instance.new("TextButton")
-arrowDownButton.Name = "ArrowDownButton"
-arrowDownButton.Size = UDim2.new(0, 30, 0, 30)
-arrowDownButton.Position = UDim2.new(1, -30, 1, -30)
-arrowDownButton.Text = "v"
-arrowDownButton.TextColor3 = Color3.new(1, 1, 1)
-arrowDownButton.BackgroundColor3 = Color3.new(0, 0, 0)
-arrowDownButton.BackgroundTransparency = 0.5
-arrowDownButton.BorderSizePixel = 0
-arrowDownButton.Font = Enum.Font.SourceSans
-arrowDownButton.TextSize = 18
-arrowDownButton.Visible = false
-arrowDownButton.Parent = frame
+local function closeInterface()
+    screenGui:Destroy()
+end
 
 local function updateButtons()
     for _, button in ipairs(buttonContainer:GetChildren()) do
@@ -89,25 +78,6 @@ local function updateButtons()
             button:Destroy()
         end
     end
-    
-    local closeButton = Instance.new("TextButton")
-    closeButton.Name = "CloseButton"
-    closeButton.Size = UDim2.new(0, 30, 0, 30)
-    closeButton.Position = UDim2.new(1, -30, 0, 0)
-    closeButton.Text = "X"
-    closeButton.TextColor3 = Color3.new(1, 1, 1)
-    closeButton.BackgroundColor3 = Color3.new(0, 0, 0)
-    closeButton.BackgroundTransparency = 0.5
-    closeButton.BorderSizePixel = 0
-    closeButton.Font = Enum.Font.SourceSans
-    closeButton.TextSize = 18
-    closeButton.Parent = frame
-
-    local function closeInterface()
-        screenGui:Destroy()
-    end
-
-    closeButton.MouseButton1Click:Connect(closeInterface)
     
     local linkURL = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Links.lua"
     local response = game:HttpGet(linkURL)
@@ -147,16 +117,10 @@ local function updateButtons()
         button.Font = Enum.Font.SourceSans
         button.TextSize = 18
         button.Parent = buttonContainer
-
         button.MouseButton1Click:Connect(function()
-            local scriptURL = fileData.url
-            local success, error = pcall(function()
-                loadstring(game:HttpGet(scriptURL))()
-            end)
-            
-            if not success then
-                print("Error loading script: " .. error)
-            end
+            print("Se ha hecho clic en el botón " .. fileData.name)
+            local scriptCode = "loadstring(game:HttpGet('" .. fileData.url .. "'))()"
+            loadstring(scriptCode)()
         end)
     end
 end
@@ -166,17 +130,6 @@ searchBox:GetPropertyChangedSignal("Text"):Connect(function()
     updateButtons()
 end)
 
+closeButton.MouseButton1Click:Connect(closeInterface)
+
 updateButtons()
-
-buttonContainer:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
-    arrowUpButton.Visible = buttonContainer.CanvasPosition.Y > 0
-    arrowDownButton.Visible = buttonContainer.CanvasPosition.Y < buttonContainer.CanvasSize.Y.Offset - buttonContainer.AbsoluteSize.Y
-end)
-
-arrowUpButton.MouseButton1Click:Connect(function()
-    buttonContainer.CanvasPosition = Vector2.new(0, buttonContainer.CanvasPosition.Y - 100)
-end)
-
-arrowDownButton.MouseButton1Click:Connect(function()
-    buttonContainer.CanvasPosition = Vector2.new(0, buttonContainer.CanvasPosition.Y + 100)
-end)

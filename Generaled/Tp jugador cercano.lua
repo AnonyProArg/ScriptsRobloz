@@ -74,9 +74,18 @@ screenGui.Parent = game.Players.LocalPlayer.PlayerGui
 -- Create an "Activar" button within the ScreenGui
 local activarButton = Instance.new("TextButton")
 activarButton.Name = "Activar"
-activarButton.Text = "Activar"
-activarButton.Size = UDim2.new(0, 100, 0, 50)
-activarButton.Position = UDim2.new(0.15, 0, 0.6, -25) -- Updated position
+activarButton.Text = "TP Mod🥷"
+activarButton.Size = UDim2.new(0, 100, 0, 40) -- Adjust the size as desired
+activarButton.Position = UDim2.new(0.15, 0, 0.6, -20) -- Adjust the position as desired
+activarButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Set the button background color to red
+activarButton.BorderSizePixel = 2 -- Add a border
+activarButton.BorderColor3 = Color3.fromRGB(0, 0, 0) -- Set the border color to black
+activarButton.Font = Enum.Font.SourceSans -- Use a different font
+activarButton.FontSize = Enum.FontSize.Size24 -- Adjust the font size
+activarButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- Set the text color to white
+activarButton.AutoButtonColor = false -- Prevent automatic button color changes
+
+-- Parent the button to the ScreenGui
 activarButton.Parent = screenGui
 
 -- Connect the 'Activar' button click event to the function

@@ -6,49 +6,63 @@ local function onActivarButtonClicked()
     -- Get all the players in the game
     local players = game.Players:GetPlayers()
 
-    -- Initialize a variable to store the closest player
-    local closestPlayer = nil
+    -- Initialize variables to store the player in front and behind
+    local playerInFront = nil
+    local playerBehind = nil
     local closestDistance = math.huge
 
     -- Iterate through each player in the game
     for _, otherPlayer in ipairs(players) do
         -- Exclude the local player from consideration
         if otherPlayer ~= player then
-            -- Calculate the distance between the local player and the other player
-            local distance = (otherPlayer.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).magnitude
+            -- Calculate the direction vector from the local player to the other player
+            local direction = (otherPlayer.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).unit
 
-            -- Check if the other player is closer than the current closest player
-            if distance < closestDistance then
-                closestPlayer = otherPlayer
-                closestDistance = distance
+            -- Calculate the angle between the local player's forward vector and the direction to the other player
+            local angle = math.acos(direction.Z)
+
+            -- Check if the other player is in front or behind the local player
+            if math.deg(angle) < 90 then
+                -- Player is in front
+                if angle < closestDistance then
+                    closestDistance = angle
+                    playerInFront = otherPlayer
+                end
+            else
+                -- Player is behind
+                playerBehind = otherPlayer
+                break -- Stop iterating after finding a player behind
             end
         end
     end
 
-    -- Check if a closest player was found
-    if closestPlayer then
-        -- Teleport the local player to the closest player
-        player.Character.HumanoidRootPart.CFrame = closestPlayer.Character.HumanoidRootPart.CFrame
+    -- Check if a player in front and a player behind were found
+    if playerInFront and playerBehind then
+        -- Calculate the distance to move the local player behind the player in front
+        local distanceToMove = -1 -- Adjust this value as desired
 
-        -- Attach a ScreenGui to the local player's Back
-        local screenGui = Instance.new("ScreenGui")
-        screenGui.Name = "BackScreenGui"
-        screenGui.Parent = player.Character.HumanoidRootPart
+        -- Calculate the new position for the local player
+        local newPosition = playerInFront.Character.HumanoidRootPart.Position + playerInFront.Character.HumanoidRootPart.CFrame.LookVector * distanceToMove
 
-        -- Create a TextButton within the ScreenGui
-        local textButton = Instance.new("TextButton")
-        textButton.Name = "DesactivarButton"
-        textButton.Text = "Desactivar"
-        textButton.Parent = screenGui
+        -- Calculate the rotation needed for the local player to face the player in front
+        local lookVector = playerInFront.Character.HumanoidRootPart.Position - newPosition
+        local rotation = CFrame.lookAt(Vector3.new(), lookVector)
 
-        -- Define a function that will be called when the 'Desactivar' button is clicked
-        local function onDesactivarButtonClicked()
-            -- Remove the ScreenGui from the local player's Back
-            screenGui:Destroy()
-        end
+        -- Set the local player's position and orientation
+        player.Character.HumanoidRootPart.CFrame = CFrame.new(newPosition) * rotation
+    elseif playerBehind then
+        -- Calculate the distance to move the local player closer to the player behind
+        local distanceToMove = -1 -- Adjust this value as desired
 
-        -- Connect the 'Desactivar' button click event to the function
-        textButton.MouseButton1Click:Connect(onDesactivarButtonClicked)
+        -- Calculate the new position for the local player
+        local newPosition = playerBehind.Character.HumanoidRootPart.Position + playerBehind.Character.HumanoidRootPart.CFrame.LookVector * distanceToMove
+
+        -- Calculate the rotation needed for the local player to face the player behind
+        local lookVector = playerBehind.Character.HumanoidRootPart.Position - newPosition
+        local rotation = CFrame.lookAt(Vector3.new(), lookVector)
+
+        -- Set the local player's position and orientation
+        player.Character.HumanoidRootPart.CFrame = CFrame.new(newPosition) * rotation
     end
 end
 
@@ -60,19 +74,10 @@ screenGui.Parent = game.Players.LocalPlayer.PlayerGui
 -- Create an "Activar" button within the ScreenGui
 local activarButton = Instance.new("TextButton")
 activarButton.Name = "Activar"
-activarButton.Text = "Tp Jugador cercano"
+activarButton.Text = "Activar"
 activarButton.Size = UDim2.new(0, 100, 0, 50)
-activarButton.Position = UDim2.new(0.5, -50, 0.2, 0)
+activarButton.Position = UDim2.new(0.15, 0, 0.6, -25) -- Updated position
 activarButton.Parent = screenGui
-
--- Create a "Desactivar" button within the ScreenGui
-local desactivarButton = Instance.new("TextButton")
-desactivarButton.Name = "Desactivar"
-desactivarButton.Text = "Desactivar"
-desactivarButton.Size = UDim2.new(0, 100, 0, 50)
-desactivarButton.Position = UDim2.new(0.5, -50, 0.3, 0)
-desactivarButton.Parent = screenGui
-desactivarButton.Visible = false
 
 -- Connect the 'Activar' button click event to the function
 activarButton.MouseButton1Click:Connect(onActivarButtonClicked)

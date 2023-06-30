@@ -23,3 +23,4 @@ Cortar Cesped(Mow The Lawn)[Simulador]:https://raw.githubusercontent.com/AnonyPr
 Anti Afk[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/AntiAfk.lua
 Anti Censura 80%[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/NoCensure.lua
 Brillo/Luz de día/Fullbright[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Fullbright.lua
+Tp al jugador más cercano/quedas de atrás:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Tp%20jugador%20cercano.lua

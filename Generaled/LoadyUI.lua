@@ -11,4 +11,18 @@ Window:Game({
     } 
 })
 
+Window:Game({
+    Status = true,
+    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua",
+    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","CoffeShop.lua"),
+    Place = 13276475159
+})
+
+Window:Game({
+    Status = true,
+    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua",
+    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Pasteler%C3%ADa/LaundryExe.lua"),
+    Place = 6305942109
+})
+
 Window:Initiate()

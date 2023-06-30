@@ -2,7 +2,7 @@ ESP Players[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobl
 Plataforma+10:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/%2B10DeAltura.lua
 Caminar sobre plataformas[Genelares]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/CaminarPlataforma.lua
 Modo Espectador[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/ModoEspectador.lua
-Dex v3[Tools]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Dexv3.lua
+Dex v3[Tools]:https://https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua
 Atravesar Paredes(noclip)[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Nocolision.lua
 Caer[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Caer.lua
 Alejarse de jugadores(Regresa)[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejarse%2B.lua

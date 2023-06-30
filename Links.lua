@@ -20,3 +20,5 @@ Menu para plantas [Meepcity]:https://raw.githubusercontent.com/AnonyProArg/Scrip
 Donas(Donuts)[Tycoon]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/DonutsTycoon.lua
 Alejarse de jugadores(NoRegresa)[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejar%2B10.lua
 Cortar Cesped(Mow The Lawn)[Simulador]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/EjecuteAllCespet.lua
+Anti Afk[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/AntiAfk.lua
+Anti Censura 80%[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/NoCensure.lua

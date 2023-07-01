@@ -48,7 +48,7 @@ for i = 1, 6 do
         boton.Position = UDim2.new(0, 20, 0.7 - (0.3 * (i - 1)), 0)
     else
         -- Posiciones del 6 al 4 en la parte derecha (de arriba hacia abajo)
-        boton.Position = UDim2.new(0.8, -20, 0.1 + (0.3 * (i - 4)), 0)
+        boton.Position = UDim2.new(0.8, -20, 0.7 - (0.3 * (i - 4)), 0)
     end
 
     boton.Parent = frame
@@ -74,10 +74,21 @@ end
 local function spamThread()
     local selectedNumber = 4 -- Número seleccionado por defecto
 
+    while not workspace.Plots["Plot" .. selectedNumber] do
+        wait()
+    end
+
     while wait(0.1) do
         workspace.Plots["Plot" .. selectedNumber].Shelf.Info:FireServer()
     end
 end
+
+-- Esperar a que el usuario ingrese un valor
+local selectedNumberInput = game.Players.LocalPlayer:WaitForChild("SelectedNumber")
+
+-- Cambiar el valor de selectedNumber cuando el usuario lo ingrese
+selectedNumberInput:GetPropertyChangedSignal("Value"):Wait()
+local selectedNumber = selectedNumberInput.Value
 
 -- Ejecutar la función spamThread
 spawn(spamThread)

@@ -16,12 +16,44 @@ DesactivarImagen.Parent = ScreenGui
 
 local plataforma
 
+local colors = {
+    BrickColor.new("Sand blue"),
+    BrickColor.new("Bright red"),
+    BrickColor.new("Lime green"),
+    BrickColor.new("Bright yellow"),
+    BrickColor.new("Cyan"),
+    BrickColor.new("Magenta"),
+    BrickColor.new("Bright orange"),
+    BrickColor.new("Light green"),
+    BrickColor.new("Dark indigo"),
+    BrickColor.new("Really black"),
+    BrickColor.new("Deep orange"),
+    BrickColor.new("Toothpaste"),
+    BrickColor.new("Dusty rose"),
+    BrickColor.new("Light blue"),
+    BrickColor.new("Teal"),
+}
+
+local colorIndex = 1
+
 local function generatePlatform(position)
     local newPlatform = Instance.new("Part")
     newPlatform.Size = Vector3.new(5.5, 1, 5.5)
-    newPlatform.BrickColor = BrickColor.new("Sand blue")
+    newPlatform.BrickColor = colors[colorIndex]
     newPlatform.Anchored = true
-    newPlatform.Position = position
+
+    colorIndex = colorIndex + 1
+    if colorIndex > #colors then
+        colorIndex = 1
+    end
+
+    if plataforma then
+        local previousPlatformHeight = plataforma.Position.Y + (plataforma.Size.Y / 2)
+        newPlatform.Position = Vector3.new(position.X, previousPlatformHeight, position.Z)
+    else
+        newPlatform.Position = position
+    end
+
     newPlatform.Parent = workspace
 
     return newPlatform

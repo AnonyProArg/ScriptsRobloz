@@ -25,3 +25,4 @@ Anti Censura 80%[Generales]:https://raw.githubusercontent.com/AnonyProArg/Script
 Brillo/Luz de día/Fullbright[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Fullbright.lua
 Tpjugador cercano/Mod atack espalda [Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Tp%20jugador%20cercano.lua
 Tp Players:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua
+Waypoints TP-Position:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua

@@ -20,4 +20,12 @@ Window:Game({
     } 
 })
 
+Window:Game({
+    Status = true,
+    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/PizzaMeep.lua",
+    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","PizzaMeep.lua"),
+    Custom = {
+        Name = "Pizzería AutoPizzas" 
+    } 
+})
 Window:Initiate()

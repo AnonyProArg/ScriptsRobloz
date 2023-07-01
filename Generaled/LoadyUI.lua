@@ -43,7 +43,7 @@ Window:Game({
     Status = true,
     Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Exes/MeepCity.lua",
     UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Exes/MeepCity.lua"),
-    Place = 6305942109
+    Place = 370731277
 })
 
 Window:Initiate()

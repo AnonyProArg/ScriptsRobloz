@@ -24,3 +24,4 @@ Anti Afk[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/
 Anti Censura 80%[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/NoCensure.lua
 Brillo/Luz de día/Fullbright[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Fullbright.lua
 Tpjugador cercano/Mod atack espalda [Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Tp%20jugador%20cercano.lua
+Tp Players:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua

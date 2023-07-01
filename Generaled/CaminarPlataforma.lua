@@ -15,22 +15,35 @@ DesactivarImagen.Visible = false
 DesactivarImagen.Parent = ScreenGui
 
 local plataforma
+local alturaGuardada -- Variable para almacenar la altura
 
 ActivarImagen.MouseButton1Down:Connect(function()
     ActivarImagen.Visible = false
     DesactivarImagen.Visible = true
 
     if not plataforma then
+        if not alturaGuardada then
+            alturaGuardada = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y -- Guardar la altura actual
+        end
+
         plataforma = Instance.new("Part")
         plataforma.Size = Vector3.new(5, 1, 5)
         plataforma.BrickColor = BrickColor.new("Sand blue")
         plataforma.Anchored = true
-        plataforma.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(0, 3.5.9, 0)
+        plataforma.Position = Vector3.new(
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,
+            alturaGuardada - 3.5,
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
+        ) -- Utilizar la altura guardada para generar la plataforma
         plataforma.Parent = workspace
 
         game.Players.LocalPlayer.Character.Humanoid.Running:Connect(function(speed)
             if speed > 0 then
-                plataforma.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(0, 3.5.9, 0)
+                plataforma.Position = Vector3.new(
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,
+                    alturaGuardada - 3.5,
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z
+                ) -- Actualizar la posición de la plataforma mientras el jugador se mueve
             end
         end)
 
@@ -40,6 +53,7 @@ ActivarImagen.MouseButton1Down:Connect(function()
                 plataforma = nil
                 DesactivarImagen.Visible = false
                 ActivarImagen.Visible = true
+                alturaGuardada = nil -- Restablecer la altura guardada al saltar
             end
         end)
     end
@@ -53,5 +67,6 @@ DesactivarImagen.MouseButton1Down:Connect(function()
         plataforma:Destroy()
         plataforma = nil
     end
-end)
 
+    alturaGuardada = nil -- Eliminar la altura guardada
+end)

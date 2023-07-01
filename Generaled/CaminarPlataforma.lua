@@ -25,12 +25,12 @@ ActivarImagen.MouseButton1Down:Connect(function()
         plataforma.Size = Vector3.new(5, 1, 5)
         plataforma.BrickColor = BrickColor.new("Sand blue")
         plataforma.Anchored = true
-        plataforma.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(0, 3, 0)
+        plataforma.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(0, 3.5.9, 0)
         plataforma.Parent = workspace
 
         game.Players.LocalPlayer.Character.Humanoid.Running:Connect(function(speed)
             if speed > 0 then
-                plataforma.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(0, 3, 0)
+                plataforma.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Vector3.new(0, 3.5.9, 0)
             end
         end)
 

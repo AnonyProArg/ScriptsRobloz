@@ -41,18 +41,9 @@ Window:Game({
 
 Window:Game({
     Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Pasteler%C3%ADa/LaundryExe.lua"),
+    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Exes/MeepCity.lua",
+    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Exes/MeepCity.lua"),
     Place = 6305942109
 })
-
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Pasteler%C3%ADa/LaundryExe.lua"),
-    Place = 6305942109
-})
-
-
 
 Window:Initiate()

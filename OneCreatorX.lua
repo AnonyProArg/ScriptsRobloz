@@ -522,28 +522,10 @@ local Bakery = Window:MakeTab({
 })
 
 Bakery:AddButton({
-    Name = "Puesto 4",
+    Name = "Fix UP AllSuport :)",
     Callback = function()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Exe4.lua"))()
-
-end
-})
-
-Bakery:AddButton({
-    Name = "Puesto 5",
-    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Exe5.lua"))()
-
-end
-})
-
-Bakery:AddButton({
-    Name = "Puesto 6",
-    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/Exe6.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/ExePanaderia.lua"))()
 
 end
 })

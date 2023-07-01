@@ -28,3 +28,4 @@ Tp Players:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPpl
 Waypoints TP-Position:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
 Generador Infin de plataformas:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
 Generator plataforma InfV2:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
+genera plataforma 1000x1000(evita caida):https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua

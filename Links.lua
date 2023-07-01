@@ -27,3 +27,4 @@ Tpjugador cercano/Mod atack espalda [Generales]:https://raw.githubusercontent.co
 Tp Players:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua
 Waypoints TP-Position:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
 Generador Infin de plataformas:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
+Generator plataforma InfV2:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua

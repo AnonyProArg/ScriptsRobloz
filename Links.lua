@@ -26,3 +26,4 @@ Brillo/Luz de día/Fullbright[Generales]:https://raw.githubusercontent.com/Anony
 Tpjugador cercano/Mod atack espalda [Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Tp%20jugador%20cercano.lua
 Tp Players:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua
 Waypoints TP-Position:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
+Generador Infin de plataformas:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt

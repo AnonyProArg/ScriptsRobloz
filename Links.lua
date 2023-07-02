@@ -24,9 +24,9 @@ Anti Afk[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/
 Anti Censura 80%[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/NoCensure.lua
 Brillo/Luz de día/Fullbright[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Fullbright.lua
 Tpjugador cercano/Mod atack espalda [Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Tp%20jugador%20cercano.lua
-Tp Players:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua
-Waypoints TP-Position:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
-Generador Infin de plataformas:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
-Generator plataforma InfV2:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
-genera plataforma 1000x1000(evita caida):https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua
+Tp Players[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua
+Waypoints TP-Position[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
+Generador Infin de plataformas[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
+Generator plataforma InfV2[Generes]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
+genera plataforma 1000x1000(evita caida)[Generales]:https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua
 Math answers o die:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua

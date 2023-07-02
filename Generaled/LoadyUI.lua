@@ -11,7 +11,6 @@ end)
     "Status":true,
     "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua"
   },
-    Status = true,
  "13276475159":{
     "Status":true,
     "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua"

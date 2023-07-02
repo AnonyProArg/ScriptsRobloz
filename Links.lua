@@ -29,3 +29,4 @@ Waypoints TP-Position:https://raw.githubusercontent.com/AnonyProArg/ScriptsRoblo
 Generador Infin de plataformas:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
 Generator plataforma InfV2:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
 genera plataforma 1000x1000(evita caida):https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua
+Math answers o die:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua

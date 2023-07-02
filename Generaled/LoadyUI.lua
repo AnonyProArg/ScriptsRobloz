@@ -2,48 +2,40 @@ local Library = loadstring(game:HttpGet("https://bitbucket.org/cat__/uis/raw/Loa
 local Window = Library:Window("Loady", function(Script)
     loadstring(game:HttpGet(Script), Script:split("/")[3])()
 end)
-Window:Game({
+{
+  "Generales/Tools":{
+    "Status":true,
+    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua"
+  },
+  "12398414727":{
+    "Status":true,
+    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua"
+  },
     Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","OneCreatorX%203.lua"),
-    Custom = {
-        Name = "Generales-Tools" 
-    } 
-})
+ "13276475159":{
+    "Status":true,
+    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua"
+  },
+ "6305942109":{
+    "Status":true,
 
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","CoffeShop.lua"),
-    Place = 13276475159
-})
-
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Pasteler%C3%ADa/LaundryExe.lua"),
-    Place = 6305942109
-})
-
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/EjecuteAllCespet.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","EjecuteAllCespet.lua"),
-    Place = 10108131074
-})
-
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/ExePanaderia.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Pasteler%C3%ADa/ExePanaderia.lua"),
-    Place = 6915291292
-})
-
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Exes/MeepCity.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","Exes/MeepCity.lua"),
-    Place = 370731277
-})
+"Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua"
+  },
+ "10108131074":{
+    "Status":true,
+    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/EjecuteAllCespet.lua"
+  },
+ "6915291292":{
+    "Status":true,
+    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/ExePanaderia.lua"
+  },
+ "370731277":{
+    "Status":true,
+    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Exes/MeepCity.lua"
+  },
+ "12398414727":{
+    "Status":true,
+    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua"
+  },
 
 Window:Initiate()

@@ -33,4 +33,5 @@ Math answers o die:Game:Live:https://raw.githubusercontent.com/AnonyProArg/Scrip
 Velocidad/Speed:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Velocidad.lua
 TP UP/DOWN Digite: Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/TpAltura.lua
 PowerJump/Valor del Salto:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Salto.lua
+Tp name player:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/TpName.lua
  

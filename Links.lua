@@ -32,5 +32,5 @@ genera plataforma 1000x1000(evita caida)[Generales]:https://github.com/AnonyProA
 Math answers o die:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua
 Velocidad/Speed:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Velocidad.lua
 TP UP/DOWN Digite:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/TpAltura.lua
-PowerJump/Valor del Salto:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Salto.lua
+PowerJump/Valor del Salto:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Salto.lua
  

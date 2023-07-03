@@ -30,3 +30,7 @@ Generador Infin de plataformas[Generales]:https://raw.githubusercontent.com/Anon
 Generator plataforma InfV2[Generes]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
 genera plataforma 1000x1000(evita caida)[Generales]:https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua
 Math answers o die:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua
+Velocidad/Speed:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Velocidad.lua
+TP UP/DOWN Digite: https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/TpAltura.lua
+PowerJump/Valor del Salto:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Salto.lua
+ 

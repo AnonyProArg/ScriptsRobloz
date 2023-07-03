@@ -1,7 +1,3 @@
-local Library = loadstring(game:HttpGet("https://bitbucket.org/cat__/uis/raw/Loady/Module"))() 
-local Window = Library:Window("Loady", function(Script)
-    loadstring(game:HttpGet(Script), Script:split("/")[3])()
-end)
 {
   "Generales/Tools":{
     "Status":true,
@@ -35,5 +31,3 @@ end)
     "Status":true,
 "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua"
   }
-
-Window:Initiate()

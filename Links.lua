@@ -2,7 +2,7 @@ ESP Players[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobl
 Plataforma+10:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/%2B10DeAltura.lua
 Caminar sobre plataformas[Genelares]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/CaminarPlataforma.lua
 Modo Espectador[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/ModoEspectador.lua
-Dex v3[Tools]:https://https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua
+Dex v3[Tools]:https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua
 Atravesar Paredes(noclip)[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Nocolision.lua
 Caer[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Caer.lua
 Alejarse de jugadores(Regresa)[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Alejarse%2B.lua
@@ -25,12 +25,12 @@ Anti Censura 80%[Generales]:https://raw.githubusercontent.com/AnonyProArg/Script
 Brillo/Luz de día/Fullbright[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Fullbright.lua
 Tpjugador cercano/Mod atack espalda [Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Tp%20jugador%20cercano.lua
 Tp Players[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/TPplayers.lua
-Waypoints TP-Position[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
-Generador Infin de plataformas[Generales]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
-Generator plataforma InfV2[Generes]:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
-genera plataforma 1000x1000(evita caida)[Generales]:https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua
-Math answers o die:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua
-Velocidad/Speed:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Velocidad.lua
-TP UP/DOWN Digite:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/TpAltura.lua
+Waypoints TP-Position:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
+Generador Infin de plataformas:Fin:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
+Generator plataforma InfV2:Fun:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
+genera plataforma 1000x1000:Utilidad:Roto:https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua
+Math answers o die:Game:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua
+Velocidad/Speed:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Velocidad.lua
+TP UP/DOWN Digite: Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/TpAltura.lua
 PowerJump/Valor del Salto:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Salto.lua
  

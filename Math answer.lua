@@ -1,7 +1,7 @@
 local Debounce = false
 
 game:GetService("ReplicatedStorage").Events.Round.RoundRE.OnClientEvent:Connect(function(Status, Time, Data)
-    if game:GetService("Players").LocalPlayer.InGame.Value then
+
         if Status == "countdown" and not Debounce then
             Debounce = true
             Data.CurrentQuestion = Data.CurrentQuestion:gsub("= %?", "")
@@ -16,6 +16,4 @@ game:GetService("ReplicatedStorage").Events.Round.RoundRE.OnClientEvent:Connect(
         elseif Status == "idle" then
             Debounce = false
         end
-    end
-end)
-
+    end)

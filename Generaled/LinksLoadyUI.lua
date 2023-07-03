@@ -12,7 +12,7 @@
 "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua"
   },
  "6305942109":{
-    "Status":true",
+    "Status":true,
 "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua"
   },
  "10108131074":{

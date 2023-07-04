@@ -6,7 +6,7 @@ gui.Parent = game.Players.LocalPlayer.PlayerGui
 local textBox = Instance.new("TextBox")
 textBox.Size = UDim2.new(0, 20, 0, 20)
 textBox.Position = UDim2.new(0.35, -10, 0.3, -10) -- Cambiar los valores para ajustar la posición
-textBox.FontSize = Enum.FontSize.Size0
+textBox.FontSize = Enum.FontSize.Size10
 textBox.Parent = gui
 
 -- Función para buscar y teletransportarse

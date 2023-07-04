@@ -1,10 +1,35 @@
-{
-  "Generales/Tools":{
-    "Status":true,
-    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua"
-  },
-  "12398414727":{
-    "Status":true,
-    "Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua"
-  }
-}
+local Scripts = game.HttpService:JSONDecode(game:HttpGet("https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/LinksLoadyUI.lua"))
+
+local Library = loadstring(game:HttpGet("https://bitbucket.org/cat__/uis/raw/Loady/Module"))()
+local Window = Library:Window("Loady", function(Script, Func)
+    Func:TryExecuteURL(Script)
+end, {
+    Start = Color3.fromRGB(0, 147, 233),
+    End = Color3.fromRGB(128, 208, 199)
+})
+
+for i, v in pairs(Scripts) do
+    if tonumber(i) then
+        i = tonumber(i)
+    end
+
+    if typeof(i) == "number" then
+        Window:Game({
+            Place = i,
+            Status = v.Status,
+            Script = v.Url,
+            UpdateDate = Window:GetDate("Github", "AnonyProArg", "ScriptsRobloz", v.Url:match("/([^/]+%.lua)$")),
+        })
+    elseif typeof(i) == "string" then
+        Window:Game({
+            Status = v.Status,
+            Script = v.Url,
+            Custom = {
+                Name = i
+            },
+            UpdateDate = Window:GetDate("Github", "AnonyProArg", "ScriptsRobloz", v.Url:match("/([^/]+%.lua)$")),
+        })
+    end
+end
+
+Window:Initiate()

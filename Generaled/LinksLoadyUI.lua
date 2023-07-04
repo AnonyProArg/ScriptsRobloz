@@ -1,7 +1,8 @@
 {
   "Generales/Tools":{
     "Status":true,
-"Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua"
+"Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua",
+"Creator":"Prueba"
   },
   "12398414727":{
     "Status":true,

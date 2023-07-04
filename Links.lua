@@ -28,7 +28,7 @@ Tp Players:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRo
 Waypoints TP-Position:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Waypoints.lua
 Generador Infin de plataformas:Fun:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/generador%20de%20plataformas.txt
 Generator plataforma InfV2:Fun:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Generate%20Plataformas%20InfV2.lua
-Evitar Caída Digite - :Utilidad:Beta:https://github.com/AnonyProArg/ScriptsRobloz/blob/main/Generaled/plataforma1000x1000-300.lua
+Evitar Caída Digite - :Utilidad:Beta:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/plataforma1000x1000-300.lua
 Math answers o die:Game:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua
 Velocidad/Speed:Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/Velocidad.lua
 TP UP/DOWN Digite: Utilidad:Live:https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Generaled/TpAltura.lua

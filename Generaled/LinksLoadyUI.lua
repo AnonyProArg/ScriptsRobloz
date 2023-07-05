@@ -2,25 +2,25 @@
 "Updated":"04/07/2023",
   "Generales/Tools":{
      "Creator": "OneCreatorX",
-    "Status": "Functional and in Development",
+    "Status": "Working and in Development",
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua",
   "Updated": "04/07/2023"
   },
  "13276475159":{
     "Creator": "OneCreatorX",
-    "Status": "Functional and in Development",
+    "Status": "Working and in Development",
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/CoffeShop.lua",
   "Updated": "04/07/2023"
   },
  "6305942109":{
     "Creator": "OneCreatorX",
-    "Status": "Beta but Functional",
+    "Status": "Beta but Working",
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Pasteler%C3%ADa/LaundryExe.lua",
   "Updated": "04/07/2023"
   },
  "10108131074":{
     "Creator": "OneCreatorX",
-    "Status": "Functional in 1-8 worlds",
+    "Status": "Working in 1-8 worlds",
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/EjecuteAllCespet.lua",
   "Updated": "04/07/2023"
   },
@@ -32,13 +32,13 @@
   },
  "370731277":{
     "Creator": "OneCreatorX",
-    "Status": "Functional",
+    "Status": "Working",
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Exes/MeepCity.lua",
   "Updated": "04/07/2023"
   },
  "12398414727":{
     "Creator": "Cat, OneCreatorX",
-    "Status": "Functional",
+    "Status": "Working",
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua",
   "Updated": "04/07/2023"
   }

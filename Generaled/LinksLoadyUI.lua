@@ -37,7 +37,7 @@
   "Updated": "04/07/2023"
   },
  "12398414727":{
-    "Creator": "OneCreatorX",
+    "Creator": "Cat, OneCreatorX",
     "Status": "Functional",
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua",
   "Updated": "04/07/2023"

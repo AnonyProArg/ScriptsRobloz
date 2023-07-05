@@ -1,31 +1,19 @@
-local Library = loadstring(game:HttpGet("https://bitbucket.org/cat__/uis/raw/Loady/Module"))() 
-local Window = Library:Window("Loady", function(Script)
-    loadstring(game:HttpGet(Script), Script:split("/")[3])()
-end)
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/ColocarYenMeep.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","ColocarYenMeep.lua"),
-    Custom = {
-        Name = "Colocar Ítems en Casa" 
-    } 
-})
+{
+  "Updated":"05/07/2023"
+   "Colocar Objetos no area":{
+    "Status": true,
+   "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/ColocarYenMeep.lua",
+    "Updated":"05/07/2023"
+},
+"Plantas Options":{
+"Status": true,
+"Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/plantsMeepC.lua",
+    "Updated":"04/07/2023"
+    },
+"Fun Pizzería Trolling":{
+"Status": true,
+"Url":"https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/PizzaMeep.lua",
+    "Updated":"07/05/2023"
+}
+}
 
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/plantsMeepC.txt",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","plantsMeepC.txt"),
-    Custom = {
-        Name = "Plantas Opciónes" 
-    } 
-})
-
-Window:Game({
-    Status = true,
-    Script = "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/PizzaMeep.lua",
-    UpdateDate = Window:GitDate("AnonyProArg","ScriptsRobloz","PizzaMeep.lua"),
-    Custom = {
-        Name = "Pizzería AutoPizzas" 
-    } 
-})
-Window:Initiate()

@@ -9,26 +9,31 @@ end, {
 })
 
 for i, v in pairs(Scripts) do
-    if tonumber(i) then
-        i = tonumber(i)
-    end
+    if i ~= "Updated" then
+        if tonumber(i) then
+            i = tonumber(i)
+        end
 
-    if typeof(i) == "number" then
-        Window:Game({
-            Place = i,
-            Status = v.Status,
-            Script = v.Url,
-            UpdateDate = Window:GetDate("Github", "AnonyProArg", "ScriptsRobloz", v.Url:match("/([^/]+%.lua)$")),
-        })
-    elseif typeof(i) == "string" then
-        Window:Game({
-            Status = v.Status,
-            Script = v.Url,
-            Custom = {
-                Name = i
-            },
-            UpdateDate = Window:GetDate("Github", "AnonyProArg", "ScriptsRobloz", v.Url:match("/([^/]+%.lua)$")),
-        })
+        if typeof(i) == "number" then
+            Window:Game({
+                Place = i,
+                Status = v.Status,
+                Script = v.Url,
+                Creator = v.Creator,
+                UpdateDate = Window:GetDate("Local", v.Updated == nil and Scripts.Updated or v.Updated),
+            })
+        elseif typeof(i) == "string" then
+            Window:Game({
+                Status = v.Status,
+                Script = v.Url,
+                Creator = v.Creator,
+                Custom = {
+                    Name = i,
+                    Image = v.Image or ""
+                },
+                UpdateDate = Window:GetDate("Local", v.Updated == nil and Scripts.Updated or v.Updated),
+            })
+        end
     end
 end
 

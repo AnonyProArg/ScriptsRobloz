@@ -6,12 +6,6 @@
 "Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/OneCreatorX%203.lua",
   "Updated": "04/07/2023"
   },
-  "12398414727":{
-   "Creator": "Cat, OneCreatorX",
-    "Status": "Functional",
-"Url": "https://raw.githubusercontent.com/AnonyProArg/ScriptsRobloz/main/Math%20answer.lua",
-  "Updated": "04/07/2023"
-  },
  "13276475159":{
     "Creator": "OneCreatorX",
     "Status": "Functional and in Development",
